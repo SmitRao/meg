@@ -1,0 +1,32 @@
+https://docs.docker.com/compose/gettingstarted/
+https://dev.to/riverfount/dockerize-a-flask-app-17ag
+
+----------------
+Daniel's example of docker-compose.yml:
+
+version: "3"
+services:
+  trident:
+    build: .
+    depends_on:
+      - postgres
+    environment:
+      DATABASE_URL: postgres://moonshot:moonshot@postgres:5432/moonshot
+      NODE_ENV: development
+      PORT: 3000
+    ports:
+      - "3000:3000"
+    command: npm run dev
+    volumes:
+      - .:/app/
+      - /app/node_modules
+  postgres:
+    image: postgres:10.4
+    ports:
+      - "35432:5432"
+    environment:
+      POSTGRES_USER: moonshot
+      POSTGRES_PASSWORD: moonshot
+      POSTGRES_DB: moonshot
+--------------------
+
