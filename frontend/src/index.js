@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import HowItWorks from "./screens/HowItWorks/HowItWorks";
 import "antd/dist/antd.css";
 import * as serviceWorker from "./serviceWorker";
+import { HowItWorks } from "./screens/HowItWorks/HowItWorks";
+// import Home from "./screens/Home/Home";
 
 ReactDOM.render(<HowItWorks />, document.getElementById("root"));
 
