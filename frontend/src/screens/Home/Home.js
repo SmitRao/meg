@@ -4,6 +4,7 @@ import "./Home.css";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 import PicturesCarousel from "../../assets/pictures-carousel.png";
 import { FacebookFilled, InstagramFilled, MailFilled } from "@ant-design/icons";
+import {Link} from "react-router-dom";
 
 const { Text } = Typography;
 
@@ -40,7 +41,9 @@ class Home extends React.Component {
               placeholder="search for items..."
             />
             <Button className="learn" type="link">
-              Learn how it works
+            <Link to={"/how-it-works"}>
+                  Learn how it works
+            </Link>
             </Button>
           </div>
         </Content>
