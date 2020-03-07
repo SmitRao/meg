@@ -29,6 +29,16 @@
   color: #efefef;
 }
 
+.footer-icons {
+  font-size: xx-large;
+  height: 2em;
+  color: #efefef;
+}
+
+.icon {
+  padding-left: 1em;
+}
+
 .menu {
   line-height: 6em;
   float: right;

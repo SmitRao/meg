@@ -1,14 +1,18 @@
 import React from "react";
 import "./HowItWorks.css";
-import { Layout, Menu } from "antd";
+import { Layout, Menu, Typography } from "antd";
 import {
   SearchOutlined,
   FilterOutlined,
-  ShoppingCartOutlined
+  ShoppingCartOutlined,
+  FacebookFilled,
+  InstagramFilled,
+  MailFilled
 } from "@ant-design/icons";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 
 const { Header, Content, Footer } = Layout;
+const { Text } = Typography;
 
 export class HowItWorks extends React.Component {
   render() {
@@ -38,7 +42,14 @@ export class HowItWorks extends React.Component {
         </Content>
 
         <Footer className="footer">
-          © {copyrightYear}, My Ethical Garment Inc. All rights reserved.
+          <div className="footer-icons">
+            <FacebookFilled className="icon"></FacebookFilled>
+            <InstagramFilled className="icon"></InstagramFilled>
+            <MailFilled className="icon"></MailFilled>
+          </div>
+          <Text style={{color: "#efefef"}}>
+            © {copyrightYear}, My Ethical Garment Inc. All rights reserved.
+          </Text>
         </Footer>
       </Layout>
     );
