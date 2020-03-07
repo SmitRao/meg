@@ -1,6 +1,6 @@
 /*below is for the header*/
 
-.home{
+.home {
   min-height: 100vh;
 }
 
@@ -23,12 +23,12 @@
   float: right;
 }
 
-.content{
+.content {
   background-color: #fff;
-  height:85vh;
+  height: 85vh;
 }
 
-.message{
+.message {
   font-size: 64px;
   max-width: 22ex;
   margin-left: auto;
@@ -40,7 +40,7 @@
   letter-spacing: 4px;
 }
 
-.highlight{
+.highlight {
   color: #fff;
   background-color: #000;
   border-radius: 4px;
@@ -50,22 +50,22 @@
   margin-bottom: 6px;
 }
 
-.message-search{
+.message-search {
   font-size: 36px;
   margin-top: 12px;
-  margin-bottom: 12px;;
+  margin-bottom: 12px;
 }
 
-.learn{
+.learn {
   font-size: 24px;
   font-weight: lighter;
   height: auto;
   color: #777777;
   justify-content: flex-end;
-  margin-left:auto;
+  margin-left: auto;
 }
 
-.pictures-carousel{
+.pictures-carousel {
   width: auto;
   max-height: 20vw;
 }
