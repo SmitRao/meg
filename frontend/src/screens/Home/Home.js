@@ -13,7 +13,7 @@ const { Header, Content, Sider } = Layout;
 class Home extends React.Component {
   render() {
     return (
-      <Layout>
+      <Layout style={{ height: "100vh" }}>
         <Header className="header">
           <div className="logo" />
           <Menu
