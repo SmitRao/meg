@@ -13,8 +13,7 @@ import { ReactComponent as Logo } from "../../assets/logo.svg";
 
 const { Header, Content, Footer } = Layout;
 const { Text, Title } = Typography;
-
-export class HowItWorks extends React.Component {
+class HowItWorks extends React.Component {
   render() {
     const copyrightYear = new Date().getFullYear();
     return (
@@ -85,3 +84,6 @@ export class HowItWorks extends React.Component {
     );
   }
 }
+
+
+export default HowItWorks;
