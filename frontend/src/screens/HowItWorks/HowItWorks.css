@@ -15,6 +15,7 @@
 
 .layout {
   height: 100vh;
+  background-color: white;
 }
 
 .header {
@@ -22,9 +23,19 @@
   height: 6em;
 }
 
+.footer {
+  text-align: end;
+  background-color: black;
+  color: #efefef;
+}
+
 .menu {
   line-height: 6em;
   float: right;
+}
+
+.ant-menu-horizontal {
+  border-bottom: 0px;
 }
 
 .ant-menu-horizontal > .ant-menu-item:hover,
@@ -36,6 +47,5 @@
 .ant-menu-horizontal > .ant-menu-item-selected,
 .ant-menu-horizontal > .ant-menu-submenu-selected {
   color: #000;
-  font-weight: 1em;
   border-bottom: 2px solid #000;
 }

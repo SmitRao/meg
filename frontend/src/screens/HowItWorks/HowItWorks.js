@@ -1,12 +1,18 @@
 import React from "react";
 import "./HowItWorks.css";
-import { Layout, Menu, Breadcrumb } from "antd";
+import { Layout, Menu } from "antd";
+import {
+  SearchOutlined,
+  FilterOutlined,
+  ShoppingCartOutlined
+} from "@ant-design/icons";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 
 const { Header, Content, Footer } = Layout;
 
 export class HowItWorks extends React.Component {
   render() {
+    const copyrightYear = new Date().getFullYear();
     return (
       <Layout className="layout">
         <Header className="header">
@@ -22,16 +28,17 @@ export class HowItWorks extends React.Component {
             <Menu.Item key="3">Brands</Menu.Item>
           </Menu>
         </Header>
+
         <Content style={{ padding: "0 50px" }}>
-          <Breadcrumb style={{ margin: "16px 0" }}>
-            <Breadcrumb.Item>Home</Breadcrumb.Item>
-            <Breadcrumb.Item>List</Breadcrumb.Item>
-            <Breadcrumb.Item>App</Breadcrumb.Item>
-          </Breadcrumb>
-          <div className="site-layout-content">Content</div>
+          <div className="site-layout-content">
+            <SearchOutlined></SearchOutlined>
+            <FilterOutlined></FilterOutlined>
+            <ShoppingCartOutlined></ShoppingCartOutlined>
+          </div>
         </Content>
-        <Footer style={{ textAlign: "center" }}>
-          Ant Design ©2018 Created by Ant UED
+
+        <Footer className="footer">
+          © {copyrightYear}, My Ethical Garment Inc. All rights reserved.
         </Footer>
       </Layout>
     );
