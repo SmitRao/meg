@@ -1,6 +1,5 @@
 import React from "react";
 import { Layout, Menu, Breadcrumb } from "antd";
-import { ReactComponent as Logo } from "../../assets/logo.svg";
 import {
   UserOutlined,
   LaptopOutlined,
@@ -95,7 +94,6 @@ class Home extends React.Component {
               }}
             >
               Content
-              <Logo />
             </Content>
           </Layout>
         </Layout>
