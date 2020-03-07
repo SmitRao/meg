@@ -1,7 +1,15 @@
-.site-layout-content {
-  background: #fff;
-  padding: 24px;
-  min-height: 280px;
+.content {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  justify-content: space-evenly;
+
+  background: #000;
+  align-items: stretch;
+}
+
+.card {
+  padding: 2em;
 }
 
 .logo {

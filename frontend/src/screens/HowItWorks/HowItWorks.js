@@ -1,6 +1,6 @@
 import React from "react";
 import "./HowItWorks.css";
-import { Layout, Menu, Typography } from "antd";
+import { Layout, Menu, Typography, Card } from "antd";
 import {
   SearchOutlined,
   FilterOutlined,
@@ -34,10 +34,16 @@ export class HowItWorks extends React.Component {
         </Header>
 
         <Content style={{ padding: "0 50px" }}>
-          <div className="site-layout-content">
-            <SearchOutlined></SearchOutlined>
-            <FilterOutlined></FilterOutlined>
-            <ShoppingCartOutlined></ShoppingCartOutlined>
+          <div className="content">
+            <Card className="card">
+              <SearchOutlined></SearchOutlined>
+            </Card>
+            <Card className="card">
+              <FilterOutlined></FilterOutlined>
+            </Card>
+            <Card className="card">
+              <ShoppingCartOutlined></ShoppingCartOutlined>
+            </Card>
           </div>
         </Content>
 
@@ -47,7 +53,7 @@ export class HowItWorks extends React.Component {
             <InstagramFilled className="icon"></InstagramFilled>
             <MailFilled className="icon"></MailFilled>
           </div>
-          <Text style={{color: "#efefef"}}>
+          <Text style={{ color: "#efefef" }}>
             © {copyrightYear}, My Ethical Garment Inc. All rights reserved.
           </Text>
         </Footer>
