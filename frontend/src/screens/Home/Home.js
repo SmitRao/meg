@@ -1,5 +1,6 @@
 import React from "react";
 import { Layout, Menu, Breadcrumb } from "antd";
+import { ReactComponent as Logo } from "../../assets/logo.svg";
 import {
   UserOutlined,
   LaptopOutlined,
@@ -13,7 +14,7 @@ const { Header, Content, Sider } = Layout;
 class Home extends React.Component {
   render() {
     return (
-      <Layout>
+      <Layout style={{ height: "100vh" }}>
         <Header className="header">
           <div className="logo" />
           <Menu
@@ -94,6 +95,7 @@ class Home extends React.Component {
               }}
             >
               Content
+              <Logo />
             </Content>
           </Layout>
         </Layout>
