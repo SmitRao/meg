@@ -28,14 +28,15 @@
  * Provide clear steps for using each feature described above
  * This section is critical to testing your application and must be done carefully and thoughtfully
 
- 1. home page: search bar
- 2. result page: 
-    - display results. 
-    - once you select filters, display filtered results. 
-    - once you sort, display results in osrted order. 
-    - can serach other things. 
-    - redirect to the brand's prodcut url when you click specific product
- 3. how it works page: show how this website works
+![UserWorkFlow](https://github.com/SmitRao/meg/blob/deliverables/deliverables/user_workflow_2.png)
+ **Home Page**<br>
+ First, user enters to home page. This is the main page. User can search by key words through the search bar.
+ 
+ **Result Page**<br>
+ When user clicks the 'search' button, **result page** comes up. It displays the results with available filters and sorting values. When user selects filters, then the filtered results will be displayed. When user selects sorting value, then the ordered by sorting value will be displayed. Users can search by key words using the search bar. All results are linked to the brand's product site, so when users click specific product, it redirects to the brand's page.
+ 
+ **How It Works Page**<br>
+ This page shows how our website works.
 
  
  ## Development requirements
