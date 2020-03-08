@@ -30,15 +30,6 @@ CREATE TABLE Products(
 	FOREIGN KEY (CategoryName) REFERENCES Categories(CategoryName) ON DELETE CASCADE
 );
 
--- DROP TABLE IF EXISTS Images;
-
--- CREATE TABLE Images(
--- 	ImageId SERIAL,
--- 	ImageUrl TEXT UNIQUE NOT NULL,
--- 	ProductId INT NOT NULL,
--- 	PRIMARY KEY (ImageId),
--- 	FOREIGN KEY (ProductId) REFERENCES Products(ProductId) ON DELETE CASCADE
--- );
 
 DROP TABLE IF EXISTS PreviewImages;
 

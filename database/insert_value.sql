@@ -31,7 +31,7 @@ VALUES
 
 -- eb data
 INSERT INTO Brands(BrandName, BrandUrl)
-VALUES ('ElectricBazarr', 'https://www.electric-bazaar.com/heritage');
+VALUES ('ElectricBazaar', 'https://www.electric-bazaar.com/heritage');
 
 INSERT INTO Categories(CategoryName)
 VALUES 
@@ -46,3 +46,8 @@ VALUES
 -- INSERT INTO Images(ImageUrl, ProductId)
 -- VALUES
 --     ('https://static.wixstatic.com/media/78c8d2_43a491b82bb64bdabb358941850d9d1c~mv2_d_3717_5534_s_4_2.jpg/v1/fill/w_996,h_1496,al_c,q_85,usm_0.66_1.00_0.01/78c8d2_43a491b82bb64bdabb358941850d9d1c~mv2_d_3717_5534_s_4_2.jpg');
+
+
+--- using copy at psql
+
+\copy products(productName,priceInEuros,productUrl,gender,productDetail,mainImageUrl,brandName,categoryName) from '/Users/limhyesu/meg/database/static_data/parsed_eb.csv' DELIMITER ',' CSV HEADER;
