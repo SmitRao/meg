@@ -43,7 +43,7 @@ class HowItWorks extends React.Component {
             </Title>
             <div className="cards-row-container">
               <div className="card">
-                <SearchOutlined style={{padding: "0.2em"}}></SearchOutlined>
+                <SearchOutlined style={{ padding: "0.2em" }}></SearchOutlined>
                 <Title level={3}>Search</Title>
                 <Text style={{ textAlign: "left", fontSize: "large" }}>
                   Type what you’re looking for into the search bar and see
@@ -51,7 +51,7 @@ class HowItWorks extends React.Component {
                 </Text>
               </div>
               <div className="card">
-                <FilterOutlined style={{padding: "0.2em"}}></FilterOutlined>
+                <FilterOutlined style={{ padding: "0.2em" }}></FilterOutlined>
                 <Title level={3}>Filter</Title>
                 <Text style={{ textAlign: "left", fontSize: "large" }}>
                   Use filters to narrow down your search and find the styles you
@@ -59,7 +59,9 @@ class HowItWorks extends React.Component {
                 </Text>
               </div>
               <div className="card">
-                <ShoppingCartOutlined style={{padding: "0.2em"}}></ShoppingCartOutlined>
+                <ShoppingCartOutlined
+                  style={{ padding: "0.2em" }}
+                ></ShoppingCartOutlined>
                 <Title level={3}>Find</Title>
                 <Text style={{ textAlign: "left", fontSize: "large" }}>
                   Once you find that perfect piece, MEG redirects you to the
@@ -84,6 +86,5 @@ class HowItWorks extends React.Component {
     );
   }
 }
-
 
 export default HowItWorks;
