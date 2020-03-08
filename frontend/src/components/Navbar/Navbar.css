@@ -1,0 +1,22 @@
+.logo {
+    width: 6em;
+    height: 4.2em;
+    margin-top: 1em;
+    margin-bottom: 0.8em;
+    background: #fff;
+    /* margin: 16px 24px 16px 0; */
+    float: left;
+}
+
+.menu {
+    line-height: 6em;
+    background: #fff;
+    float: right;
+}
+
+.header {
+    width: 100%;
+    height: 4.2em;
+    background: #fff;
+}
+
