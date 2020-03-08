@@ -1,102 +1,69 @@
 import React from "react";
-import { Layout, Menu, Breadcrumb } from "antd";
-import {
-  UserOutlined,
-  LaptopOutlined,
-  NotificationOutlined
-} from "@ant-design/icons";
+import { Layout, Menu, Input, Button, Typography } from "antd";
 import "./Home.css";
+import { ReactComponent as Logo } from "../../assets/logo.svg";
+import PicturesCarousel from "../../assets/pictures-carousel.png";
+import { FacebookFilled, InstagramFilled, MailFilled } from "@ant-design/icons";
+import {Link} from "react-router-dom";
 
-const { SubMenu } = Menu;
-const { Header, Content, Sider } = Layout;
+const { Text } = Typography;
+
+//TODO: remove when navbar and footer are made
+const { Header, Content, Footer } = Layout;
+const copyrightYear = new Date().getFullYear();
 
 class Home extends React.Component {
   render() {
+    //TODO: replace Header with navbar when implemented
     return (
-      <Layout style={{ height: "100vh" }}>
+      <Layout className="home">
         <Header className="header">
-          <div className="logo" />
+          <Logo className="logo" />
           <Menu
-            theme="dark"
+            theme="light"
             mode="horizontal"
-            defaultSelectedKeys={["2"]}
-            style={{ lineHeight: "64px" }}
+            defaultSelectedKeys={["1"]}
+            className="menu"
           >
-            <Menu.Item key="1">nav 1</Menu.Item>
-            <Menu.Item key="2">nav 2</Menu.Item>
-            <Menu.Item key="3">nav 3</Menu.Item>
+            <Menu.Item key="1">Home</Menu.Item>
+            <Menu.Item key="2">Our Values</Menu.Item>
+            <Menu.Item key="3">Brands</Menu.Item>
           </Menu>
         </Header>
-        <Layout>
-          <Sider width={200} className="site-layout-background">
-            <Menu
-              mode="inline"
-              defaultSelectedKeys={["1"]}
-              defaultOpenKeys={["sub1"]}
-              style={{ height: "100%", borderRight: 0 }}
-            >
-              <SubMenu
-                key="sub1"
-                title={
-                  <span>
-                    <UserOutlined />
-                    subnav 1
-                  </span>
-                }
-              >
-                <Menu.Item key="1">option1</Menu.Item>
-                <Menu.Item key="2">option2</Menu.Item>
-                <Menu.Item key="3">option3</Menu.Item>
-                <Menu.Item key="4">option4</Menu.Item>
-              </SubMenu>
-              <SubMenu
-                key="sub2"
-                title={
-                  <span>
-                    <LaptopOutlined />
-                    subnav 2
-                  </span>
-                }
-              >
-                <Menu.Item key="5">option5</Menu.Item>
-                <Menu.Item key="6">option6</Menu.Item>
-                <Menu.Item key="7">option7</Menu.Item>
-                <Menu.Item key="8">option8</Menu.Item>
-              </SubMenu>
-              <SubMenu
-                key="sub3"
-                title={
-                  <span>
-                    <NotificationOutlined />
-                    subnav 3
-                  </span>
-                }
-              >
-                <Menu.Item key="9">option9</Menu.Item>
-                <Menu.Item key="10">option10</Menu.Item>
-                <Menu.Item key="11">option11</Menu.Item>
-                <Menu.Item key="12">option12</Menu.Item>
-              </SubMenu>
-            </Menu>
-          </Sider>
-          <Layout style={{ padding: "0 24px 24px" }}>
-            <Breadcrumb style={{ margin: "16px 0" }}>
-              <Breadcrumb.Item>Home</Breadcrumb.Item>
-              <Breadcrumb.Item>List</Breadcrumb.Item>
-              <Breadcrumb.Item>App</Breadcrumb.Item>
-            </Breadcrumb>
-            <Content
-              className="site-layout-background"
-              style={{
-                padding: 24,
-                margin: 0,
-                minHeight: 280
-              }}
-            >
-              Content
-            </Content>
-          </Layout>
-        </Layout>
+
+        <Content className="content">
+          <div className="message">
+            <span className="highlight"> Finding ethically </span>
+            <span className="highlight"> made styles can </span>
+            <span className="highlight"> really be this easy. </span>
+            <Input.Search
+              className="message-search"
+              placeholder="search for items..."
+            />
+            <Button className="learn" type="link">
+            <Link to={"/how-it-works"}>
+                  Learn how it works
+            </Link>
+            </Button>
+          </div>
+        </Content>
+
+        <img
+          className="pictures-carousel"
+          src={PicturesCarousel}
+          alt="pictures carousel"
+        />
+
+        <Footer className="footer">
+          <div className="footer-icons">
+            <FacebookFilled className="icon" />
+            <InstagramFilled className="icon" />
+            <MailFilled className="icon" />
+          </div>
+          <Text style={{ color: "#efefef" }}>
+            © {copyrightYear}, My Ethical Garment Inc. All rights reserved.
+          </Text>
+        </Footer>
       </Layout>
     );
   }
