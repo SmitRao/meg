@@ -1,11 +1,71 @@
-#components-layout-demo-top-side-2 .logo {
-  width: 120px;
-  height: 31px;
-  background: rgba(255, 255, 255, 0.2);
-  margin: 16px 28px 16px 0;
+/*below is for the header*/
+
+.home {
+  min-height: 100vh;
+}
+
+.logo {
+  width: 6em;
+  height: 4.2em;
+  margin-top: 1em;
+  margin-bottom: 0.8em;
+  /* margin: 16px 24px 16px 0; */
   float: left;
 }
 
-.site-layout-background {
-  background: #fff;
+.header {
+  background-color: #fff;
+  height: 6em;
+}
+
+.menu {
+  line-height: 6em;
+  float: right;
+}
+
+.content {
+  background-color: #fff;
+  height: 85vh;
+}
+
+.message {
+  font-size: 64px;
+  max-width: 22ex;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-weight: lighter;
+  letter-spacing: 4px;
+}
+
+.highlight {
+  color: #fff;
+  background-color: #000;
+  border-radius: 4px;
+  padding-left: 12px;
+  padding-right: 24px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.message-search {
+  font-size: 36px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.learn {
+  font-size: 24px;
+  font-weight: lighter;
+  height: auto;
+  color: #777777;
+  justify-content: flex-end;
+  margin-left: auto;
+}
+
+.pictures-carousel {
+  width: auto;
+  max-height: 20vw;
 }
