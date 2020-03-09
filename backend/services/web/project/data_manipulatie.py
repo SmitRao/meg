@@ -42,3 +42,39 @@ def copy_from_csv(csv_file_path, table_name_with_columns):
         conn.commit()
         f.close
 
+# searching
+search_keyword = ''
+
+prdocuts = models.Products()
+res = db.session.query(Products).filter(or_(Products.productName.like('%'+search_keyword+'%'),
+                                            Products.priceInEuros.like('%'+search_keyword+'%'),
+                                            Products.gender.like('%'+search_keyword+'%'),
+                                            Products.productDetail.like('%'+search_keyword+'%'),
+                                            Products.brandName.like('%'+search_keyword+'%'),
+                                            Products.categoryName.like('%'+search_keyword+'%')))
+
+# sorting ASC or DESC
+sorting_value = ''
+if sorting_value == 'ASC':
+    res = db.session.query(Products).order_by(Products.priceInEuros.asc())
+else if sorting_value == 'DESC':
+    res = db.session.query(Products).order_by(Products.priceInEuros.desc())
+else:
+    # error
+
+# filtering
+
+selected_filter = ''
+filtering_value = ''
+if selected_filter == 'Gender':
+    res = db.session.query(Prdocuts).filter(Prdocuts.gender == filtering_value)
+else if selected_filter == 'PriceInEuros':
+    res = db.session.query(Products).filter(Products.priceInEuros == filtering_value)
+else if selected_filter == 'CategoryName':
+    res = db.session.query(Products).filter(Prodcuts.categoryName == filtering_value)
+else:
+    # error
+
+# first, create VIEW with searched result.
+# then apply filtering, sorting to the VIEW
+# when you search new keyword, delte the VIEW and create new VIEW with newly searched results.
