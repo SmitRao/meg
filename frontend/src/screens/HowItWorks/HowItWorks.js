@@ -65,7 +65,7 @@ class HowItWorks extends React.Component {
                 <Title level={3}>Find</Title>
                 <Text style={{ textAlign: "left", fontSize: "large" }}>
                   Once you find that perfect piece, MEG redirects you to the
-                  vendor’s site to purchase that item.
+                  vendor’s site to purchase that item. YUMMY3... {window.yummytoken3}
                 </Text>
               </div>
             </div>
