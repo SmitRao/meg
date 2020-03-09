@@ -4,7 +4,7 @@ import unicodedata
 import csv
 
 
-with open (os.path.abspath('nea_data.json')) as f:
+with open (os.path.abspath('./static_data/nea_data.json')) as f:
     json = json.load(f)
     f.close()
 
@@ -43,7 +43,7 @@ for i in range(len(json['products'])):
 
 # wirte the results in csv file
 csv_columns = ['productName', 'priceInEuros', 'productUrl', 'gender', 'productDetails', 'mainImage', 'brandName', 'categoryName']
-csv_file = 'parsed_nea.csv'
+csv_file = './static_data/parsed_nea.csv'
 
 with open(csv_file, 'w', newline='') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=csv_columns)
