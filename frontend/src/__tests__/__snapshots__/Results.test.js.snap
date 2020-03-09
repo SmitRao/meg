@@ -1,5 +1,146 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Testing Results components price filter component check 1`] = `
+<Group
+  size="small"
+>
+  <Row
+    gutter={8}
+    justify="center"
+  >
+    <Col
+      span={7}
+    >
+      <Input
+        maxLength={4}
+        placeholder="MIN"
+        type="text"
+      />
+    </Col>
+    <Col
+      span={7}
+    >
+      <Input
+        maxLength={4}
+        placeholder="MAX"
+        type="text"
+      />
+    </Col>
+    <Col
+      span={4}
+    >
+      <Button
+        block={false}
+        ghost={false}
+        htmlType="button"
+        loading={false}
+        size="small"
+      >
+        SET
+      </Button>
+    </Col>
+  </Row>
+</Group>
+`;
+
+exports[`Testing Results components products component check 1`] = `
+<div>
+  <Row
+    gutter={32}
+    justify="space-around"
+  >
+    <Col
+      span={6}
+    >
+      <Card
+        cover={
+          <img
+            alt="example"
+            src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+          />
+        }
+        hoverable={true}
+      >
+        <Meta
+          description="www.instagram.com"
+          title="Europe Street beat"
+        />
+        <Text>
+          $100.00
+        </Text>
+      </Card>
+       
+    </Col>
+    <Col
+      span={6}
+    >
+      <Card
+        cover={
+          <img
+            alt="example"
+            src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+          />
+        }
+        hoverable={true}
+      >
+        <Meta
+          description="www.instagram.com"
+          title="Europe Street beat"
+        />
+        <Text>
+          $100.00
+        </Text>
+      </Card>
+       
+    </Col>
+    <Col
+      span={6}
+    >
+      <Card
+        cover={
+          <img
+            alt="example"
+            src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+          />
+        }
+        hoverable={true}
+      >
+        <Meta
+          description="www.instagram.com"
+          title="Europe Street beat"
+        />
+        <Text>
+          $100.00
+        </Text>
+      </Card>
+       
+    </Col>
+    <Col
+      span={6}
+    >
+      <Card
+        cover={
+          <img
+            alt="example"
+            src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+          />
+        }
+        hoverable={true}
+      >
+        <Meta
+          description="www.instagram.com"
+          title="Europe Street beat"
+        />
+        <Text>
+          $100.00
+        </Text>
+      </Card>
+       
+    </Col>
+  </Row>
+</div>
+`;
+
 exports[`checks the sort component 1`] = `
 <div>
   <span
