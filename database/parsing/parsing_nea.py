@@ -17,7 +17,7 @@ for i in range(len(json['products'])):
     current_product = {}
 
     # Parse then convert productName from unicode to ascii and store 
-    current_product['productName'] = json['products'][i]["productName"].encode('ascii', 'ignore')
+    current_product['productName'] = json['products'][i]["productName"]
 
     # Parse then convert priceInEuros to float and store
     current_product['priceInEuros'] = float(json['products'][i]["priceInEuros"][2:])
@@ -45,7 +45,7 @@ for i in range(len(json['products'])):
 csv_columns = ['productName', 'priceInEuros', 'productUrl', 'gender', 'productDetails', 'mainImage', 'brandName', 'categoryName']
 csv_file = 'parsed_nea.csv'
 
-with open(csv_file, 'w') as csvfile:
+with open(csv_file, 'w', newline='') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=csv_columns)
         writer.writeheader()
         for data in all_product_info:
