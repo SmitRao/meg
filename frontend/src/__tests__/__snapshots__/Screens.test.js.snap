@@ -1,0 +1,515 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing HowItWorks screen should render correctly 1`] = `
+<Layout
+  className="layout"
+>
+  <Header
+    className="header"
+  >
+    <ForwardRef(SvgLogo)
+      className="logo"
+    />
+    <Menu
+      className="menu"
+      defaultSelectedKeys={
+        Array [
+          "1",
+        ]
+      }
+      mode="horizontal"
+      theme="light"
+    >
+      <MenuItem
+        key="1"
+      >
+        Home
+      </MenuItem>
+      <MenuItem
+        key="2"
+      >
+        Our Values
+      </MenuItem>
+      <MenuItem
+        key="3"
+      >
+        Brands
+      </MenuItem>
+    </Menu>
+  </Header>
+  <Content
+    className="content"
+  >
+    <div
+      className="container"
+    >
+      <Title
+        className="title"
+        strong={true}
+        style={
+          Object {
+            "fontSize": "4em",
+            "justifyContent": "center",
+          }
+        }
+      >
+        How it works
+      </Title>
+      <div
+        className="cards-row-container"
+      >
+        <div
+          className="card"
+        >
+          <ForwardRef(SearchOutlined)
+            style={
+              Object {
+                "padding": "0.2em",
+              }
+            }
+          />
+          <Title
+            level={3}
+          >
+            Search
+          </Title>
+          <Text
+            style={
+              Object {
+                "fontSize": "large",
+                "textAlign": "left",
+              }
+            }
+          >
+            Type what you’re looking for into the search bar and see results from verified clothing brands.
+          </Text>
+        </div>
+        <div
+          className="card"
+        >
+          <ForwardRef(FilterOutlined)
+            style={
+              Object {
+                "padding": "0.2em",
+              }
+            }
+          />
+          <Title
+            level={3}
+          >
+            Filter
+          </Title>
+          <Text
+            style={
+              Object {
+                "fontSize": "large",
+                "textAlign": "left",
+              }
+            }
+          >
+            Use filters to narrow down your search and find the styles you love that align with he values that are important to you.
+          </Text>
+        </div>
+        <div
+          className="card"
+        >
+          <ForwardRef(ShoppingCartOutlined)
+            style={
+              Object {
+                "padding": "0.2em",
+              }
+            }
+          />
+          <Title
+            level={3}
+          >
+            Find
+          </Title>
+          <Text
+            style={
+              Object {
+                "fontSize": "large",
+                "textAlign": "left",
+              }
+            }
+          >
+            Once you find that perfect piece, MEG redirects you to the vendor’s site to purchase that item.
+          </Text>
+        </div>
+      </div>
+    </div>
+  </Content>
+  <Footer
+    className="footer"
+  >
+    <div
+      className="footer-icons"
+    >
+      <ForwardRef(FacebookFilled)
+        className="icon"
+      />
+      <ForwardRef(InstagramFilled)
+        className="icon"
+      />
+      <ForwardRef(MailFilled)
+        className="icon"
+      />
+    </div>
+    <Text
+      style={
+        Object {
+          "color": "#efefef",
+        }
+      }
+    >
+      © 
+      2020
+      , My Ethical Garment Inc. All rights reserved.
+    </Text>
+  </Footer>
+</Layout>
+`;
+
+exports[`testing Results screen should render correctly 1`] = `
+<Layout>
+  <Header />
+  <Sider>
+    <Button
+      block={false}
+      ghost={false}
+      htmlType="button"
+      loading={false}
+    >
+      RESET FILTERS
+    </Button>
+    <Menu
+      defaultOpenKeys={
+        Array [
+          "gender",
+          "price",
+          "colors",
+          "size",
+        ]
+      }
+      defaultSelectedKeys={
+        Array [
+          "1",
+        ]
+      }
+      mode="inline"
+    >
+      <SubMenu
+        key="gender"
+        title={
+          <span>
+            GENDER
+          </span>
+        }
+      >
+        <MenuItem
+          key="Men"
+        >
+          <Checkbox
+            indeterminate={false}
+            onChange={[Function]}
+          >
+            Men
+          </Checkbox>
+        </MenuItem>
+        <MenuItem
+          key="Woman"
+        >
+          <Checkbox
+            indeterminate={false}
+            onChange={[Function]}
+          >
+            Woman
+          </Checkbox>
+        </MenuItem>
+        <MenuItem
+          key="Unisex"
+        >
+          <Checkbox
+            indeterminate={false}
+            onChange={[Function]}
+          >
+            Unisex
+          </Checkbox>
+        </MenuItem>
+      </SubMenu>
+      <SubMenu
+        key="price"
+        title={
+          <span>
+            PRICE
+          </span>
+        }
+      >
+        <PriceFilter />
+      </SubMenu>
+      <SubMenu
+        key="colors"
+        title={
+          <span>
+            COLORS
+          </span>
+        }
+      >
+        <MenuItem
+          key="Red"
+        >
+          <Checkbox
+            indeterminate={false}
+            onChange={[Function]}
+          >
+            Red
+          </Checkbox>
+        </MenuItem>
+        <MenuItem
+          key="Orange"
+        >
+          <Checkbox
+            indeterminate={false}
+            onChange={[Function]}
+          >
+            Orange
+          </Checkbox>
+        </MenuItem>
+        <MenuItem
+          key="Yellow"
+        >
+          <Checkbox
+            indeterminate={false}
+            onChange={[Function]}
+          >
+            Yellow
+          </Checkbox>
+        </MenuItem>
+        <MenuItem
+          key="Blue"
+        >
+          <Checkbox
+            indeterminate={false}
+            onChange={[Function]}
+          >
+            Blue
+          </Checkbox>
+        </MenuItem>
+        <MenuItem
+          key="Green"
+        >
+          <Checkbox
+            indeterminate={false}
+            onChange={[Function]}
+          >
+            Green
+          </Checkbox>
+        </MenuItem>
+        <MenuItem
+          key="Indigo"
+        >
+          <Checkbox
+            indeterminate={false}
+            onChange={[Function]}
+          >
+            Indigo
+          </Checkbox>
+        </MenuItem>
+        <MenuItem
+          key="Violet"
+        >
+          <Checkbox
+            indeterminate={false}
+            onChange={[Function]}
+          >
+            Violet
+          </Checkbox>
+        </MenuItem>
+      </SubMenu>
+      <SubMenu
+        key="size"
+        title={
+          <span>
+            SIZE
+          </span>
+        }
+      >
+        <MenuItem
+          key="XS"
+        >
+          <Checkbox
+            indeterminate={false}
+            onChange={[Function]}
+          >
+            XS
+          </Checkbox>
+        </MenuItem>
+        <MenuItem
+          key="S"
+        >
+          <Checkbox
+            indeterminate={false}
+            onChange={[Function]}
+          >
+            S
+          </Checkbox>
+        </MenuItem>
+        <MenuItem
+          key="M"
+        >
+          <Checkbox
+            indeterminate={false}
+            onChange={[Function]}
+          >
+            M
+          </Checkbox>
+        </MenuItem>
+        <MenuItem
+          key="L"
+        >
+          <Checkbox
+            indeterminate={false}
+            onChange={[Function]}
+          >
+            L
+          </Checkbox>
+        </MenuItem>
+        <MenuItem
+          key="XL"
+        >
+          <Checkbox
+            indeterminate={false}
+            onChange={[Function]}
+          >
+            XL
+          </Checkbox>
+        </MenuItem>
+      </SubMenu>
+    </Menu>
+  </Sider>
+  <Content>
+    <Text
+      strong={true}
+    >
+      Showing X Results for "Y"
+    </Text>
+    <Sort />
+    <Products />
+  </Content>
+</Layout>
+`;
+
+exports[`testing splash page screen should render correctly 1`] = `
+<Layout
+  className="home"
+>
+  <Header
+    className="header"
+  >
+    <ForwardRef(SvgLogo)
+      className="logo"
+    />
+    <Menu
+      className="menu"
+      defaultSelectedKeys={
+        Array [
+          "1",
+        ]
+      }
+      mode="horizontal"
+      theme="light"
+    >
+      <MenuItem
+        key="1"
+      >
+        Home
+      </MenuItem>
+      <MenuItem
+        key="2"
+      >
+        Our Values
+      </MenuItem>
+      <MenuItem
+        key="3"
+      >
+        Brands
+      </MenuItem>
+    </Menu>
+  </Header>
+  <Content
+    className="content"
+  >
+    <div
+      className="message"
+    >
+      <span
+        className="highlight"
+      >
+         Finding ethically 
+      </span>
+      <span
+        className="highlight"
+      >
+         made styles can 
+      </span>
+      <span
+        className="highlight"
+      >
+         really be this easy. 
+      </span>
+      <Search
+        className="message-search"
+        enterButton={false}
+        placeholder="search for items..."
+      />
+      <Button
+        block={false}
+        className="learn"
+        ghost={false}
+        htmlType="button"
+        loading={false}
+        type="link"
+      >
+        <Link
+          to="/how-it-works"
+        >
+          Learn how it works
+        </Link>
+      </Button>
+    </div>
+  </Content>
+  <img
+    alt="pictures carousel"
+    className="pictures-carousel"
+    src="pictures-carousel.png"
+  />
+  <Footer
+    className="footer"
+  >
+    <div
+      className="footer-icons"
+    >
+      <ForwardRef(FacebookFilled)
+        className="icon"
+      />
+      <ForwardRef(InstagramFilled)
+        className="icon"
+      />
+      <ForwardRef(MailFilled)
+        className="icon"
+      />
+    </div>
+    <Text
+      style={
+        Object {
+          "color": "#efefef",
+        }
+      }
+    >
+      © 
+      2020
+      , My Ethical Garment Inc. All rights reserved.
+    </Text>
+  </Footer>
+</Layout>
+`;
