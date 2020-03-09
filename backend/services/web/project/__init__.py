@@ -19,5 +19,20 @@ class User(db.Model):
 
 
 @app.route("/")
-def hello_world():
-    return render_template("index.html", theBoss="smit was here")
+def home():
+    return render_template("index.html", yummytoken="smit was here")
+
+
+@app.route("/results")
+def results():
+    return render_template("index.html", yummytoken2="smit was here 2")
+
+
+@app.route("/how-it-works")
+def how_it_works():
+    return render_template("index.html", yummytoken3="smit was here 3")
+
+
+@app.route("/testing")
+def testing():
+    return render_template("index.html", yummytoken="stella was here")
