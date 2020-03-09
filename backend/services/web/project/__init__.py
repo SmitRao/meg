@@ -7,9 +7,13 @@ app.config.from_object("project.config.Config")
 db = SQLAlchemy(app)
 
 
-from project import models
+# from project import models
 
+class Brands(db.Model):
+    __tablename__ = "Brands"
 
+    brand_name = db.Column("BrandName", db.String(50), primary_key=True, unique=True, nullable=False)
+    brand_url = db.Column("BrandUrl", db.Text, unique=True, nullable=False)
 
 @app.route("/")
 def home():
