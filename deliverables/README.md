@@ -14,7 +14,8 @@
  * Described the key features in the application that the user can access
  * Provide a breakdown or detail for each feature that is most appropriate for your application
  * This section will be used to assess the value of the features built
-
+ 
+![UserWorkFlow](https://github.com/SmitRao/meg/blob/deliverables/deliverables/user_workflow_2.png)
  Key features in the application are **searching**, **displaying**, **filtering**, **sorting**, and **redirecting**.
  * **Searching**: Users can search for products using keywords. If the keyword macthces with product name, details, or other attributes, the product comes up at result pages. 
  * **Displaying**: The website will return clothes from brands that satisfy the query.
@@ -28,12 +29,12 @@
  * Provide clear steps for using each feature described above
  * This section is critical to testing your application and must be done carefully and thoughtfully
 
-![UserWorkFlow](https://github.com/SmitRao/meg/blob/deliverables/deliverables/user_workflow_2.png)
+![UserWorkFlow](https://github.com/SmitRao/meg/blob/deliverables/deliverables/workflow_with_screenshots.png)
  **Home Page**<br>
  First, user enters to home page. This is the main page. User can search by key words through the search bar.
  
  **Result Page**<br>
- When user clicks the 'search' button, **result page** comes up. It displays the results with available filters and sorting values. When user selects filters, then the filtered results will be displayed. When user selects sorting value, then the ordered by sorting value will be displayed. Users can search by key words using the search bar. All results are linked to the brand's product site, so when users click specific product, it redirects to the brand's page.
+ It displays the results of searching with available filters, available sorting values, and search bar. If users select filter, the results will be filtered by selected filters. If users specify ordering by selecting sorting value, the results will be displayed in the order of sorting value. Users can search by key words using the search bar. All results are linked to the brand's product site, so when users click specific product, it redirects to the brand's page.
  
  **How It Works Page**<br>
  This page shows how our website works.
