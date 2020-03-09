@@ -35,8 +35,7 @@ for i in range(len(json['products'])):
         
         current_product['categoryName'] = str(json['products'][i]['productName']).rsplit(' ', 1)[-1]
         
-        
-    all_product_info.append(current_product)
+        all_product_info.append(current_product)
     
     #print(current_product)
     #print("\n")
@@ -47,9 +46,8 @@ print(all_product_info)
 csv_columns = ['productName', 'priceInEuros', 'productUrl', 'gender', 'productDetails', 'mainImageUrl', 'brandName', 'categoryName']
 csv_file = 'parsed_eb.csv'
 
-with open(csv_file, 'w') as csvfile:
+with open(csv_file, 'w', newline='') as csvfile:
     writer = csv.DictWriter(csvfile, fieldnames=csv_columns)
     writer.writeheader()
     for data in all_product_info:
         writer.writerow(data)
-
