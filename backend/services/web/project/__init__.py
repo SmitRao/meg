@@ -24,8 +24,3 @@ def results():
 @app.route("/how-it-works")
 def how_it_works():
     return render_template("index.html", yummytoken3="smit was here 3")
-
-
-@app.route("/testing")
-def testing():
-    return render_template("index.html", yummytoken="stella was here")
