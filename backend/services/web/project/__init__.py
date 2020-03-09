@@ -1,11 +1,9 @@
 from flask import Flask, jsonify
-from config import Config
 from flask_sqlalchemy import SQLAlchemy
 
 
 app = Flask(__name__)
-app.config.from_object(Config)
-# app.config.from_object("project.config.Config")
+app.config.from_object("project.config.Config")
 db = SQLAlchemy(app)
 
 from project import models
