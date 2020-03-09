@@ -1,4 +1,4 @@
-# YOUR PRODUCT/TEAM NAME
+# My Ethical Garment (MEG)
 
 > _Note:_ This document is intended to be relatively short. Be concise and precise. Assume the reader has no prior knowledge of your application and is non-technical. 
 
@@ -7,16 +7,36 @@
  * What is the problem you're trying to solve?
  * Is there any context required to understand **why** the application solves this problem?
 
+ **My Ethical Garment** is an web application that acts as a clothing search engine for ethical brands. 
+ Users, who want to be more ethically conscious of their clothing purchases, but don’t know where to start, can use this website to search for clothing from ethical brands. My Ethical Garment helps people to search ethical clothing in efficient ways. Users can serach for specific clothing, filter by selected filters, and view the results in sorted order.
+
 ## Key Features
  * Described the key features in the application that the user can access
  * Provide a breakdown or detail for each feature that is most appropriate for your application
  * This section will be used to assess the value of the features built
+
+ Key features in the application are **searching**, **displaying**, **filtering**, **sorting**, and **redirecting**.
+ * **Searching**: Users can search for products using keywords. If the keyword macthces with product name, details, or other attributes, the product comes up at result pages. 
+ * **Displaying**: The website will return clothes from brands that satisfy the query.
+ * **Filtering**: Users can filter their results. For example, they can filter their results to see only women's clothing.
+ * **Sorting**: Users can view the results in sorted order. For example, they can sort the results by price from low to high.
+ * **Redirecting**: Once they find something they like, they can click the product and be redirected to the brand’s product site.
 
 ## Instructions
  * Clear instructions for how to use the application from the end-user's perspective
  * How do you access it? Are accounts pre-created or does a user register? Where do you start? etc. 
  * Provide clear steps for using each feature described above
  * This section is critical to testing your application and must be done carefully and thoughtfully
+
+ 1. home page: search bar
+ 2. result page: 
+    - display results. 
+    - once you select filters, display filtered results. 
+    - once you sort, display results in osrted order. 
+    - can serach other things. 
+    - redirect to the brand's prodcut url when you click specific product
+ 3. how it works page: show how this website works
+
  
  ## Development requirements
  * If a developer were to set this up on their machine or a remote server, what are the technical requirements (e.g. OS, libraries, etc.)?
