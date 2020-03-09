@@ -1,0 +1,240 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`checks the sort component 1`] = `
+<div>
+  <span
+    className="ant-typography"
+    style={
+      Object {
+        "WebkitLineClamp": null,
+      }
+    }
+  >
+    <strong>
+      Sort By
+    </strong>
+  </span>
+  <div
+    className="ant-select ant-select-single ant-select-show-arrow"
+    label="Sort By"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    style={
+      Object {
+        "width": 160,
+      }
+    }
+  >
+    <div
+      className="ant-select-selector"
+      onClick={[Function]}
+      onMouseDown={[Function]}
+    >
+      <span
+        className="ant-select-selection-search"
+      >
+        <input
+          aria-activedescendant="rc_select_TEST_OR_SSR_list_0"
+          aria-autocomplete="list"
+          aria-controls="rc_select_TEST_OR_SSR_list"
+          aria-haspopup="listbox"
+          aria-owns="rc_select_TEST_OR_SSR_list"
+          autoComplete="off"
+          className="ant-select-selection-search-input"
+          id="rc_select_TEST_OR_SSR"
+          onChange={[Function]}
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          readOnly={true}
+          role="combobox"
+          style={
+            Object {
+              "opacity": 0,
+            }
+          }
+          value=""
+        />
+      </span>
+      <span
+        className="ant-select-selection-item"
+      >
+        Price High To Low
+      </span>
+    </div>
+    <span
+      aria-hidden={true}
+      className="ant-select-arrow"
+      onMouseDown={[Function]}
+      style={
+        Object {
+          "WebkitUserSelect": "none",
+          "userSelect": "none",
+        }
+      }
+      unselectable="on"
+    >
+      <span
+        aria-label="down"
+        className="anticon anticon-down"
+        role="img"
+      >
+        <svg
+          aria-hidden="true"
+          className=""
+          data-icon="down"
+          fill="currentColor"
+          focusable="false"
+          height="1em"
+          viewBox="64 64 896 896"
+          width="1em"
+        >
+          <path
+            d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+          />
+        </svg>
+      </span>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`renders the expected screen for the How it Works page 1`] = `null`;
+
+exports[`renders the expected screen for the results page 1`] = `null`;
+
+exports[`renders the expected screen for the splash page 1`] = `null`;
+
+exports[`testing Navbar should render correctly 1`] = `
+<Header
+  className="header"
+>
+  <Link
+    to=""
+  >
+    <ForwardRef(SvgLogo)
+      className="logo"
+    />
+  </Link>
+  <Menu
+    className="menu"
+    defaultSelectedKeys={
+      Array [
+        "1",
+      ]
+    }
+    mode="horizontal"
+    theme="light"
+  >
+    <MenuItem
+      key="1"
+    >
+      <Link
+        to=""
+      >
+         Home 
+      </Link>
+    </MenuItem>
+    <MenuItem
+      key="2"
+    >
+       Our Values
+    </MenuItem>
+    <MenuItem
+      key="3"
+    >
+       Brands 
+    </MenuItem>
+  </Menu>
+</Header>
+`;
+
+exports[`testing footer component 1`] = `
+<section
+  className="ant-layout"
+>
+  <footer
+    className="ant-layout-footer footer"
+  >
+    <div
+      className="footer-icons"
+    >
+      <span
+        aria-label="facebook"
+        className="anticon anticon-facebook icon"
+        role="img"
+      >
+        <svg
+          aria-hidden="true"
+          className=""
+          data-icon="facebook"
+          fill="currentColor"
+          focusable="false"
+          height="1em"
+          viewBox="64 64 896 896"
+          width="1em"
+        >
+          <path
+            d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-92.4 233.5h-63.9c-50.1 0-59.8 23.8-59.8 58.8v77.1h119.6l-15.6 120.7h-104V912H539.2V602.2H434.9V481.4h104.3v-89c0-103.3 63.1-159.6 155.3-159.6 44.2 0 82.1 3.3 93.2 4.8v107.9z"
+          />
+        </svg>
+      </span>
+      <span
+        aria-label="instagram"
+        className="anticon anticon-instagram icon"
+        role="img"
+      >
+        <svg
+          aria-hidden="true"
+          className=""
+          data-icon="instagram"
+          fill="currentColor"
+          focusable="false"
+          height="1em"
+          viewBox="64 64 896 896"
+          width="1em"
+        >
+          <path
+            d="M512 378.7c-73.4 0-133.3 59.9-133.3 133.3S438.6 645.3 512 645.3 645.3 585.4 645.3 512 585.4 378.7 512 378.7zM911.8 512c0-55.2.5-109.9-2.6-165-3.1-64-17.7-120.8-64.5-167.6-46.9-46.9-103.6-61.4-167.6-64.5-55.2-3.1-109.9-2.6-165-2.6-55.2 0-109.9-.5-165 2.6-64 3.1-120.8 17.7-167.6 64.5C132.6 226.3 118.1 283 115 347c-3.1 55.2-2.6 109.9-2.6 165s-.5 109.9 2.6 165c3.1 64 17.7 120.8 64.5 167.6 46.9 46.9 103.6 61.4 167.6 64.5 55.2 3.1 109.9 2.6 165 2.6 55.2 0 109.9.5 165-2.6 64-3.1 120.8-17.7 167.6-64.5 46.9-46.9 61.4-103.6 64.5-167.6 3.2-55.1 2.6-109.8 2.6-165zM512 717.1c-113.5 0-205.1-91.6-205.1-205.1S398.5 306.9 512 306.9 717.1 398.5 717.1 512 625.5 717.1 512 717.1zm213.5-370.7c-26.5 0-47.9-21.4-47.9-47.9s21.4-47.9 47.9-47.9 47.9 21.4 47.9 47.9a47.84 47.84 0 01-47.9 47.9z"
+          />
+        </svg>
+      </span>
+      <span
+        aria-label="mail"
+        className="anticon anticon-mail icon"
+        role="img"
+      >
+        <svg
+          aria-hidden="true"
+          className=""
+          data-icon="mail"
+          fill="currentColor"
+          focusable="false"
+          height="1em"
+          viewBox="64 64 896 896"
+          width="1em"
+        >
+          <path
+            d="M928 160H96c-17.7 0-32 14.3-32 32v640c0 17.7 14.3 32 32 32h832c17.7 0 32-14.3 32-32V192c0-17.7-14.3-32-32-32zm-80.8 108.9L531.7 514.4c-7.8 6.1-18.7 6.1-26.5 0L189.6 268.9A7.2 7.2 0 01194 256h648.8a7.2 7.2 0 014.4 12.9z"
+          />
+        </svg>
+      </span>
+    </div>
+    <span
+      className="ant-typography"
+      style={
+        Object {
+          "WebkitLineClamp": null,
+          "color": "#efefef",
+        }
+      }
+    >
+      © 
+      2020
+      , My Ethical Garment Inc. All rights reserved.
+    </span>
+  </footer>
+</section>
+`;
