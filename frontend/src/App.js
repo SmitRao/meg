@@ -8,9 +8,11 @@ import Results from "./screens/Results/Results";
 
 function App() {
   return (
+    // <h2>My yummytoken is... {window.yummytoken}</h2>
     <Router>
       <div>
         <Route path="/" exact component={Home} />
+        <Route path="/testing" component={<h2>My yummytoken is... ???</h2>} />
         <Route path="/how-it-works" component={HowItWorks} />
         <Route path="/results" component={Results} />
       </div>
