@@ -1,0 +1,19 @@
+.search-bar:hover{
+    color: black;
+}
+
+.search-bar {
+    font-size: 36px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+
+
+
+.ant-input-search-bar > .ant-input-affix-wrapper:hover 
+.ant-input-search-bar > .ant-input:hover 
+.ant-input-search > .ant-input-affix-wrapper-focused:hover{
+    color: black;
+    border-color: black;
+
+}
