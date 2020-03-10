@@ -12,6 +12,9 @@ import Products from "../../components/Results/Products.js";
 import MegFooter from "../../components/MegFooter/MegFooter.js"
 import Navbar from "../../components/Navbar/Navbar.js"
 
+import Searchbar from "../../components/Searchbar/Searchbar";
+
+
 const { SubMenu } = Menu;
 const { Header, Content, Sider, Footer } = Layout;
 const { Text } = Typography;
@@ -48,7 +51,7 @@ class Result extends React.Component {
     return (
       <div>
       <Layout>
-      <Navbar></Navbar>
+      <Navbar searchbar={<Searchbar className="searchbarresults" text="search items"/>}></Navbar> 
         <Layout class="background">
         <Row className="row" justify="space-between" align="middle">
         <Col>

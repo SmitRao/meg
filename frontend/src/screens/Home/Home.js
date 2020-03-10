@@ -14,7 +14,6 @@ const copyrightYear = new Date().getFullYear();
 
 class Home extends React.Component {
   render() {
-    //TODO: replace Header with navbar when implemented
     return (
       <Layout className="home">
         <Navbar/>
@@ -24,7 +23,7 @@ class Home extends React.Component {
             <span className="highlight"> Finding ethically </span>
             <span className="highlight"> made styles can </span>
             <span className="highlight"> really be this easy. </span>
-            <Searchbar/>
+            <Searchbar text="search for items..."/>
             <Button className="learn" type="link">
               <Link to={"/how-it-works"}>Learn how it works</Link>
             </Button>

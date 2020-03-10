@@ -12,8 +12,9 @@ class Searchbar extends React.Component{
     render(){
         return(
             <Search
-              className="search-bar"
-              placeholder="search for items..."
+              className={"search-bar" + " " + this.props.className}
+              placeholder={this.props.text}
+              onSearch={this.props.handleSearch}
             />
         );
     }

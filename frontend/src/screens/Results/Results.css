@@ -49,3 +49,11 @@
 .blackfont {
 	color: black;
 }
+
+.searchbarresults {
+	position: absolute;
+	font-size: inherit;
+	left: 20%;
+	width: 40%;
+	top: 2%;
+}
