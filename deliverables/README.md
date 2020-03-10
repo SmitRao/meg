@@ -67,7 +67,6 @@ Docker v19.03.05
  4. run `npm run build`
  5. In the terminal, from the root folder `meg` navigate to `backend`
  6. Enter the command: `docker-compose up -d --build`
-    1. Make sure that you have root access
     2. Make sure that Docker is running on your computer
     3. This will set up the container and volumes in Docker
  7. In your browser navigate to [http://localhost:5000/](http://localhost:5000/)
@@ -80,6 +79,8 @@ Name|Version|
 [Flask](https://flask.palletsprojects.com/en/1.1.x/) | v1.1.1
 [Flask-sqlalchemy](https://flask-sqlalchemy.palletsprojects.com/en/2.x/) | v2.4.1
 [psycopg2-binary](https://www.psycopg.org/docs/) | v2.8.4
+[jest](https://www.npmjs.com/package/jest)| v24.9.0
+[enzyme js testing](https://www.npmjs.com/package/enzyme)| v3.11.0
  
  ## Deployment and Github Workflow
 
