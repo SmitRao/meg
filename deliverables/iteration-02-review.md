@@ -1,17 +1,11 @@
 # My Ethical Garment (MEG)
 
- > _Note:_ This document is meant to be written during (or shortly after) your review meeting, which should happen fairly close to the due date.      
- >      
- > _Suggestion:_ Have your review meeting a day or two before the due date. This way you will have some time to go over (and edit) this document, and all team members should have a chance to make their contribution.
-
-
 ## Iteration 2 - Review & Retrospect
 
  * When: Monday March 9 2020
  * Where: Bahen Centre for Information Technology
 
 ## Process - Reflection
-
 
 #### Q1. Decisions that turned out well
 
@@ -43,10 +37,11 @@ List any **process-related** (i.e. team organization and how you work) changes y
 ## Product - Review
 
 #### Q4. How was your product demo?
- * How did you prepare your demo?
- * What did you manage to demo to your partner?
- * Did your partner accept the features?
- * Were there change requests?
- * What did you learn from the demo from either a process or product perspective?
- * *This section will be marked very leniently so keep it brief and just make sure the points are addressed*
+ * We walked our partner through different scenarios (user stories) to showcase how the web-app is running so far. We used a computer that had the most up-to-date working version of our project. 
+
+ * We were able to able to demo four completed user stories. We demoed the search and results components as well as some of the filter components. Additionally we were able to select by multiple filters without the page being refreshed every time a filter was applied. Lastly, we were able to demo our sorting functionality for sorting by price. 
+
+ * Our partner accepted all of the functionality features for this iteration.
+
+ * Our partner had a few small requests in regards to how the UI looks- specifically for the layout of the splash page as well as being able to access the how-it-works page from anywhere page on the site (adding it to our navigation bar).
 
