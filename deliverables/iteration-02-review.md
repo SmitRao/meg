@@ -11,35 +11,35 @@
 
 List **process-related** (i.e. team organization and how you work) decisions that, in retrospect, turned out to be successful.
 
- * Our set communication rules were extremely effective, there was constant communication between team-members and sub-groups via Slack
+ * Our set communication rules were  effective; there was constant communication between team-members and sub-groups via Slack
 
- * Meetings between D1 and D2 were frequent. There were set weekly meetings however we met up more than we had planned which led to a better outcome.
+ * Meetings between D1 and D2 were frequent. Although we set weekly meetings, we met more than we had planned, which led to a better outcome.
 
-* Our meeting minutes were well organized and we kept up with them after every meeting with our partner in order to reflect and respond.
+* Our meeting minutes were organized well, and we reviewed them after every meeting with our partner to reflect and respond.
 
 
 #### Q2. Decisions that did not turn out as well as we hoped
 
 List **process-related** (i.e. team organization and how you work) decisions that, in retrospect, were not as successful as you thought they would be.
 
- * We hoped that the Trello board would be an effective way to keep up-to-date regarding which tasks needed to be completed. However, this proved to not be as successful. Instead, we kept each other and our partner updated via Slack which was our main way of communicating.
+ * We hoped that the Trello board would be an effective way to keep up-to-date regarding incomplete tasks. However, this proved not to be as successful. Instead, we updated each other, and our partner via Slack, which was our primary way of communicating.
 
- * Rather than doing individual work and setting up meetings for code-review, we instead set meetings with our group to do the work using pair programming. This proved to be a successful way to work as everyone was together and any questions that someone had could be answered by someone with more experience. 
+ * Rather than doing individual work and setting up meetings for code-review, we instead set meetings with our group and completed the majority of our second deliverable using pair programming. Pair-programming proved to be a successful way to work as everyone was together, and someone with more experience could answer any questions that another team member had.
 
 
 #### Q3. Planned changes
 
 List any **process-related** (i.e. team organization and how you work) changes you are planning to make (if there are any)
 
- * We want to be slightly more organized with our code-review process. We found that the pair-programming that we did was very effective in helping us complete our tasks, however in order to have better documentation and keep a written report on the progress of our work, we should try to heed to our original code-review process. 
+ * We want to be more organized with our code-review process. As we completed the majority of our work using pair programming, we didn't set up meetings specifically for code review.  Although pair programming was very effective in helping us complete our tasks, it came with a few caveats concerning code organization. We feel that in order to have better documentation and keep a written report on the progress of our work, we should try to heed our original code-review process. 
 
 
 ## Product - Review
 
 #### Q4. How was your product demo?
- * We walked our partner through different scenarios (user stories) to showcase how the web-app is running so far. We used a computer that had the most up-to-date working version of our project. 
+ * We walked our partner through different scenarios (user stories) to showcase how the web-app is running so far. We used a computer that had the most up-to-date working version of our project.
 
- * We were able to able to demo four completed user stories. We demoed the search and results components as well as some of the filter components. Additionally we were able to select by multiple filters without the page being refreshed every time a filter was applied. Lastly, we were able to demo our sorting functionality for sorting by price. 
+ * We were able to able to demo four completed user stories. We demoed the search and result components as well as some of the filter components. Additionally, we were able to select by multiple filters without the page refreshing every time a filter was applied. Lastly, we were able to demo our sorting functionality for sorting by price. 
 
  * Our partner accepted all of the functionality features for this iteration.
 
