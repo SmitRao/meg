@@ -65,9 +65,20 @@ Docker v19.03.05
  4. run `npm run build`
  5. In the terminal, from the root folder `meg` navigate to `backend`
  6. Enter the command: `docker-compose up -d --build`
-    1. Make sure that Docker is running on your computer
-    2. This will set up the container and volumes in Docker
+    1. Make sure that you have root access
+    2. Make sure that Docker is running on your computer
+    3. This will set up the container and volumes in Docker
  7. In your browser navigate to [http://localhost:5000/](http://localhost:5000/)
+
+### Libraries used in development
+
+[antd](https://ant.design) - v4.0.1
+
+Flask - v1.1.1
+
+Flask-sqlalchemy - v2.4.1
+
+psycopg2-binary - v2.8.4
  
  ## Deployment and Github Workflow
 
