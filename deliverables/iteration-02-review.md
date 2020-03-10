@@ -28,7 +28,7 @@ List **process-related** (i.e. team organization and how you work) decisions tha
 
 List **process-related** (i.e. team organization and how you work) decisions that, in retrospect, were not as successful as you thought they would be.
 
- * We hoped that the Trello board would be an effective way to keep up-to-date regarding which tasks needed to be completed. However, this proved to not be as successful. Instead we kept each other and our partner updated via Slack which was our main way of communicating.
+ * We hoped that the Trello board would be an effective way to keep up-to-date regarding which tasks needed to be completed. However, this proved to not be as successful. Instead, we kept each other and our partner updated via Slack which was our main way of communicating.
 
  * Rather than doing individual work and setting up meetings for code-review, we instead set meetings with our group to do the work using pair programming. This proved to be a successful way to work as everyone was together and any questions that someone had could be answered by someone with more experience. 
 
@@ -37,7 +37,7 @@ List **process-related** (i.e. team organization and how you work) decisions tha
 
 List any **process-related** (i.e. team organization and how you work) changes you are planning to make (if there are any)
 
- * We want to be slghtly more organized with our code-review process. We found that the pair-programming that we did was very effective in helping us complete our tasks, however in order to have better documentation and keep a written report on the progress of our work, we should try to heed to our original code-review process. 
+ * We want to be slightly more organized with our code-review process. We found that the pair-programming that we did was very effective in helping us complete our tasks, however in order to have better documentation and keep a written report on the progress of our work, we should try to heed to our original code-review process. 
 
 
 ## Product - Review
