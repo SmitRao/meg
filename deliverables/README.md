@@ -52,8 +52,11 @@ Docker v19.03.05
  6. Enter the command: `docker-compose up -d --build`
     1. Make sure you have root access
     2. Make sure that Docker is running on your computer
-    3. This will set up the container and volumes in Docker
- 7. In your browser navigate to [http://localhost:5000/](http://localhost:5000/)
+    3. This will set up the container, images, and volumes in Docker
+ 7. In your browser navigate to [http://localhost:5000/](http://localhost:5000/) to view the application
+ 8. Once you're done browsing, in the terminal, from the root folder `meg` navigate to `backend`
+ 9. Enter the command: `docker-compose down -v`
+    1.  This will remove the container and volumes created for this session in Docker
 
 ### Libraries used in development
 
