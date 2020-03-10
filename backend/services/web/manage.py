@@ -34,8 +34,8 @@ def create_db():
     db.create_all()
     db.session.commit()
 
-@cli.command("add_to_db")
-def add_to_db():
+@cli.command("populate_db")
+def populate_db():
     db.session.add(Brands(BrandName="Electric Bazaar", BrandUrl="https://www.electric-bazaar.com/heritage"))
     db.session.add(Brands(BrandName="Nea", BrandUrl="https://n-e-a.co.uk/"))
 
@@ -70,26 +70,6 @@ def add_to_db():
             BrandName=p[6], 
             CategoryName=p[7]
         ))
-
-    s = search("Electric")
-    print(s)
-
-    # g = filter_by_gender(s, "F")
-    # print(len(g))
-
-    # p = filter_by_price(s, 30, 10)
-    # print("p")
-    # print(len(p))
-
-    # c = filter_by_category(s, "Hijab")
-    # print('c')
-    # print(len(c))
-
-    a = sort_by_price_ascending(s)
-    print(a)
-
-    d = sort_by_price_descending(s)
-    print(d)
     
     db.session.commit()
 
@@ -108,6 +88,9 @@ def search(search_keyword):
     return dicts
 
 def filter_by_gender(res, gender):
+    """
+    res should be the return value of search (a list of Products as dictionaries)
+    """
     filtered_search = []
     for r in res:
         if r["Gender"] == gender:
@@ -116,6 +99,9 @@ def filter_by_gender(res, gender):
     # return searched_view.query.filter(searched_view.Gender == filter_value)
 
 def filter_by_price(res, max, min):
+    """
+    res should be the return value of search (a list of Products as dictionaries)
+    """
     filtered_search = []
     for r in res:
         if r["PriceInEuros"] <= max and r.PriceInEuros >= min:
@@ -124,6 +110,9 @@ def filter_by_price(res, max, min):
     # return searched_view.query.filter(searched_view.PriceInEuros == filter_value)
 
 def filter_by_category(res, category):
+    """
+    res should be the return value of search (a list of Products as dictionaries)
+    """
     filtered_search = []
     for r in res:
         if r["CategoryName"] == category:
@@ -132,9 +121,15 @@ def filter_by_category(res, category):
     # return searched_view.query.filter(searched_view.CategoryName == filter_value)
 
 def sort_by_price_ascending(res):
+    """
+    res should be the return value of search (a list of Products as dictionaries)
+    """
     return sorted(res, key = lambda i: i["PriceInEuros"])
 
 def sort_by_price_descending(res):
+    """
+    res should be the return value of search (a list of Products as dictionaries)
+    """
     return sorted(res, key = lambda i: i["PriceInEuros"], reverse=True)
 
 if __name__ == "__main__":
