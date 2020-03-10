@@ -20,6 +20,7 @@ class Navbar extends React.Component {
                         className="menu">
 
                         <Menu.Item key="1" onClick=""> 
+                            <Link to=""/>
                             Home
                         </Menu.Item>
                         <Menu.Item key="2"> Our Values</Menu.Item>
