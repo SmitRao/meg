@@ -14,7 +14,8 @@
  * Described the key features in the application that the user can access
  * Provide a breakdown or detail for each feature that is most appropriate for your application
  * This section will be used to assess the value of the features built
-
+ 
+![UserWorkFlow](https://github.com/SmitRao/meg/blob/deliverables/deliverables/user_workflow_2.png)
  Key features in the application are **searching**, **displaying**, **filtering**, **sorting**, and **redirecting**.
  * **Searching**: Users can search for products using keywords. If the keyword macthces with product name, details, or other attributes, the product comes up at result pages. 
  * **Displaying**: The website will return clothes from brands that satisfy the query.
@@ -28,14 +29,15 @@
  * Provide clear steps for using each feature described above
  * This section is critical to testing your application and must be done carefully and thoughtfully
 
- 1. home page: search bar
- 2. result page: 
-    - display results. 
-    - once you select filters, display filtered results. 
-    - once you sort, display results in osrted order. 
-    - can serach other things. 
-    - redirect to the brand's prodcut url when you click specific product
- 3. how it works page: show how this website works
+![UserWorkFlow](https://github.com/SmitRao/meg/blob/deliverables/deliverables/workflow_with_screenshots.png)
+ **Home Page**<br>
+ First, user enters to home page. This is the main page. User can search by key words through the search bar.
+ 
+ **Result Page**<br>
+ It displays the results of searching with available filters, available sorting values, and search bar. If users select filter, the results will be filtered by selected filters. If users specify ordering by selecting sorting value, the results will be displayed in the order of sorting value. Users can search by key words using the search bar. All results are linked to the brand's product site, so when users click specific product, it redirects to the brand's page.
+ 
+ **How It Works Page**<br>
+ This page shows how our website works.
 
  
  ## Development requirements
@@ -59,4 +61,5 @@ Describe your Git / GitHub workflow. Essentially, we want to understand how your
  * What type of license will you apply to your codebase?
  * What affect does it have on the development and use of your codebase?
  * Why did you or your partner make this choice?
-
+ 
+ As we are starting this project from black slate, we chose **MIT license** which is one of the most popular permissive licenses and puts only very limited restrictions.
