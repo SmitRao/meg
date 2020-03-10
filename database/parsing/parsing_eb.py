@@ -5,7 +5,7 @@ import csv
 
 ### Heavily commented to avoid eye strain from staring at string slicing ###
 
-with open (os.path.abspath('eb_data.json')) as f:
+with open (os.path.abspath('./static_data/json_files/eb_data.json')) as f:
     json = json.load(f)
     f.close()
 
@@ -44,7 +44,7 @@ print(all_product_info)
 #print(json['products'])
 # wirte the results in csv file
 csv_columns = ['productName', 'priceInEuros', 'productUrl', 'gender', 'productDetails', 'mainImageUrl', 'brandName', 'categoryName']
-csv_file = 'parsed_eb.csv'
+csv_file = './static_data/csv_files/parsed_eb.csv'
 
 with open(csv_file, 'w', newline='') as csvfile:
     writer = csv.DictWriter(csvfile, fieldnames=csv_columns)

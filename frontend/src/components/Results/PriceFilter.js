@@ -6,7 +6,7 @@ const InputGroup = Input.Group;
 class PriceFilter extends React.Component {
   render() {
     return (
-      <InputGroup size="small">
+      <InputGroup size="small" className={this.props.className}>
         <Row justify="center" gutter={8}>
           <Col span={7}>
             <Input placeholder="MIN" maxLength={4} />

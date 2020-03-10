@@ -19,8 +19,8 @@ class Navbar extends React.Component {
                         defaultSelectedKeys={["1"]}
                         className="menu">
 
-                        <Menu.Item key="1"> 
-                        <Link to={""}> Home </Link>
+                        <Menu.Item key="1" onClick=""> 
+                            Home
                         </Menu.Item>
                         <Menu.Item key="2"> Our Values</Menu.Item>
                         <Menu.Item key="3"> Brands </Menu.Item>
@@ -31,3 +31,4 @@ class Navbar extends React.Component {
 }
 
 export default Navbar;
+

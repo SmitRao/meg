@@ -9,8 +9,6 @@ db = SQLAlchemy(app)
 
 from project import models
 
-
-
 @app.route("/")
 def home():
     return render_template("index.html", yummytoken="smit was here")
@@ -24,8 +22,3 @@ def results():
 @app.route("/how-it-works")
 def how_it_works():
     return render_template("index.html", yummytoken3="smit was here 3")
-
-
-@app.route("/testing")
-def testing():
-    return render_template("index.html", yummytoken="stella was here")
