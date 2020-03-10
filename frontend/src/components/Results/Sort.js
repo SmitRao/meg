@@ -1,5 +1,5 @@
 import React from "react";
-import { Select, Typography } from "antd";
+import { Select, Typography, Row, Col } from "antd";
 
 const { Text } = Typography;
 const { Option } = Select;
@@ -7,13 +7,17 @@ const { Option } = Select;
 class Sort extends React.Component {
   render() {
     return (
-      <div>
+      <Row gutter={16} align="middle">
+      <Col>
         <Text strong>Sort By</Text>
+      </Col>
+      <Col>
         <Select defaultValue="htl" style={{ width: 160 }} label="Sort By">
           <Option value="htl">Price High To Low</Option>
           <Option value="lth">Low to High</Option>
         </Select>
-      </div>
+      </Col>
+      </Row>
     );
   }
 }

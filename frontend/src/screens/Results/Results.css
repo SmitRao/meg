@@ -1,0 +1,51 @@
+.background {
+	background: white;
+}
+
+.row {
+	margin: 1.5em;
+}
+
+.reset {
+	background: white;
+	padding: 1em;
+}
+
+.reset > button {
+	border: 1px solid #424242;
+	border-radius: 1px;
+}
+
+.price {
+	margin-top: 8px;
+}
+
+.menu {
+	border: none;
+}
+
+.menu > * {
+	color: #333333;
+}
+
+.checkbox > span:first-child {
+	border: 1px solid black;
+}
+
+.submenu {
+	border-bottom: 1px solid #333;
+}
+
+.pricefilter {
+	margin-bottom: 1em;
+}
+
+.productscontainer {
+	padding-left: 1.5em;
+	padding-right: 1.5em;
+	padding-bottom: 1.5em;
+}
+
+.blackfont {
+	color: black;
+}
