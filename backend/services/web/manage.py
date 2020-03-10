@@ -1,4 +1,5 @@
 from flask.cli import FlaskGroup
+from sqlalchemy import or_,text
 
 
 from project import app, db
@@ -69,8 +70,72 @@ def add_to_db():
             BrandName=p[6], 
             CategoryName=p[7]
         ))
+
+    s = search("Electric")
+    print(s)
+
+    # g = filter_by_gender(s, "F")
+    # print(len(g))
+
+    # p = filter_by_price(s, 30, 10)
+    # print("p")
+    # print(len(p))
+
+    # c = filter_by_category(s, "Hijab")
+    # print('c')
+    # print(len(c))
+
+    a = sort_by_price_ascending(s)
+    print(a)
+
+    d = sort_by_price_descending(s)
+    print(d)
     
     db.session.commit()
+
+def search(search_keyword):
+    # NO SEARCHING BY PRICE
+    s=text("'%"+search_keyword+"%'")
+    res = Products.query.filter(or_(Products.ProductName.like(s),
+                            Products.Gender.like(s),
+                            Products.ProductDetail.like(s),
+                            Products.BrandName.like(s),
+                            Products.CategoryName.like(s)))
+    dicts = []
+    for r in res:
+        dicts.append(r.asDict())
+
+    return dicts
+
+def filter_by_gender(res, gender):
+    filtered_search = []
+    for r in res:
+        if r["Gender"] == gender:
+            filtered_search.append(r)
+    return filtered_search
+    # return searched_view.query.filter(searched_view.Gender == filter_value)
+
+def filter_by_price(res, max, min):
+    filtered_search = []
+    for r in res:
+        if r["PriceInEuros"] <= max and r.PriceInEuros >= min:
+            filtered_search.append(r)
+    return filtered_search
+    # return searched_view.query.filter(searched_view.PriceInEuros == filter_value)
+
+def filter_by_category(res, category):
+    filtered_search = []
+    for r in res:
+        if r["CategoryName"] == category:
+            filtered_search.append(r)
+    return filtered_search
+    # return searched_view.query.filter(searched_view.CategoryName == filter_value)
+
+def sort_by_price_ascending(res):
+    return sorted(res, key = lambda i: i["PriceInEuros"])
+
+def sort_by_price_descending(res):
+    return sorted(res, key = lambda i: i["PriceInEuros"], reverse=True)
 
 if __name__ == "__main__":
     cli()

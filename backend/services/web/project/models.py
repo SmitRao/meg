@@ -53,9 +53,31 @@ class Products(db.Model):
         self.MainImageUrl=MainImageUrl
         self.BrandName=BrandName
         self.CategoryName=CategoryName
+    
+    def asDict(self):
+        d = {
+            "ProductName" : self.ProductName,
+            "PriceInEuros": self.PriceInEuros,
+            "ProductUrl": self.ProductUrl,
+            "Gender": self.Gender,
+            "ProductDetail": self.ProductDetail,
+            "MainImageUrl": self.MainImageUrl,
+            "BrandName": self.BrandName,
+            "CategoryName": self.CategoryName
+        }
+        return d
 
-    def __repr__(self):
-        return '<Products {}>'.format(self.product_name)
+    # def __repr__(self):
+    #     return '<Products {}>'.format(self.ProductName)
+
+    # def search(self, search_keyword):
+    #     res = Products.filter(or_(self.ProductName.like('%'+search_keyword+'%'),
+    #                             self.PriceInEuros.like('%'+search_keyword+'%'),
+    #                             self.Gender.like('%'+search_keyword+'%'),
+    #                             self.ProductDetail.like('%'+search_keyword+'%'),
+    #                             self.BrandName.like('%'+search_keyword+'%'),
+    #                             self.CategoryName.like('%'+search_keyword+'%')))
+    #     return res
 
 # class PreviewImages(db.Model):
 #     __tablename__ = 'preview_images'
