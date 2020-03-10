@@ -9,6 +9,9 @@ import Sort from "../../components/Results/Sort.js";
 import PriceFilter from "../../components/Results/PriceFilter.js";
 import Products from "../../components/Results/Products.js";
 
+import MegFooter from "../../components/MegFooter/MegFooter.js"
+import Navbar from "../../components/Navbar/Navbar.js"
+
 const { SubMenu } = Menu;
 const { Header, Content, Sider, Footer } = Layout;
 const { Text } = Typography;
@@ -16,10 +19,10 @@ const copyrightYear = new Date().getFullYear();
 
 
 function onChange(checkedValues) {
-  console.log("checked = ", checkedValues);
+  // console.log("checked = ", checkedValues);
 }
 
-console.log(filters["gender"]);
+// console.log(filters["gender"]);
 
 const generatesubMenu = (title, children) => {
   return (
@@ -45,7 +48,7 @@ class Result extends React.Component {
     return (
       <div>
       <Layout>
-        <Header></Header>
+      <Navbar></Navbar>
         <Layout class="background">
         <Row className="row" justify="space-between" align="middle">
         <Col>
@@ -81,16 +84,7 @@ class Result extends React.Component {
           <Products></Products>
         </Content>
         </Layout>
-        <Footer className="footer">
-          <div className="footer-icons">
-            <FacebookFilled className="icon" />
-            <InstagramFilled className="icon" />
-            <MailFilled className="icon" />
-          </div>
-          <Text style={{ color: "#efefef" }}>
-            © {copyrightYear}, My Ethical Garment Inc. All rights reserved.
-          </Text>
-        </Footer>
+        <MegFooter></MegFooter>
       </Layout>
       </div>
     );
