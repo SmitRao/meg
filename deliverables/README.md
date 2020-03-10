@@ -41,6 +41,33 @@
  ## Development requirements
  * If a developer were to set this up on their machine or a remote server, what are the technical requirements (e.g. OS, libraries, etc.)?
  * Briefly describe instructions for setting up and running the application (think a true README).
+
+### Technical requirements:
+
+npm v6.13.6
+  - [Get npm](https://www.npmjs.com/get-npm)
+
+Docker v19.03.05
+  - Can check version with `docker --version` in the command line
+  - Note that Docker Toolbox is not enough!
+    - Install [Docker Desktop](https://www.docker.com/products/docker-desktop)
+    - OS requirements: (for Docker Desktop)
+      - Microsoft Windows 10 Professional or Enterprise 64-bit
+      - macOS must be version 10.13 or newer
+  - Note that for some Windows users, users need to allow Docker to access C-drive for file sharing
+    - In the Docker Dashboard, go to Settings (gear icon in top right)
+    - Under "Select the local drives to be available to your containers", check "C-drive" is selected
+
+### Setup Instructions:
+ 1. In the folder of your choice, clone the repo: `git clone https://github.com/SmitRao/meg.git`
+ 2. In the terminal, from the root folder `meg` navigate to `frontend` 
+ 3. run `npm i`
+ 4. run `npm run build`
+ 5. In the terminal, from the root folder `meg` navigate to `backend`
+ 6. Enter the command: `docker-compose up -d --build`
+    1. Make sure that Docker is running on your computer
+    2. This will set up the container and volumes in Docker
+ 7. In your browser navigate to [http://localhost:5000/](http://localhost:5000/)
  
  ## Deployment and Github Workflow
 
