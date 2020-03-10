@@ -72,13 +72,12 @@ Docker v19.03.05
 
 ### Libraries used in development
 
-[antd](https://ant.design) - v4.0.1
-
-Flask - v1.1.1
-
-Flask-sqlalchemy - v2.4.1
-
-psycopg2-binary - v2.8.4
+Name|Version|
+--|--|
+[antd](https://ant.design) | v4.0.1
+[Flask](https://flask.palletsprojects.com/en/1.1.x/) | v1.1.1
+[Flask-sqlalchemy](https://flask-sqlalchemy.palletsprojects.com/en/2.x/) | v2.4.1
+[psycopg2-binary](https://www.psycopg.org/docs/) | v2.8.4
  
  ## Deployment and Github Workflow
 
