@@ -3,9 +3,8 @@ import os
 import unicodedata
 import csv
 
-### Heavily commented to avoid eye strain from staring at string slicing ###
-
-with open (os.path.abspath('./static_data/json_files/eb_data.json')) as f:
+# Open json of scraped data to be parsed
+with open (os.path.abspath('../static_data/json_files/eb_data.json')) as f:
     json = json.load(f)
     f.close()
 
@@ -14,14 +13,14 @@ all_product_info = []
 
 # Loop through every product to parse data
 for i in range(len(json['products'])):
-#    print(json['products'])
     current_product = {}
     
-    # Only parse data for valid products
+    # Skip donation card since its not a product
     if (json['products'][i]['productName'] != 'Sewing Machine Project Donation Card'):
-        current_product['productName'] = json['products'][i]["productName"]
+        # Parse out all the required informartion from JSON object
+        current_product['productName'] = json['products'][i]['productName']
 
-        current_product['priceInEuros'] = float(json['products'][i]["priceInEuros"][2:])
+        current_product['priceInEuros'] = float(json['products'][i]['priceInEuros'][2:])
         
         current_product['productUrl'] = json['products'][i]['productUrl']
         
@@ -35,17 +34,16 @@ for i in range(len(json['products'])):
         
         current_product['categoryName'] = str(json['products'][i]['productName']).rsplit(' ', 1)[-1]
         
+        # Add the current product dict into list of all products
         all_product_info.append(current_product)
     
-    #print(current_product)
-    #print("\n")
 
-print(all_product_info)
-#print(json['products'])
-# wirte the results in csv file
+
+# Set up to write parsed data into structured csv file
 csv_columns = ['productName', 'priceInEuros', 'productUrl', 'gender', 'productDetails', 'mainImageUrl', 'brandName', 'categoryName']
-csv_file = './static_data/csv_files/parsed_eb.csv'
+csv_file = '../static_data/csv_files/parsed_eb.csv'
 
+# Write parsed data into file parsed_eb.csv
 with open(csv_file, 'w', newline='') as csvfile:
     writer = csv.DictWriter(csvfile, fieldnames=csv_columns)
     writer.writeheader()

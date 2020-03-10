@@ -3,8 +3,8 @@ import os
 import unicodedata
 import csv
 
-
-with open (os.path.abspath('./static_data/json_files/nea_data.json')) as f:
+# Open json of scraped data to be parsed
+with open (os.path.abspath('../static_data/json_files/nea_data.json')) as f:
     json = json.load(f)
     f.close()
 
@@ -13,14 +13,13 @@ all_product_info = []
 
 # Loop through every product to parse data
 for i in range(len(json['products'])):
-    # Dictionary to store parsed info about current product
     current_product = {}
 
-    # Parse then convert productName from unicode to ascii and store 
-    current_product['productName'] = json['products'][i]["productName"]
+    # Parse out all required info from JSON object
+    
+    current_product['productName'] = json['products'][i]['productName']
 
-    # Parse then convert priceInEuros to float and store
-    current_product['priceInEuros'] = float(json['products'][i]["priceInEuros"][2:])
+    current_product['priceInEuros'] = float(json['products'][i]['priceInEuros'][2:])
     
     current_product['productUrl'] = json['products'][i]['productUrl']
         
@@ -33,18 +32,16 @@ for i in range(len(json['products'])):
     current_product['brandName'] = 'Nea'
         
     current_product['categoryName'] = 'Hijab'
-    
 
-
-    # Print out each product's dictionary for now
+    # Add the current product dict into list of all products
     all_product_info.append(current_product)
-    print(all_product_info[i])  
-    print("\n")
 
-# wirte the results in csv file
+
+# Set up to write parsed data into structured csv file
 csv_columns = ['productName', 'priceInEuros', 'productUrl', 'gender', 'productDetails', 'mainImage', 'brandName', 'categoryName']
-csv_file = './static_data/csv_files/parsed_nea.csv'
+csv_file = '../static_data/csv_files/parsed_nea.csv'
 
+# Write parsed data into file parsed_nea.csv
 with open(csv_file, 'w', newline='') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=csv_columns)
         writer.writeheader()
