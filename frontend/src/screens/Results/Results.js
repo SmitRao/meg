@@ -1,5 +1,7 @@
 import React from "react";
-import { Layout, Menu, Checkbox, Typography, Button } from "antd";
+import { Layout, Menu, Checkbox, Typography, Button, Row, Col} from "antd";
+import { FacebookFilled, InstagramFilled, MailFilled } from "@ant-design/icons";
+
 import { filters } from "../../constants/FilterOptions.js";
 import "./Results.css";
 
@@ -8,8 +10,10 @@ import PriceFilter from "../../components/Results/PriceFilter.js";
 import Products from "../../components/Results/Products.js";
 
 const { SubMenu } = Menu;
-const { Header, Content, Sider } = Layout;
+const { Header, Content, Sider, Footer } = Layout;
 const { Text } = Typography;
+const copyrightYear = new Date().getFullYear();
+
 
 function onChange(checkedValues) {
   console.log("checked = ", checkedValues);
@@ -23,6 +27,7 @@ const generatesubMenu = (title, children) => {
       key={title}
       title={<span>{title.toUpperCase()}</span>}
       children={children}
+      className="submenu"
     ></SubMenu>
   );
 };
@@ -30,7 +35,7 @@ const generatesubMenu = (title, children) => {
 const generateOptions = filters => {
   return filters.map(option => (
     <Menu.Item key={option}>
-      <Checkbox onChange={onChange}>{option}</Checkbox>
+      <Checkbox className="checkbox" onChange={onChange}>{option}</Checkbox>
     </Menu.Item>
   ));
 };
@@ -38,18 +43,33 @@ const generateOptions = filters => {
 class Result extends React.Component {
   render() {
     return (
+      <div>
       <Layout>
         <Header></Header>
+        <Layout class="background">
+        <Row className="row" justify="space-between" align="middle">
+        <Col>
+        <Text strong>Showing X Results for "Y"</Text>
+        </Col>
+        <Col>
+        <Sort></Sort>
+        </Col>
+        </Row>
+        </Layout>
+        <Layout class="background">
         <Sider>
+        <Row justify="center" className="reset">
           <Button>RESET FILTERS</Button>
+        </Row>
           <Menu
             onClick={this.handleClick}
             defaultSelectedKeys={["1"]}
             mode="inline"
             defaultOpenKeys={Object.keys(filters)}
+            className="menu"
           >
             {Object.keys(filters).map(filter => {
-              let typeOfFilter = <PriceFilter />;
+              let typeOfFilter = <PriceFilter className="pricefilter"/>;
               if (filter !== "price") {
                 typeOfFilter = generateOptions(filters[filter]);
               }
@@ -57,12 +77,22 @@ class Result extends React.Component {
             })}
           </Menu>
         </Sider>
-        <Content>
-          <Text strong>Showing X Results for "Y"</Text>
-          <Sort></Sort>
+        <Content className="productscontainer background">
           <Products></Products>
         </Content>
+        </Layout>
+        <Footer className="footer">
+          <div className="footer-icons">
+            <FacebookFilled className="icon" />
+            <InstagramFilled className="icon" />
+            <MailFilled className="icon" />
+          </div>
+          <Text style={{ color: "#efefef" }}>
+            © {copyrightYear}, My Ethical Garment Inc. All rights reserved.
+          </Text>
+        </Footer>
       </Layout>
+      </div>
     );
   }
 }
