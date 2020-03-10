@@ -31,7 +31,7 @@ VALUES
 
 -- eb data
 INSERT INTO Brands(BrandName, BrandUrl)
-VALUES ('ElectricBazaar', 'https://www.electric-bazaar.com/heritage');
+VALUES ('Electric Bazaar', 'https://www.electric-bazaar.com/heritage');
 
 INSERT INTO Categories(CategoryName)
 VALUES 
@@ -50,4 +50,6 @@ VALUES
 
 --- using copy at psql
 
-\copy products(productName,priceInEuros,productUrl,gender,productDetail,mainImageUrl,brandName,categoryName) from '/Users/limhyesu/meg/database/static_data/parsed_eb.csv' DELIMITER ',' CSV HEADER;
+\copy products(productName,priceInEuros,productUrl,gender,productDetail,mainImageUrl,brandName,categoryName) from '/Users/limhyesu/meg/database/parsed_eb.csv' DELIMITER ',' CSV HEADER;
+\copy products(productName,priceInEuros,productUrl,gender,productDetail,mainImageUrl,brandName,categoryName) from '/Users/limhyesu/meg/database/parsed_nea.csv' DELIMITER ',' CSV HEADER;
+\copy PreviewImages(productUrl, PreviewImageUrl) from '/Users/limhyesu/meg/database/parsed_images.csv' DELIMITER ',' CSV HEADER;
