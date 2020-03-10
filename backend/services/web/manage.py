@@ -2,7 +2,7 @@ from flask.cli import FlaskGroup
 
 
 from project import app, db
-from project.models import Brands
+from project.models import Brands,Categories
 
 
 
@@ -17,9 +17,15 @@ def create_db():
 
 @cli.command("add_to_db")
 def add_to_db():
+    db.session.add(Brands(BrandName="Electric Bazaar", BrandUrl="https://www.electric-bazaar.com/heritage"))
     db.session.add(Brands(BrandName="Nea", BrandUrl="https://n-e-a.co.uk/"))
-    db.session.commit()
 
+    # add categories to category
+    categories_values = ["Hijab", "Gharara", "Kimono", "Dress"]
+    for category in categories_values:
+        db.session.add(Categories(CategoryName=category))
+    
+    db.session.commit()
 
 if __name__ == "__main__":
     cli()
