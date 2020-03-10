@@ -1,5 +1,7 @@
 # My Ethical Garment (MEG)
 
+Repository: https://github.com/SmitRao/meg
+
 ## Description 
  **My Ethical Garment** is an web application that acts as a clothing search engine for ethical brands. 
  Users, who want to be more ethically conscious of their clothing purchases, but don’t know where to start, can use this website to search for clothing from ethical brands. My Ethical Garment helps people to search ethical clothing in efficient ways. Users can serach for specific clothing, filter by selected filters, and view the results in sorted order.
@@ -78,6 +80,14 @@ Describe your Git / GitHub workflow. Essentially, we want to understand how your
  * Describe your overall deployment process from writing code to viewing a live applicatioon
  * What deployment tool(s) are you using and how
  * Don't forget to **briefly explain why** you chose this workflow or particular aspects of it!
+
+To avoid conflicts, the codebase was set up so that each subteam has their own project folder that they are in charge of. This was crucial to ensure that the code is organized and can easily be navigated by any member of the development team. This also helped ensure that there were minimal code conflicts.
+
+During development, everyone made their own branches from the main development branch (`master`) that they would work on. Naming conventions that we used generally involved the name of the person working on that branch and the feature that they were implementing. This helped to organize the work that was being done throughout the repository.
+
+Pull requests to the main development branch were only made after a complete feature on a branch was completed. Code reviews were performed by members of the team and issues would be pointed out on the group Slack channel. If there were any issues with the feature, adjustments would be made on the branch where the feature was implemented, and reviewed again.
+
+When the project was completed, following review by the team members and our project partner, we merged the project from the development branch to the deployment branch `deployed`
 
  ## Licenses 
  As we are starting this project from black slate, we chose **MIT license** which is one of the most popular permissive licenses and puts only very limited restrictions.
