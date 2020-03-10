@@ -1,20 +1,10 @@
 # My Ethical Garment (MEG)
 
-> _Note:_ This document is intended to be relatively short. Be concise and precise. Assume the reader has no prior knowledge of your application and is non-technical. 
-
 ## Description 
- * Provide a high-level description of your application and it's value from an end-user's perspective
- * What is the problem you're trying to solve?
- * Is there any context required to understand **why** the application solves this problem?
-
  **My Ethical Garment** is an web application that acts as a clothing search engine for ethical brands. 
  Users, who want to be more ethically conscious of their clothing purchases, but don’t know where to start, can use this website to search for clothing from ethical brands. My Ethical Garment helps people to search ethical clothing in efficient ways. Users can serach for specific clothing, filter by selected filters, and view the results in sorted order.
 
 ## Key Features
- * Described the key features in the application that the user can access
- * Provide a breakdown or detail for each feature that is most appropriate for your application
- * This section will be used to assess the value of the features built
- 
 ![UserWorkFlow](https://github.com/SmitRao/meg/blob/deliverables/deliverables/user_workflow_2.png)
  Key features in the application are **searching**, **displaying**, **filtering**, **sorting**, and **redirecting**.
  * **Searching**: Users can search for products using keywords. If the keyword macthces with product name, details, or other attributes, the product comes up at result pages. 
@@ -24,11 +14,6 @@
  * **Redirecting**: Once they find something they like, they can click the product and be redirected to the brand’s product site.
 
 ## Instructions
- * Clear instructions for how to use the application from the end-user's perspective
- * How do you access it? Are accounts pre-created or does a user register? Where do you start? etc. 
- * Provide clear steps for using each feature described above
- * This section is critical to testing your application and must be done carefully and thoughtfully
-
 ![UserWorkFlow](https://github.com/SmitRao/meg/blob/deliverables/deliverables/workflow_with_screenshots.png)
  **Home Page**<br>
  First, user enters to home page. This is the main page. User can search by key words through the search bar.
@@ -41,8 +26,6 @@
 
  
  ## Development requirements
- * If a developer were to set this up on their machine or a remote server, what are the technical requirements (e.g. OS, libraries, etc.)?
- * Briefly describe instructions for setting up and running the application (think a true README).
 
 ### Technical requirements:
 
@@ -93,11 +76,4 @@ Describe your Git / GitHub workflow. Essentially, we want to understand how your
  * Don't forget to **briefly explain why** you chose this workflow or particular aspects of it!
 
  ## Licenses 
-
- Keep this section as brief as possible. You may read this [Github article](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/licensing-a-repository) for a start.
-
- * What type of license will you apply to your codebase?
- * What affect does it have on the development and use of your codebase?
- * Why did you or your partner make this choice?
- 
  As we are starting this project from black slate, we chose **MIT license** which is one of the most popular permissive licenses and puts only very limited restrictions.
