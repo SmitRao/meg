@@ -11,7 +11,7 @@ db = SQLAlchemy(app)
 from project.models import Products
 
 def search(search_keyword):
-    # NO SEARCHING BY PRICE
+    # NO SEARCHING BY PRICE!!
     s=text("'%"+search_keyword+"%'")
     res = Products.query.filter(or_(Products.ProductName.like(s),
                             Products.Gender.like(s),
@@ -27,6 +27,7 @@ def search(search_keyword):
 def filter_by_gender(res, gender):
     """
     res should be the return value of search (a list of Products as dictionaries)
+    gender must be F, M or U (uppercase only for now!)
     """
     filtered_search = []
     for r in res:
@@ -60,20 +61,21 @@ def filter_by_category(res, category):
 def sort_by_price_ascending(res):
     """
     res should be the return value of search (a list of Products as dictionaries)
+    returns res as a sorted list of dicts by ascending by price
     """
     return sorted(res, key = lambda i: i["PriceInEuros"])
 
 def sort_by_price_descending(res):
     """
     res should be the return value of search (a list of Products as dictionaries)
+    returns res as a sorted list of dicts by descending by price
     """
     return sorted(res, key = lambda i: i["PriceInEuros"], reverse=True)
 
-# if db:
-#     print(search("love"))
-
 @app.route("/")
 def home():
+    # see these results in docker-compose logs -f
+    # should show up if you go to localhost:5000
     print("testing search: love")
     print(search("love"))
     return render_template("index.html", yummytoken="smit was here")
