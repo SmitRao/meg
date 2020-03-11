@@ -2,7 +2,6 @@ from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import or_,text
 
-
 app = Flask(__name__)
 app.config.from_object("project.config.Config")
 db = SQLAlchemy(app)
@@ -72,20 +71,22 @@ def sort_by_price_descending(res):
     """
     return sorted(res, key = lambda i: i["PriceInEuros"], reverse=True)
 
+  
+### routes
 @app.route("/")
 def home():
     # see these results in docker-compose logs -f
     # should show up if you go to localhost:5000
     print("testing search: love")
     print(search("love"))
-    return render_template("index.html", yummytoken="smit was here")
+    return render_template("index.html", hometoken="--welcomehome--")
 
 
 @app.route("/results")
 def results():
-    return render_template("index.html", yummytoken2="smit was here 2")
+    return render_template("index.html", resultstoken="--spicyresults--")
 
 
 @app.route("/how-it-works")
 def how_it_works():
-    return render_template("index.html", yummytoken3="smit was here 3")
+    return render_template("index.html", howitworkstoken="--meggy--")
