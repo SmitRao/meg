@@ -6,11 +6,10 @@ const { Meta } = Card;
 const { Text } = Typography;
 
 const generateCard = (product) => {
-  console.log(product)
   return (
-    <a href="www.instagram.com">
     <Card
       hoverable
+      onClick={()=> window.location.href= "http://www.instagram.com"}
       cover={
         <img
           alt="example"
@@ -21,7 +20,6 @@ const generateCard = (product) => {
       <Meta title="Europe Street beat" description="www.instagram.com" />
       <Text>{product["price"]}</Text>
     </Card>
-    </a>
   );
 };
 
