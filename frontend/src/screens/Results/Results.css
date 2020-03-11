@@ -1,4 +1,4 @@
-.background {
+.ant-layout-sider, .background {
 	background: white;
 }
 
@@ -48,4 +48,61 @@
 
 .blackfont {
 	color: black;
+}
+
+.searchbarresults {
+	position: absolute;
+	font-size: inherit;
+	left: 20%;
+	width: 40%;
+	top: 2%;
+}
+
+.ant-menu-inline .ant-menu-item:after, 
+.ant-menu-vertical-left .ant-menu-item:after, 
+.ant-menu-vertical-right .ant-menu-item:after, 
+.ant-menu-vertical .ant-menu-item:after {
+	border-right: none;
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+	background-color: white;
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+    background-color: #333;
+    border-color: #333;
+}
+
+.ant-btn:focus, .ant-btn:hover {
+    color: #333;
+    background-color: white;	
+}
+
+.ant-card-body {
+	padding-left: 10px;
+}
+
+.ant-card-bordered {
+	border: none;
+}
+
+.filterrow {
+	margin-left: -20px;
+}
+
+.ant-typography {
+	color: black;
+}
+
+.ant-menu-submenu-title:hover {
+	color: #333;
+}
+
+.ant-menu-submenu-inline>.ant-menu-submenu-title:hover .ant-menu-submenu-arrow:before {
+	background: #333;
+}
+
+.ant-menu-submenu-inline>.ant-menu-submenu-title:hover .ant-menu-submenu-arrow:after {
+	background: #333;
 }

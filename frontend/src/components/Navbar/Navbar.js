@@ -13,6 +13,7 @@ class Navbar extends React.Component {
                     <Link to="">
                     <Logo className="logo"/>
                     </Link>
+                    {this.props.searchbar}
                     <Menu
                         theme="light"
                         mode="horizontal"
