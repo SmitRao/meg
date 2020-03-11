@@ -28,7 +28,6 @@ function onChange(checkedValues) {
 function resetFilters() {
 
 }
-// console.log(filters["gender"]);
 
 const generatesubMenu = (title, children) => {
   return (
@@ -50,19 +49,31 @@ const generateOptions = filters => {
 };
 
 class Result extends React.Component {
-   constructor(props) {
+  constructor(props) {
     super(props);
     this.handleSort = this.handleSort.bind(this);
-    this.state = {sortFunction: "htl"}
+    this.handlePriceFilter = this.handlePriceFilter.bind(this);
+    this.state = {
+      sortFunction: "htl", 
+      min: 0, 
+      max: 1000,
+      query: 'Europe Street Beat',
+      amount: 10
+    }
   }
 
   handleSort(sortOption) {
     this.setState({sortFunction: sortOption})
   }
 
+  handlePriceFilter(values) {
+    console.log(values);
+    this.setState(values);
+  }
+
   render() {
-    const resultQuery = "Europe Street Beat";
-    const amount = 10;
+    const resultQuery = this.state.query;
+    const amount = this.state.amount;
 
     const products = [{"price":150}, {"price":200}, {"price":250}, {"price":300}]
     
@@ -101,7 +112,7 @@ class Result extends React.Component {
             className="menu"
           >
             {Object.keys(filters).map(filter => {
-              let typeOfFilter = <PriceFilter className="pricefilter"/>;
+              let typeOfFilter = <PriceFilter onSet={this.handlePriceFilter} className="pricefilter"/>;
               if (filter !== "price") {
                 typeOfFilter = generateOptions(filters[filter]);
               }

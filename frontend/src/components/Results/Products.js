@@ -35,7 +35,7 @@ const generateGrid = (products) => {
 
 class Products extends React.Component {
   render() {
-  console.log(this.props.products);
+  // console.log(this.props.products);
     return <div>{generateGrid(this.props.products)}</div>;
   }
 }
