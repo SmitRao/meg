@@ -1,8 +1,10 @@
-from flask import Flask, render_template
+from flask import Flask, jsonify, request, render_template
+from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import or_,text
 
 app = Flask(__name__)
+CORS(app)
 app.config.from_object("project.config.Config")
 db = SQLAlchemy(app)
 
@@ -71,14 +73,21 @@ def sort_by_price_descending(res):
     """
     return sorted(res, key = lambda i: i["PriceInEuros"], reverse=True)
 
-  
+
+## POST methods
+
+@app.route("/query", methods=["POST"])
+def query():
+    print("your searched...", request.data.decode('utf-8'))
+    return "thanks"
+
 ### routes
 @app.route("/")
 def home():
     # see these results in docker-compose logs -f
     # should show up if you go to localhost:5000
-    print("testing search: love")
-    print(search("love"))
+    # print("testing search: love")
+    # print(search("love"))
     return render_template("index.html", hometoken="--welcomehome--")
 
 
@@ -90,3 +99,4 @@ def results():
 @app.route("/how-it-works")
 def how_it_works():
     return render_template("index.html", howitworkstoken="--meggy--")
+
