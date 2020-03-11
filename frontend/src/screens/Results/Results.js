@@ -25,6 +25,9 @@ function onChange(checkedValues) {
   // console.log("checked = ", checkedValues);
 }
 
+function resetFilters() {
+
+}
 // console.log(filters["gender"]);
 
 const generatesubMenu = (title, children) => {
@@ -40,33 +43,56 @@ const generatesubMenu = (title, children) => {
 
 const generateOptions = filters => {
   return filters.map(option => (
-    <Menu.Item key={option}>
+    <Menu.Item key={option} className="filterrow">
       <Checkbox className="checkbox" onChange={onChange}>{option}</Checkbox>
     </Menu.Item>
   ));
 };
 
 class Result extends React.Component {
+   constructor(props) {
+    super(props);
+    this.handleSort = this.handleSort.bind(this);
+    this.state = {sortFunction: "htl"}
+  }
+
+  handleSort(sortOption) {
+    this.setState({sortFunction: sortOption})
+  }
+
   render() {
+    const resultQuery = "Europe Street Beat";
+    const amount = 10;
+
+    const products = [{"price":150}, {"price":200}, {"price":250}, {"price":300}]
+    
+    let compare = (x) => {return x};
+
+    if (this.state.sortFunction === "lth") {
+      compare = (a,b) => {return a.price-b.price};
+    }
+    else if (this.state.sortFunction === "htl") {
+      compare = (a,b) => {return b.price-a.price};
+    }
     return (
       <div>
       <Layout>
       <Navbar searchbar={<Searchbar className="searchbarresults" text="search items"/>}></Navbar> 
         <Layout class="background">
-        <Row className="row" justify="space-between" align="middle">
-        <Col>
-        <Text strong>Showing X Results for "Y"</Text>
-        </Col>
-        <Col>
-        <Sort></Sort>
-        </Col>
-        </Row>
+          <Row className="row" justify="space-between" align="middle">
+            <Col>
+              <Text>Showing {amount} Results for {resultQuery}</Text>
+            </Col>
+            <Col>
+              <Sort onChange={this.handleSort}></Sort>
+            </Col>
+          </Row>
         </Layout>
         <Layout class="background">
         <Sider>
-        <Row justify="center" className="reset">
-          <Button>RESET FILTERS</Button>
-        </Row>
+        {/*<Row justify="center" className="reset">
+          <Button onClick={resetFilters}>RESET FILTERS</Button>
+        </Row>*/}
           <Menu
             onClick={this.handleClick}
             defaultSelectedKeys={["1"]}
@@ -84,7 +110,7 @@ class Result extends React.Component {
           </Menu>
         </Sider>
         <Content className="productscontainer background">
-          <Products></Products>
+          <Products products={products.sort(compare)}></Products>
         </Content>
         </Layout>
         <MegFooter></MegFooter>
