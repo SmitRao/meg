@@ -1,13 +1,15 @@
 import React from "react";
-import { Typography, Card, Row, Col } from "antd";
+import { Typography, Card, Row, Col} from "antd";
+
 
 const { Meta } = Card;
 const { Text } = Typography;
 
-const generateCard = () => {
+const generateCard = (product) => {
   return (
     <Card
       hoverable
+      onClick={()=> window.location.href= "http://www.instagram.com"}
       cover={
         <img
           alt="example"
@@ -16,16 +18,16 @@ const generateCard = () => {
       }
     >
       <Meta title="Europe Street beat" description="www.instagram.com" />
-      <Text>$100.00</Text>
+      <Text>{product["price"]}</Text>
     </Card>
   );
 };
 
-const generateGrid = (perRow, amount) => {
+const generateGrid = (products) => {
   return (
-    <Row justify="space-around" gutter={32}>
-      {[...Array(perRow)].map(() => {
-        return <Col span={6}>{generateCard()} </Col>;
+    <Row gutter={[32,48]}>
+      {products.map((product) => {
+        return <Col span={6}>{generateCard(product)} </Col>;
       })}
     </Row>
   );
@@ -33,7 +35,8 @@ const generateGrid = (perRow, amount) => {
 
 class Products extends React.Component {
   render() {
-    return <div>{generateGrid(4, 5)}</div>;
+  // console.log(this.props.products);
+    return <div>{generateGrid(this.props.products)}</div>;
   }
 }
 

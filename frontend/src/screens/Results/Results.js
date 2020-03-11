@@ -12,6 +12,9 @@ import Products from "../../components/Results/Products.js";
 import MegFooter from "../../components/MegFooter/MegFooter.js"
 import Navbar from "../../components/Navbar/Navbar.js"
 
+import Searchbar from "../../components/Searchbar/Searchbar";
+
+
 const { SubMenu } = Menu;
 const { Header, Content, Sider, Footer } = Layout;
 const { Text } = Typography;
@@ -22,7 +25,9 @@ function onChange(checkedValues) {
   // console.log("checked = ", checkedValues);
 }
 
-// console.log(filters["gender"]);
+function resetFilters() {
+
+}
 
 const generatesubMenu = (title, children) => {
   return (
@@ -37,33 +42,68 @@ const generatesubMenu = (title, children) => {
 
 const generateOptions = filters => {
   return filters.map(option => (
-    <Menu.Item key={option}>
+    <Menu.Item key={option} className="filterrow">
       <Checkbox className="checkbox" onChange={onChange}>{option}</Checkbox>
     </Menu.Item>
   ));
 };
 
 class Result extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleSort = this.handleSort.bind(this);
+    this.handlePriceFilter = this.handlePriceFilter.bind(this);
+    this.state = {
+      sortFunction: "htl", 
+      min: 0, 
+      max: 1000,
+      query: 'Europe Street Beat',
+      amount: 10
+    }
+  }
+
+  handleSort(sortOption) {
+    this.setState({sortFunction: sortOption})
+  }
+
+  handlePriceFilter(values) {
+    console.log(values);
+    this.setState(values);
+  }
+
   render() {
+    const resultQuery = this.state.query;
+    const amount = this.state.amount;
+
+    const products = [{"price":150}, {"price":200}, {"price":250}, {"price":300}]
+    
+    let compare = (x) => {return x};
+
+    if (this.state.sortFunction === "lth") {
+      compare = (a,b) => {return a.price-b.price};
+    }
+    else if (this.state.sortFunction === "htl") {
+      compare = (a,b) => {return b.price-a.price};
+    }
     return (
       <div>
       <Layout>
-      <Navbar></Navbar>
+      <Navbar searchbar={<Searchbar className="searchbarresults" text="search items"/>}></Navbar> 
         <Layout class="background">
-        <Row className="row" justify="space-between" align="middle">
-        <Col>
-        <Text strong>Showing X Results for "Y"</Text>
-        </Col>
-        <Col>
-        <Sort></Sort>
-        </Col>
-        </Row>
+          <Row className="row" justify="space-between" align="middle">
+            <Col>
+              <Text>Showing {amount} Results for {resultQuery}</Text>
+            </Col>
+            <Col>
+              <Sort onChange={this.handleSort}></Sort>
+            </Col>
+          </Row>
         </Layout>
         <Layout class="background">
         <Sider>
-        <Row justify="center" className="reset">
-          <Button>RESET FILTERS</Button>
-        </Row>
+        {/*<Row justify="center" className="reset">
+          <Button onClick={resetFilters}>RESET FILTERS</Button>
+        </Row>*/}
           <Menu
             onClick={this.handleClick}
             defaultSelectedKeys={["1"]}
@@ -72,7 +112,7 @@ class Result extends React.Component {
             className="menu"
           >
             {Object.keys(filters).map(filter => {
-              let typeOfFilter = <PriceFilter className="pricefilter"/>;
+              let typeOfFilter = <PriceFilter onSet={this.handlePriceFilter} className="pricefilter"/>;
               if (filter !== "price") {
                 typeOfFilter = generateOptions(filters[filter]);
               }
@@ -81,7 +121,7 @@ class Result extends React.Component {
           </Menu>
         </Sider>
         <Content className="productscontainer background">
-          <Products></Products>
+          <Products products={products.sort(compare)}></Products>
         </Content>
         </Layout>
         <MegFooter></MegFooter>
