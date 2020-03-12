@@ -1,3 +1,4 @@
+
 https://github.com/SmitRao/meg.git
 
 
@@ -17,6 +18,15 @@ Repository: https://github.com/SmitRao/meg
  * **Filtering**: Users can filter the resulting products from their search based on attributes such as gender, color, size or price. 
  * **Sorting**: Users can view the resulting products from their search sorted based on attributes such as price. 
  * **Redirecting**: Once the user finds a product they like, they can click the product and be redirected to the brand’s product site to complete their purchase.
+
+There were a lot of moving pieces that we haven't quite put together in the app yet (we have something developed for sorting/filtering/searching, however, these haven't yet been successfully integrated to work with our application). So, for the purpose of showing a proof-of-concept (and our prioritization of Frontend/DB/Scraping) we've added mocks in the /results route and deployed only the frontend since this is what we chose to finish by the D2 deadline. **The features that have been implemented but not integrated into the deployed application at this point are shown below.**
+
+**Scraping/Parsing**
+The brands that we are currently working with were not able to get in touch with us regarding their API endpoints, so we chose to scrape all the required product info directly from their sites. We utilized parsehub to gather the various product details we needed and exported them as JSON objects. These JSON objects were parsed and all of the data was formatted in a csv based on the database requirements. The functionality can be seen by going through the following steps. 
+* After cloning the repo `https://github.com/SmitRao/meg.git`, navigate to `meg/database/parsing`
+* Run the programs `parsing_eb.py` and `parsing_nea.py`
+* These programs pull the JSON files from `meg/database/static_data/json_files` and store the resulting csv files in `meg/database/static_data/csv_files`
+
 
 ## Instructions
 ![UserWorkFlow](https://github.com/SmitRao/meg/blob/deliverables/deliverables/workflow_with_screenshots.png)
