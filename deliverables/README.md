@@ -120,7 +120,7 @@ NOTE: if at any point you encounter errors due to searching for invalid inputs, 
    1. `sort_by_price_ascending` takes 1 arguments: `res`
       1. `res` a search result containing a list of products as dictionaries
       2. Example: `sort_by_price_ascending(res)` will show you the sorted results ordered by price of products from low to high
-   2. `sort_by_price_descending` takes 1 arguements: `res`
+   2. `sort_by_price_descending` takes 1 arguments: `res`
       1. `res` a search result containing a list of products as dictionaries
       2. Example: `sort_by_price_descending(res)` will show you the sorted results ordered by price of products from high to low
 9. Once you're done testing, you can quit the python shell with `quit()`
@@ -128,10 +128,15 @@ NOTE: if at any point you encounter errors due to searching for invalid inputs, 
 
 ##  Testing  instructions  for   parsing 
 **Scraping/Parsing**
+
 The brands that we are currently working with were not able to get in touch with us regarding their API endpoints, so we chose to scrape all the required product info directly from their sites. We utilized parsehub to gather the various product details we needed and exported them as JSON objects. These JSON objects were parsed and all of the data was formatted into csv files based on the database requirements. The functionality can be seen by going through the following steps. 
-* After cloning the repo `https://github.com/SmitRao/meg.git`, navigate to `meg/database/parsing`
-* Run the programs `parsing_eb.py` and `parsing_nea.py`
-* These programs pull the JSON files from `meg/database/static_data/json_files` and store the resulting CSV files in `meg/database/static_data/csv_files`
+
+ 1. After cloning the repo `https://github.com/SmitRao/meg.git`
+    navigate to `meg/database/parsing`
+ 2. Run the programs `parsing_eb.py` and `parsing_nea.py`
+     * These programs pull the JSON files from `meg/database/static_data/json_files` and store the resulting CSV
+    files in `meg/database/static_data/csv_files` to be used by the database.
+
 ## Site navigation instructions
 ![UserWorkFlow](https://github.com/SmitRao/meg/blob/deliverables/deliverables/workflow_with_screenshots.png)
  **Home Page**<br>
