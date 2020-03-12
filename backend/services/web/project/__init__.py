@@ -41,7 +41,7 @@ def filter_by_price(res, max, min):
     """
     filtered_search = []
     for r in res:
-        if r["PriceInEuros"] <= max and r.PriceInEuros >= min:
+        if r["PriceInEuros"] <= max and r["PriceInEuros"] >= min:
             filtered_search.append(r)
     return filtered_search
     # return searched_view.query.filter(searched_view.PriceInEuros == filter_value)
