@@ -1,4 +1,5 @@
 
+
 https://github.com/SmitRao/meg.git
 
 
@@ -21,7 +22,7 @@ Repository: https://github.com/SmitRao/meg
 
 There were a lot of moving pieces that we haven't quite put together in the app yet (we have something developed for sorting/filtering/searching, however, these haven't yet been successfully integrated to work with our application). So, for the purpose of showing a proof-of-concept (and our prioritization of Frontend/DB/Scraping) we've added mocks in the /results route and deployed only the frontend since this is what we chose to finish by the D2 deadline. **The features that have been implemented but not integrated into the deployed application at this point are shown below.**
 
-# Testing instructions for the backend
+## Testing instructions for the backend
 
 1. Set up the docker container (if you haven't already started it yet)
    1. In the command line, from the root project directory `meg` navigate to `backend`
@@ -125,13 +126,13 @@ NOTE: if at any point you encounter errors due to searching for invalid inputs, 
 9. Once you're done testing, you can quit the python shell with `quit()`
 
 
-#  Testing  instructions  for   parsing 
+##  Testing  instructions  for   parsing 
 **Scraping/Parsing**
 The brands that we are currently working with were not able to get in touch with us regarding their API endpoints, so we chose to scrape all the required product info directly from their sites. We utilized parsehub to gather the various product details we needed and exported them as JSON objects. These JSON objects were parsed and all of the data was formatted into csv files based on the database requirements. The functionality can be seen by going through the following steps. 
 * After cloning the repo `https://github.com/SmitRao/meg.git`, navigate to `meg/database/parsing`
 * Run the programs `parsing_eb.py` and `parsing_nea.py`
 * These programs pull the JSON files from `meg/database/static_data/json_files` and store the resulting CSV files in `meg/database/static_data/csv_files`
-## Instructions
+## Site navigation instructions
 ![UserWorkFlow](https://github.com/SmitRao/meg/blob/deliverables/deliverables/workflow_with_screenshots.png)
  **Home Page**<br>
 The user enters the website and is greeted by the home page. The home page has a search bar as well as links to other parts of the website. Users can click the "Learn how it works" link to be shown a quick guide for using the site and search for products using the search bar in the center of the page to be taken to the results page. 
