@@ -37,7 +37,7 @@ List any **process-related** (i.e. team organization and how you work) changes y
 ## Product - Review
 
 #### Q4. How was your product demo?
- * We walked our partner through different scenarios (user stories) to showcase how the web-app is running so far. We used a computer that had the most up-to-date working version of our project.
+ * We walked our partner through different scenarios (user stories that we picked to complete, which are Mina, Clara's first, second and third dilemma) to showcase how the web-app is running so far. We used a computer that had the most up-to-date working version of our project.
 
  * We were able to able to demo four completed user stories. We demoed the search and result components as well as some of the filter components. Additionally, we were able to select by multiple filters without the page refreshing every time a filter was applied. Lastly, we were able to demo our sorting functionality for sorting by price. 
 
