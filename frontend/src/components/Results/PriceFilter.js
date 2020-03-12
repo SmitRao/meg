@@ -14,11 +14,11 @@ class PriceFilter extends React.Component {
   }
 
   handleMinChange(event) {
-    this.setState({min: event});
+    this.setState({min: event.target.value});
   }
 
   handleMaxChange(event) {
-    this.setState({max: event});
+    this.setState({max: event.target.value});
   }
 
   getMinMax() {

@@ -58,7 +58,8 @@ class Result extends React.Component {
       min: 0, 
       max: 1000,
       query: 'Europe Street Beat',
-      amount: 10
+      amount: 10,
+      setFilterOn: false
     }
   }
 
@@ -67,15 +68,25 @@ class Result extends React.Component {
   }
 
   handlePriceFilter(values) {
-    console.log(values);
-    this.setState(values);
+    if (values['min'] <= values['max'] && values['min'] >= 0){
+      this.setState({...values, setFilterOn: true});
+    }
+    else {
+      this.setState({setFilterOn: false});
+    }
   }
 
   render() {
     const resultQuery = this.state.query;
     const amount = this.state.amount;
 
-    const products = [{"price":150}, {"price":200}, {"price":250}, {"price":300}]
+    let products = [{"price":150}, {"price":200}, {"price":250}, {"price":300}]
+
+    if (this.state.setFilterOn) {
+      products = products.filter((product)=> 
+        product['price'] >= this.state.min && product['price'] <= this.state.max
+        )
+    }
     
     let compare = (x) => {return x};
 
