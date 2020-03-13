@@ -36,8 +36,8 @@ def create_db():
 
 @cli.command("populate_db")
 def populate_db():
-    db.session.add(Brands(BrandName="Electric Bazaar", BrandUrl="https://www.electric-bazaar.com/heritage"))
-    db.session.add(Brands(BrandName="Nea", BrandUrl="https://n-e-a.co.uk/"))
+    db.session.add(Brands("Electric Bazaar", "https://www.electric-bazaar.com/heritage"))
+    db.session.add(Brands("Nea", "https://n-e-a.co.uk/"))
 
     # add categories to category
     categories_values = ["Hijab", "Gharara", "Kimono", "Dress"]

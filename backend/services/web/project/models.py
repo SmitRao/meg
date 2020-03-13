@@ -3,15 +3,15 @@ from project import db
 class Brands(db.Model):
     __tablename__ = "brands"
 
-    BrandName = db.Column(db.String(50), primary_key=True, unique=True, nullable=False)
-    BrandUrl = db.Column(db.Text, unique=True, nullable=False)
+    brand_name = db.Column(db.String(50), primary_key=True, unique=True, nullable=False)
+    brand_url = db.Column(db.Text, unique=True, nullable=False)
 
     # https://flask-sqlalchemy.palletsprojects.com/en/2.x/models/#one-to-many-relationships
     products = db.relationship('Products', cascade="all,delete", backref='brands', lazy=True)
 
-    def __init__(self, BrandName, BrandUrl):
-        self.BrandName=BrandName
-        self.BrandUrl=BrandUrl
+    def __init__(self, brand_name, brand_url):
+        self.brand_name=brand_name
+        self.brand_url=brand_url
 
     def __repr__(self):
         return '<Brands {}>'.format(self.brand_name)
