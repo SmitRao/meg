@@ -19,12 +19,12 @@ class Brands(db.Model):
 class Categories(db.Model):
     __tablename__ = "categories" 
 
-    CategoryName = db.Column(db.String(50), primary_key=True, unique=True, nullable=False)
+    category_name = db.Column(db.String(50), primary_key=True, unique=True, nullable=False)
 
     products = db.relationship('Products', cascade="all,delete", backref='categories', lazy=True) 
 
-    def __init__(self, CategoryName):
-        self.CategoryName=CategoryName
+    def __init__(self, category_name):
+        self.category_name=category_name
 
     def __repr__(self):
         return '<Categories {}>'.format(self.category_name)

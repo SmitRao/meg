@@ -42,7 +42,7 @@ def populate_db():
     # add categories to category
     categories_values = ["Hijab", "Gharara", "Kimono", "Dress"]
     for category in categories_values:
-        db.session.add(Categories(CategoryName=category))
+        db.session.add(Categories(category_name=category))
 
     # add eb products to products
     # productName,priceInEuros,productUrl,gender,productDetails,mainImageUrl,brandName,categoryName
