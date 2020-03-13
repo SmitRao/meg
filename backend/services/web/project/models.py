@@ -32,63 +32,64 @@ class Categories(db.Model):
 class Products(db.Model):
     __tablename__ = "products"
 
-    ProductId = db.Column(db.Integer, primary_key = True)
-    ProductName = db.Column(db.String(50), nullable=False)
-    PriceInEuros = db.Column(db.Float(4), nullable=False)
-    ProductUrl = db.Column(db.Text, unique=True, nullable=False)
-    Gender = db.Column(db.String(1))
-    ProductDetail = db.Column(db.Text)
-    MainImageUrl = db.Column(db.Text)
-    BrandName = db.Column(db.String(50), db.ForeignKey('brands.BrandName'), nullable=False)
-    CategoryName = db.Column(db.String(50), db.ForeignKey('categories.CategoryName'), nullable=False)
+    product_id = db.Column(db.Integer, primary_key = True)
+    product_name = db.Column(db.String(50), nullable=False)
+    price_in_euros = db.Column(db.Float(4), nullable=False)
+    product_url = db.Column(db.Text, unique=True, nullable=False)
+    gender = db.Column(db.String(1))
+    product_detail = db.Column(db.Text)
+    main_image_url = db.Column(db.Text)
+    brand_name = db.Column(db.String(50), db.ForeignKey('brands.brand_name'), nullable=False)
+    category_name = db.Column(db.String(50), db.ForeignKey('categories.category_name'), nullable=False)
 
     # preview_images = db.relationship('PreviewImages', cascade="all,delete", backref='products', lazy=True) 
 
-    def __init__(self, ProductName, PriceInEuros, ProductUrl, Gender, ProductDetail, MainImageUrl, BrandName, CategoryName):
-        self.ProductName=ProductName
-        self.PriceInEuros=PriceInEuros
-        self.ProductUrl=ProductUrl
-        self.Gender=Gender
-        self.ProductDetail=ProductDetail
-        self.MainImageUrl=MainImageUrl
-        self.BrandName=BrandName
-        self.CategoryName=CategoryName
+    def __init__(self, product_name, price_in_euros, product_url, gender, product_detail, main_image_url, brand_name, category_name):
+        self.product_name=product_name
+        self.price_in_euros=price_in_euros
+        self.product_url=product_url
+        self.gender=gender
+        self.product_detail=product_detail
+        self.main_image_url=main_image_url
+        self.brand_name=brand_name
+        self.category_name=category_name
     
     def asDict(self):
         d = {
-            "ProductName" : self.ProductName,
-            "PriceInEuros": self.PriceInEuros,
-            "ProductUrl": self.ProductUrl,
-            "Gender": self.Gender,
-            "ProductDetail": self.ProductDetail,
-            "MainImageUrl": self.MainImageUrl,
-            "BrandName": self.BrandName,
-            "CategoryName": self.CategoryName
+            "ProductId" : self.product_id,
+            "ProductName" : self.product_name,
+            "PriceInEuros": self.price_in_euros,
+            "ProductUrl": self.product_url,
+            "Gender": self.gender,
+            "ProductDetail": self.product_detail,
+            "MainImageUrl": self.main_image_url,
+            "BrandName": self.brand_name,
+            "CategoryName": self.category_name
         }
         return d
 
     # def __repr__(self):
-    #     return '<Products {}>'.format(self.ProductName)
+    #     return '<Products {}>'.format(self.product_name)
 
     # def search(self, search_keyword):
-    #     res = Products.filter(or_(self.ProductName.like('%'+search_keyword+'%'),
-    #                             self.PriceInEuros.like('%'+search_keyword+'%'),
-    #                             self.Gender.like('%'+search_keyword+'%'),
-    #                             self.ProductDetail.like('%'+search_keyword+'%'),
-    #                             self.BrandName.like('%'+search_keyword+'%'),
-    #                             self.CategoryName.like('%'+search_keyword+'%')))
+    #     res = Products.filter(or_(self.product_name.like('%'+search_keyword+'%'),
+    #                             self.price_in_euros.like('%'+search_keyword+'%'),
+    #                             self.gender.like('%'+search_keyword+'%'),
+    #                             self.product_detail.like('%'+search_keyword+'%'),
+    #                             self.brand_name.like('%'+search_keyword+'%'),
+    #                             self.category_name.like('%'+search_keyword+'%')))
     #     return res
 
 # class PreviewImages(db.Model):
 #     __tablename__ = 'preview_images'
 
 #     PreviewImageUrl = db.Column(db.Text, unique = True, nullable = False, primary_key = True)
-#     # ProductUrl = db.Column(db.Text, nullable=False)
-#     ProductUrl = db.Column(db.Text, db.ForeignKey('products.ProductUrl'), nullable=False)
+#     # product_url = db.Column(db.Text, nullable=False)
+#     product_url = db.Column(db.Text, db.ForeignKey('products.product_url'), nullable=False)
 
-#     def __init__(self, PreviewImageUrl, ProductUrl):
+#     def __init__(self, PreviewImageUrl, product_url):
 #         self.PreviewImageUrl=PreviewImageUrl
-#         self.ProductUrl=ProductUrl
+#         self.product_url=product_url
 
 #     def __repr__(self):
 #         return '<PreviewImages {}>'.format(self.product_url)

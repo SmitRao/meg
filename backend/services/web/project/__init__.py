@@ -12,11 +12,11 @@ from project.models import Products
 def search(search_keyword):
     # NO SEARCHING BY PRICE!!
     s=text("'%"+search_keyword+"%'")
-    res = Products.query.filter(or_(Products.ProductName.like(s),
-                            Products.Gender.like(s),
-                            Products.ProductDetail.like(s),
-                            Products.BrandName.like(s),
-                            Products.CategoryName.like(s)))
+    res = Products.query.filter(or_(Products.product_name.like(s),
+                            Products.gender.like(s),
+                            Products.product_detail.like(s),
+                            Products.brand_name.like(s),
+                            Products.category_name.like(s)))
     dicts = []
     for r in res:
         dicts.append(r.asDict())
@@ -33,7 +33,7 @@ def filter_by_gender(res, gender):
         if r["Gender"] == gender:
             filtered_search.append(r)
     return filtered_search
-    # return searched_view.query.filter(searched_view.Gender == filter_value)
+    # return searched_view.query.filter(searched_view.gender == filter_value)
 
 def filter_by_price(res, max, min):
     """
@@ -55,7 +55,7 @@ def filter_by_category(res, category):
         if r["CategoryName"] == category:
             filtered_search.append(r)
     return filtered_search
-    # return searched_view.query.filter(searched_view.CategoryName == filter_value)
+    # return searched_view.query.filter(searched_view.category_name == filter_value)
 
 def sort_by_price_ascending(res):
     """
