@@ -20,7 +20,9 @@ for i in range(len(json['products'])):
         # Parse out all the required informartion from JSON object
         current_product['productName'] = json['products'][i]['productName']
 
-        current_product['priceInEuros'] = float(json['products'][i]['priceInEuros'][2:])
+        current_product['price'] = float(json['products'][i]['priceInEuros'][2:])
+
+        current_product['currency'] = json['products'][i]['priceInEuros'][1:2]
         
         current_product['productUrl'] = json['products'][i]['productUrl']
         
@@ -40,7 +42,7 @@ for i in range(len(json['products'])):
 
 
 # Set up to write parsed data into structured csv file
-csv_columns = ['productName', 'priceInEuros', 'productUrl', 'gender', 'productDetails', 'mainImageUrl', 'brandName', 'categoryName']
+csv_columns = ['productName', 'price', 'currency', 'productUrl', 'gender', 'productDetails', 'mainImageUrl', 'brandName', 'categoryName']
 csv_file = '../static_data/csv_files/parsed_eb.csv'
 
 # Write parsed data into file parsed_eb.csv
