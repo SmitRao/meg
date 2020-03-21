@@ -1,6 +1,5 @@
 import React from "react";
 import { Layout, Menu, Checkbox, Typography, Button, Row, Col} from "antd";
-import { FacebookFilled, InstagramFilled, MailFilled } from "@ant-design/icons";
 
 import { filters } from "../../constants/FilterOptions.js";
 import "./Results.css";
@@ -18,18 +17,8 @@ import { Link } from "react-router-dom";
 
 
 const { SubMenu } = Menu;
-const { Header, Content, Sider, Footer } = Layout;
+const { Content, Sider } = Layout;
 const { Text } = Typography;
-const copyrightYear = new Date().getFullYear();
-
-
-function onChange(checkedValues) {
-  // console.log("checked = ", checkedValues);
-}
-
-function resetFilters() {
-
-}
 
 const generatesubMenu = (title, children) => {
   return (
@@ -38,14 +27,21 @@ const generatesubMenu = (title, children) => {
       title={<span>{title.toUpperCase()}</span>}
       children={children}
       className="submenu"
-    ></SubMenu>
+    >
+    </SubMenu>
   );
 };
 
-const generateOptions = filters => {
+const generateOptions = (filters, checkValues, onCheckboxChange) => {
   return filters.map(option => (
     <Menu.Item key={option} className="filterrow">
-      <Checkbox className="checkbox" onChange={onChange}>{option}</Checkbox>
+      <Checkbox 
+      className="checkbox" 
+      onChange={onCheckboxChange} 
+      checked={checkValues[option]} 
+      name={option}>
+        {option}
+      </Checkbox>
     </Menu.Item>
   ));
 };
@@ -55,14 +51,44 @@ class Result extends React.Component {
     super(props);
     this.handleSort = this.handleSort.bind(this);
     this.handlePriceFilter = this.handlePriceFilter.bind(this);
+    this.onCheckboxChange = this.onCheckboxChange.bind(this);
+    this.resetFilters = this.resetFilters.bind(this);
+
+    let intialFilters = {}
+    Object.keys(filters).forEach(key => {
+      if (key !== 'price') {
+        filters[key].forEach(value => intialFilters[value] = false);
+      }
+    });
+
     this.state = {
       sortFunction: "htl", 
       min: 0, 
       max: 1000,
       query: 'Europe Street Beat',
       amount: 10,
-      setFilterOn: false
-    }
+      setFilterOn: false,
+      checkValues: intialFilters
+    };
+  }
+
+  onCheckboxChange(event) {
+    let checkValues = this.state.checkValues;
+    checkValues[event.target.name] = event.target.name in checkValues ? !checkValues[event.target.name] : true;
+    this.setState({
+      checkValues: checkValues
+    });
+  }
+
+  resetFilters() {
+    let checkValues = this.state.checkValues;
+    Object.keys(checkValues).forEach(key => checkValues[key] = false);
+    this.setState({
+      setFilterOn: false,
+      min: 0,
+      max: 1000,
+      checkValues: checkValues
+    })
   }
 
   handleSort(sortOption) {
@@ -116,9 +142,9 @@ class Result extends React.Component {
         </Layout>
         <Layout class="background">
         <Sider>
-        {/*<Row justify="center" className="reset">
-          <Button onClick={resetFilters}>RESET FILTERS</Button>
-        </Row>*/}
+        <Row justify="center" className="reset">
+          <Button onClick={this.resetFilters}>RESET FILTERS</Button>
+        </Row>
           <Menu
             onClick={this.handleClick}
             defaultSelectedKeys={["1"]}
@@ -129,7 +155,7 @@ class Result extends React.Component {
             {Object.keys(filters).map(filter => {
               let typeOfFilter = <PriceFilter onSet={this.handlePriceFilter} className="pricefilter"/>;
               if (filter !== "price") {
-                typeOfFilter = generateOptions(filters[filter]);
+                typeOfFilter = generateOptions(filters[filter], this.state.checkValues, this.onCheckboxChange);
               }
               return generatesubMenu(filter, typeOfFilter);
             })}
