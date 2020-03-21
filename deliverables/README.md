@@ -1,9 +1,3 @@
-
-
-https://github.com/SmitRao/meg.git
-
-
-
 # My Ethical Garment (MEG)
 
 Repository: https://github.com/SmitRao/meg
