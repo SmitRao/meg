@@ -1,5 +1,6 @@
 import React from "react";
-import { Layout, Menu, Checkbox, Typography, Button, Row, Col} from "antd";
+import { Layout, Menu, Checkbox, Typography, Button, Row, Col, Spin} from "antd";
+import { LoadingOutlined } from '@ant-design/icons';
 
 import { filters } from "../../constants/FilterOptions.js";
 import "./Results.css";
@@ -14,9 +15,11 @@ import Navbar from "../../components/Navbar/Navbar.js"
 import Searchbar from "../../components/Searchbar/Searchbar";
 
 
+
 const { SubMenu } = Menu;
 const { Content, Sider } = Layout;
 const { Text } = Typography;
+const antIcon = <LoadingOutlined style={{ fontSize: 80, color:"#333"}} spin />;
 
 const generatesubMenu = (title, children) => {
   return (
@@ -51,6 +54,7 @@ class Result extends React.Component {
     this.handlePriceFilter = this.handlePriceFilter.bind(this);
     this.onCheckboxChange = this.onCheckboxChange.bind(this);
     this.resetFilters = this.resetFilters.bind(this);
+    this.handleLoad = this.handleLoad.bind(this);
 
     let intialFilters = {}
     Object.keys(filters).forEach(key => {
@@ -66,7 +70,8 @@ class Result extends React.Component {
       query: 'Europe Street Beat',
       amount: 10,
       setFilterOn: false,
-      checkValues: intialFilters
+      checkValues: intialFilters,
+      loading: false
     };
   }
 
@@ -74,8 +79,11 @@ class Result extends React.Component {
     let checkValues = this.state.checkValues;
     checkValues[event.target.name] = event.target.name in checkValues ? !checkValues[event.target.name] : true;
     this.setState({
-      checkValues: checkValues
-    });
+      checkValues: checkValues,
+      loading: true
+    },
+    this.handleLoad()
+    );
   }
 
   resetFilters() {
@@ -85,8 +93,19 @@ class Result extends React.Component {
       setFilterOn: false,
       min: 0,
       max: 1000,
-      checkValues: checkValues
-    })
+      checkValues: checkValues,
+      loading: true
+    },
+    this.handleLoad()
+  );
+  }
+
+  handleLoad() {
+    setTimeout(() => {
+        this.setState({
+          loading: false
+        });
+      }, 500) 
   }
 
   handleSort(sortOption) {
@@ -95,7 +114,7 @@ class Result extends React.Component {
 
   handlePriceFilter(values) {
     if (values['min'] <= values['max'] && values['min'] >= 0){
-      this.setState({...values, setFilterOn: true});
+      this.setState({...values, loading: true, setFilterOn: true}, this.handleLoad());
     }
     else {
       this.setState({setFilterOn: false});
@@ -105,6 +124,7 @@ class Result extends React.Component {
   render() {
     const resultQuery = this.state.query;
     const amount = this.state.amount;
+    const loading = this.state.loading;
 
     let products = [{"price":150}, {"price":200}, {"price":250}, {"price":300}]
 
@@ -158,7 +178,8 @@ class Result extends React.Component {
           </Menu>
         </Sider>
         <Content className="productscontainer background">
-          <Products products={products.sort(compare)}></Products>
+          {loading ? <Row justify="center" align="middle"><Spin indicator={antIcon}/></Row> : 
+          <Products products={products.sort(compare)}></Products>}
         </Content>
         </Layout>
         <MegFooter></MegFooter>
