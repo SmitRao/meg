@@ -12,18 +12,32 @@ import os
 products_eb_csv_path = "./project/product_data/parsed_eb.csv"
 products_nea_csv_path = "./project/product_data/parsed_nea.csv"
 
+# with open(os.path.abspath(products_eb_csv_path), newline='') as eb_csv:
+#     reader = csv.reader(eb_csv)
+#     eb_data = list(reader)
+#     eb_data = eb_data[1:] #drop header row
+#     eb_csv.close()
+
+#productName,priceInEuros,productUrl,gender,productDetails,mainImageUrl,brandName,categoryName
 with open(os.path.abspath(products_eb_csv_path), newline='') as eb_csv:
-    reader = csv.reader(eb_csv)
-    eb_data = list(reader)
-    eb_data = eb_data[1:] #drop header row
+    reader = csv.DictReader(eb_csv, delimiter=',')
+    eb_data = list(reader)  
+    for i in range(len(eb_data)):
+        eb_data[i] = dict(eb_data[i])
     eb_csv.close()
 
-with open(os.path.abspath(products_nea_csv_path), newline='') as nea_csv:
-    reader = csv.reader(nea_csv)
-    nea_data = list(reader)
-    nea_data = nea_data[1:] #drop header row
-    nea_csv.close()
+# with open(os.path.abspath(products_nea_csv_path), newline='') as nea_csv:
+#     reader = csv.reader(nea_csv)
+#     nea_data = list(reader)
+#     nea_data = nea_data[1:] #drop header row
+#     nea_csv.close()
 
+with open(os.path.abspath(products_nea_csv_path), newline='') as nea_csv:
+    reader = csv.DictReader(nea_csv, delimiter=',')
+    nea_data = list(reader)
+    for i in range(len(nea_data)):
+        nea_data[i] = dict(nea_data[i])
+    nea_csv.close()
 
 cli = FlaskGroup(app)
 
@@ -46,31 +60,61 @@ def populate_db():
 
     # add eb products to products
     # productName,price_in_euros,product_url,gender,productDetails,mainImageUrl,brandName,categoryName
+    # for p in eb_data:
+    #     db.session.add(Products(
+    #         product_name=p[0], 
+    #         price_in_euros=p[1], 
+    #         product_url=p[2], 
+    #         gender=p[3], 
+    #         product_detail=p[4], 
+    #         main_image_url=p[5], 
+    #         size = 'small',
+    #         brand_name=p[6], 
+    #         category_name=p[7]
+    #     ))
+
+# productName,priceInEuros,productUrl,gender,productDetails,mainImageUrl,brandName,categoryName
+
     for p in eb_data:
         db.session.add(Products(
-            product_name=p[0], 
-            price_in_euros=p[1], 
-            product_url=p[2], 
-            gender=p[3], 
-            product_detail=p[4], 
-            main_image_url=p[5], 
-            brand_name=p[6], 
-            category_name=p[7]
+            product_name=p["productName"], 
+            price_in_euros=p["priceInEuros"], 
+            product_url=p["productUrl"], 
+            gender=p["gender"], 
+            product_detail=p["productDetails"], 
+            main_image_url=p["mainImageUrl"], 
+            size = 'small',
+            brand_name=p["brandName"], 
+            category_name=p["categoryName"]
         ))
 
     # productName,price_in_euros,product_url,gender,productDetails,mainImage,brandName,categoryName
+    # for p in nea_data:
+    #     db.session.add(Products(
+    #         product_name=p[0], 
+    #         price_in_euros=p[1], 
+    #         product_url=p[2], 
+    #         gender=p[3], 
+    #         product_detail=p[4], 
+    #         main_image_url=p[5], 
+    #         size = 'small',
+    #         brand_name=p[6], 
+    #         category_name=p[7]
+    #     ))
+
     for p in nea_data:
         db.session.add(Products(
-            product_name=p[0], 
-            price_in_euros=p[1], 
-            product_url=p[2], 
-            gender=p[3], 
-            product_detail=p[4], 
-            main_image_url=p[5], 
-            brand_name=p[6], 
-            category_name=p[7]
+            product_name=p["productName"], 
+            price_in_euros=p["priceInEuros"], 
+            product_url=p["productUrl"], 
+            gender=p["gender"], 
+            product_detail=p["productDetails"], 
+            main_image_url=p["mainImageUrl"], 
+            size = 'small',
+            brand_name=p["brandName"], 
+            category_name=p["categoryName"]
         ))
-    
+        
     db.session.commit()
 
 
