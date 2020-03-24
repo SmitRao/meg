@@ -36,39 +36,39 @@ def create_db():
 
 @cli.command("populate_db")
 def populate_db():
-    db.session.add(Brands(BrandName="Electric Bazaar", BrandUrl="https://www.electric-bazaar.com/heritage"))
-    db.session.add(Brands(BrandName="Nea", BrandUrl="https://n-e-a.co.uk/"))
+    db.session.add(Brands("Electric Bazaar", "https://www.electric-bazaar.com/heritage"))
+    db.session.add(Brands("Nea", "https://n-e-a.co.uk/"))
 
     # add categories to category
     categories_values = ["Hijab", "Gharara", "Kimono", "Dress"]
     for category in categories_values:
-        db.session.add(Categories(CategoryName=category))
+        db.session.add(Categories(category_name=category))
 
     # add eb products to products
-    # productName,priceInEuros,productUrl,gender,productDetails,mainImageUrl,brandName,categoryName
+    # productName,price_in_euros,product_url,gender,productDetails,mainImageUrl,brandName,categoryName
     for p in eb_data:
         db.session.add(Products(
-            ProductName=p[0], 
-            PriceInEuros=p[1], 
-            ProductUrl=p[2], 
-            Gender=p[3], 
-            ProductDetail=p[4], 
-            MainImageUrl=p[5], 
-            BrandName=p[6], 
-            CategoryName=p[7]
+            product_name=p[0], 
+            price_in_euros=p[1], 
+            product_url=p[2], 
+            gender=p[3], 
+            product_detail=p[4], 
+            main_image_url=p[5], 
+            brand_name=p[6], 
+            category_name=p[7]
         ))
 
-    # productName,priceInEuros,productUrl,gender,productDetails,mainImage,brandName,categoryName
+    # productName,price_in_euros,product_url,gender,productDetails,mainImage,brandName,categoryName
     for p in nea_data:
         db.session.add(Products(
-            ProductName=p[0], 
-            PriceInEuros=p[1], 
-            ProductUrl=p[2], 
-            Gender=p[3], 
-            ProductDetail=p[4], 
-            MainImageUrl=p[5], 
-            BrandName=p[6], 
-            CategoryName=p[7]
+            product_name=p[0], 
+            price_in_euros=p[1], 
+            product_url=p[2], 
+            gender=p[3], 
+            product_detail=p[4], 
+            main_image_url=p[5], 
+            brand_name=p[6], 
+            category_name=p[7]
         ))
     
     db.session.commit()
