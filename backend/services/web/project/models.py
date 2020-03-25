@@ -70,29 +70,3 @@ class Products(db.Model):
             "CategoryName": self.category_name
         }
         return d
-
-    # def __repr__(self):
-    #     return '<Products {}>'.format(self.product_name)
-
-    # def search(self, search_keyword):
-    #     res = Products.filter(or_(self.product_name.like('%'+search_keyword+'%'),
-    #                             self.price_in_euros.like('%'+search_keyword+'%'),
-    #                             self.gender.like('%'+search_keyword+'%'),
-    #                             self.product_detail.like('%'+search_keyword+'%'),
-    #                             self.brand_name.like('%'+search_keyword+'%'),
-    #                             self.category_name.like('%'+search_keyword+'%')))
-    #     return res
-
-# class PreviewImages(db.Model):
-#     __tablename__ = 'preview_images'
-
-#     PreviewImageUrl = db.Column(db.Text, unique = True, nullable = False, primary_key = True)
-#     # product_url = db.Column(db.Text, nullable=False)
-#     product_url = db.Column(db.Text, db.ForeignKey('products.product_url'), nullable=False)
-
-#     def __init__(self, PreviewImageUrl, product_url):
-#         self.PreviewImageUrl=PreviewImageUrl
-#         self.product_url=product_url
-
-#     def __repr__(self):
-#         return '<PreviewImages {}>'.format(self.product_url)
