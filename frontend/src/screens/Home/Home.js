@@ -24,7 +24,7 @@ class Home extends React.Component {
             <span className="highlight"> Finding ethically </span>
             <span className="highlight"> made styles can </span>
             <span className="highlight"> really be this easy. </span>
-            <Searchbar />
+            <Searchbar text="search for items..."/>
             <Button className="learn" type="link">
               <Link to={"/how-it-works"}>Learn how it works</Link>
             </Button>

@@ -13,6 +13,17 @@ class Searchbar extends React.Component {
     let data = document.getElementById("product-search").value;
 
     console.log("data is..." + data);
+class Searchbar extends React.Component{
+    render(){
+        return(
+            <Search
+              className={"search-bar" + " " + this.props.className}
+              placeholder={this.props.text}
+              onSearch={this.props.handleSearch}
+            />
+        );
+    }
+
 
     axios
       .post(

@@ -9,10 +9,10 @@ class Sort extends React.Component {
     return (
       <Row gutter={16} align="middle">
       <Col>
-        <Text strong>Sort By</Text>
+        <Text>Sort By</Text>
       </Col>
       <Col>
-        <Select defaultValue="htl" style={{ width: 160 }} label="Sort By">
+        <Select defaultValue="htl" style={{ width: 160 }} label="Sort By" onChange={this.props.onChange}>
           <Option value="htl">Price High To Low</Option>
           <Option value="lth">Low to High</Option>
         </Select>
