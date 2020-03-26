@@ -121,7 +121,12 @@ NOTE: if at any point you encounter errors due to searching for invalid inputs, 
    2. `sort_by_price_descending` takes 1 arguments: `res`
       1. `res` a search result containing a list of products as dictionaries
       2. Example: `sort_by_price_descending(res)` will show you the sorted results ordered by price of products from high to low
-9. Once you're done testing, you can quit the python shell with `quit()`
+
+9. Test category size
+   1. `category_size` takes 1 argument: `res`
+      1. `res` a search result containing a list of products as dictionaries
+      2. Example: `category_size(res)` will show you the available size by category among the searched result
+10. Once you're done testing, you can quit the python shell with `quit()`
 
 
 ##  Testing  instructions  for   parsing 
