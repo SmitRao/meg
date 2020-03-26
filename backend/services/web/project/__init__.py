@@ -101,8 +101,14 @@ def category_size(res):
 
 @app.route("/query", methods=["POST"])
 def query():
-    print("your searched...", request.data.decode('utf-8'))
-    return "thanks"
+    if request.method == "POST":
+
+        search_keyword = request.args.get('data','')
+        # res = request.get_json()
+        # print("your searched...", request.data.decode('utf-8'))
+        # return "thanks"
+        res = search(search_keyword)
+        return jsonify(res)
 
 ### routes
 @app.route("/")
@@ -112,7 +118,6 @@ def home():
     # print("testing search: love")
     # print(search("love"))
     return render_template("index.html", hometoken="--welcomehome--")
-
 
 @app.route("/results")
 def results():

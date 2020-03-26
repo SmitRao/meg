@@ -13,6 +13,8 @@ import MegFooter from "../../components/MegFooter/MegFooter.js"
 import Navbar from "../../components/Navbar/Navbar.js"
 
 import Searchbar from "../../components/Searchbar/Searchbar";
+import { Link } from "react-router-dom";
+
 
 
 const { SubMenu } = Menu;
@@ -99,7 +101,28 @@ class Result extends React.Component {
     return (
       <div>
       <Layout>
-      <Navbar searchbar={<Searchbar className="searchbarresults" text="search items"/>}></Navbar> 
+      {/* <Navbar searchbar={<Searchbar className="searchbarresults" text="search items"/>}></Navbar>  */}
+      <Navbar />
+      <Searchbar className="searchbarresults" text="search items"/>
+      {/* <Button onClick = {async () =>{
+        const response = await fetch("/results",{
+          method: "POST",
+        
+        })
+      
+        }
+        
+      
+    
+    
+        }
+      
+      
+      
+      className="search" type="link">
+        <Link to={"/results"}>search</Link>
+
+      </Button> */}
         <Layout class="background">
           <Row className="row" justify="space-between" align="middle">
             <Col>
