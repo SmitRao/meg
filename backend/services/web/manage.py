@@ -59,7 +59,7 @@ def populate_db():
             gender=p["gender"], 
             product_detail=p["productDetails"], 
             main_image_url=p["mainImageUrl"], 
-            size = 'S, M, L',
+            size = p["size"],
             brand_name=p["brandName"], 
             category_name=p["categoryName"]
         ))
@@ -73,7 +73,7 @@ def populate_db():
             gender=p["gender"], 
             product_detail=p["productDetails"], 
             main_image_url=p["mainImageUrl"], 
-            size = 'one-size',
+            size = p["size"],
             brand_name=p["brandName"], 
             category_name=p["categoryName"]
         ))
