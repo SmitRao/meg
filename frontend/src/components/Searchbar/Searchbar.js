@@ -24,7 +24,8 @@ class Searchbar extends React.Component {
         {headers: { 'content-type': 'application/json', },
       })
       .then(function(response) {
-        console.log(response);
+        // response is the searched results
+        console.log(response);        
       })
       .catch(function(error) {
         console.log(error);
@@ -33,7 +34,6 @@ class Searchbar extends React.Component {
   render() {
     return (
       <Search
-
         id="product-search"
         className="search-bar"
         placeholder="search for items..."
