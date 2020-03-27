@@ -102,11 +102,7 @@ def category_size(res):
 @app.route("/query", methods=["POST"])
 def query():
     if request.method == "POST":
-
-        search_keyword = request.args.get('data','')
-        # res = request.get_json()
-        # print("your searched...", request.data.decode('utf-8'))
-        # return "thanks"
+        search_keyword = request.get_json()['data']
         res = search(search_keyword)
         return jsonify(res)
 

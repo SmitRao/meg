@@ -15,14 +15,14 @@ class Searchbar extends React.Component {
 
     console.log("data is..." + search_keyword);
 
+    const params = {'data': search_keyword}
+
     axios
       .post(
         "/query",
-        // JSON.parse(
-        //   `{"data": ${document.getElementById("product-search").value}}`
-        // )
-        search_keyword
-      )
+        params, 
+        {headers: { 'content-type': 'application/json', },
+      })
       .then(function(response) {
         console.log(response);
       })
@@ -33,6 +33,7 @@ class Searchbar extends React.Component {
   render() {
     return (
       <Search
+
         id="product-search"
         className="search-bar"
         placeholder="search for items..."
