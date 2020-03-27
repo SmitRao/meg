@@ -104,25 +104,6 @@ class Result extends React.Component {
       {/* <Navbar searchbar={<Searchbar className="searchbarresults" text="search items"/>}></Navbar>  */}
       <Navbar />
       <Searchbar className="searchbarresults" text="search items"/>
-      {/* <Button onClick = {async () =>{
-        const response = await fetch("/results",{
-          method: "POST",
-        
-        })
-      
-        }
-        
-      
-    
-    
-        }
-      
-      
-      
-      className="search" type="link">
-        <Link to={"/results"}>search</Link>
-
-      </Button> */}
         <Layout class="background">
           <Row className="row" justify="space-between" align="middle">
             <Col>
