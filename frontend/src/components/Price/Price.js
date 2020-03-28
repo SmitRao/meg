@@ -43,10 +43,10 @@ class Price extends React.Component {
 
     render() {
         const {product_value, product_curr} = this.props;
-        const curr = this.state.curr;
+        const curr = exchangeRates["CURRENCIES"][this.state.curr];
         const value = this.convertValuetoCurr( product_value, product_curr);
 
-        return <Text>{value} {curr}</Text>
+        return <Text>{curr}{value}</Text>
     }
 }
 

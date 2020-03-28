@@ -1,5 +1,6 @@
 import React from "react";
 import { Typography, Card, Row, Col} from "antd";
+import Price from "../Price/Price";
 
 
 const { Meta } = Card;
@@ -18,7 +19,8 @@ const generateCard = (product) => {
       }
     >
       <Meta title="Europe Street beat" description="www.instagram.com" />
-      <Text>{product["price"]}</Text>
+      {/*TODO: replace curr with currency to display, product_curr from product info*/}
+      <Price product_value={product['price']} product_curr={'USD'} curr={'CNY'}/>
     </Card>
   );
 };
