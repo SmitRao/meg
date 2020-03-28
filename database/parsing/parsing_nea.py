@@ -3,6 +3,18 @@ import os
 import unicodedata
 import csv
 
+# Function that converts currency symbol into 3 char string (currency code) to be returned
+def curr_symbol_to_code(symbol):
+    code = ""
+    if symbol == "£":
+        code = "GBP"
+    elif symbol == "€":
+        code = "EUR"
+    elif symbol == "₽":
+        code = "RUB"
+
+    return code
+
 # Open json of scraped data to be parsed
 with open (os.path.abspath('../static_data/json_files/nea_data.json')) as f:
     json = json.load(f)
@@ -21,7 +33,7 @@ for i in range(len(json['products'])):
 
     current_product['price'] = float(json['products'][i]['priceInEuros'][2:])
 
-    current_product['currency'] = json['products'][i]['priceInEuros'][1:2]
+    current_product['currency'] = curr_symbol_to_code(json['products'][i]['priceInEuros'][1:2])
     
     current_product['productUrl'] = json['products'][i]['productUrl']
         
