@@ -1,24 +1,46 @@
 import React from "react";
-import {Input, Button, Typography} from "antd";
+import { Input, Button, Typography } from "antd";
 import "./Searchbar.css";
+import axios from "axios";
 import { Link } from "react-router-dom";
+// import { Searchbar } from 'react-native-paper';
 
 const { Text } = Typography;
 
 const { Search } = Input;
 
+class Searchbar extends React.Component {
+  postsearch() {
+    var search_keyword = document.getElementById("product-search").value;
 
-class Searchbar extends React.Component{
-    render(){
-        return(
-            <Search
-              className={"search-bar" + " " + this.props.className}
-              placeholder={this.props.text}
-              onSearch={this.props.handleSearch}
-            />
-        );
-    }
+    console.log("data is..." + search_keyword);
 
+    const params = {'data': search_keyword}
+
+    axios
+      .post(
+        "/query",
+        params, 
+        {headers: { 'content-type': 'application/json', },
+      })
+      .then(function(response) {
+        // response is the searched results
+        console.log(response);        
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  }
+  render() {
+    return (
+      <Search
+        id="product-search"
+        className="search-bar"
+        placeholder="search for items..."
+        onSearch={this.postsearch}
+      />
+    );
+  }
 }
 
 export default Searchbar;
