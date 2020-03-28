@@ -1,8 +1,10 @@
-from flask import Flask, render_template
+from flask import Flask, jsonify, request, render_template
+from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import or_,text
 
 app = Flask(__name__)
+CORS(app)
 app.config.from_object("project.config.Config")
 db = SQLAlchemy(app)
 
@@ -72,6 +74,7 @@ def sort_by_price_descending(res):
     """
     return sorted(res, key = lambda i: i["PriceInEuros"], reverse=True)
 
+
 def category_size(res):
     """
     res should be the return value of search (a list of Products as dictionaries)
@@ -93,17 +96,24 @@ def category_size(res):
     category_size = {key:val for key, val in category_size.items() if val != set()}
 
     return category_size
-
   
+## POST methods
+
+@app.route("/query", methods=["POST"])
+def query():
+    if request.method == "POST":
+        search_keyword = request.get_json()['data']
+        res = search(search_keyword)
+        return jsonify(res)
+
 ### routes
 @app.route("/")
 def home():
     # see these results in docker-compose logs -f
     # should show up if you go to localhost:5000
-    print("testing search: love")
-    print(search("love"))
+    # print("testing search: love")
+    # print(search("love"))
     return render_template("index.html", hometoken="--welcomehome--")
-
 
 @app.route("/results")
 def results():
@@ -113,3 +123,4 @@ def results():
 @app.route("/how-it-works")
 def how_it_works():
     return render_template("index.html", howitworkstoken="--meggy--")
+
