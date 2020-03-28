@@ -42,6 +42,13 @@ for i in range(len(json['products'])):
     current_product['productDetails'] = json['products'][i]['productDescription'][0]['data'].replace('\n', " ")
         
     current_product['mainImage'] = json['products'][i]['mainImage']
+
+    # parse out size info from brands site; needs to be cleaned up but is functional
+    curr_data = json['products'][i]['productDescription'][0]['data'].replace('\n', " ")
+    size_start = curr_data.find("Dimension")
+    new_data = curr_data[size_start + 11:]
+    size_end = new_data.find('C')
+    current_product['size'] = new_data[:size_end - 1].replace('"', " ")[:-1]
         
     current_product['brandName'] = 'Nea'
         
@@ -52,8 +59,8 @@ for i in range(len(json['products'])):
 
 
 # Set up to write parsed data into structured csv file
-csv_columns = ['productName', 'price', 'currency', 'productUrl', 'gender', 'productDetails', 'mainImage', 'brandName', 'categoryName']
-csv_file = '../static_data/csv_files/parsed_nea.csv'
+csv_columns = ['productName', 'price', 'currency', 'productUrl', 'gender', 'productDetails', 'mainImage', 'size', 'brandName', 'categoryName']
+csv_file = '../../backend/services/web/project/product_data/parsed_nea.csv'
 
 # Write parsed data into file parsed_nea.csv
 with open(csv_file, 'w', newline='') as csvfile:
