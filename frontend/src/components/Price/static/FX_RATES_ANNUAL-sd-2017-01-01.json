@@ -1,0 +1,465 @@
+{
+    "groupDetail": {
+        "label": "Annual exchange rates",
+        "description": "Annual average exchange rates - published by 16:30 ET on the last business day of each year. All Bank of Canada exchange rates are indicative rates only.",
+        "link": null
+    },
+    "terms": {
+        "url": "https://www.bankofcanada.ca/terms/"
+    },
+    "seriesDetail": {
+        "FXAAUDCAD": {
+            "label": "AUD/CAD",
+            "description": "Australian dollar to Canadian dollar annual exchange rate",
+            "dimension": {
+                "key": "d",
+                "name": "date"
+            }
+        },
+        "FXABRLCAD": {
+            "label": "BRL/CAD",
+            "description": "Brazilian real to Canadian dollar annual exchange rate",
+            "dimension": {
+                "key": "d",
+                "name": "date"
+            }
+        },
+        "FXACNYCAD": {
+            "label": "CNY/CAD",
+            "description": "Chinese renminbi to Canadian dollar annual exchange rate",
+            "dimension": {
+                "key": "d",
+                "name": "date"
+            }
+        },
+        "FXAEURCAD": {
+            "label": "EUR/CAD",
+            "description": "European euro to Canadian dollar annual exchange rate",
+            "dimension": {
+                "key": "d",
+                "name": "date"
+            }
+        },
+        "FXAHKDCAD": {
+            "label": "HKD/CAD",
+            "description": "Hong Kong dollar to Canadian dollar annual exchange rate",
+            "dimension": {
+                "key": "d",
+                "name": "date"
+            }
+        },
+        "FXAINRCAD": {
+            "label": "INR/CAD",
+            "description": "Indian rupee to Canadian dollar annual exchange rate",
+            "dimension": {
+                "key": "d",
+                "name": "date"
+            }
+        },
+        "FXAIDRCAD": {
+            "label": "IDR/CAD",
+            "description": "Indonesian rupiah to Canadian dollar annual exchange rate",
+            "dimension": {
+                "key": "d",
+                "name": "date"
+            }
+        },
+        "FXAJPYCAD": {
+            "label": "JPY/CAD",
+            "description": "Japanese yen to Canadian dollar annual exchange rate",
+            "dimension": {
+                "key": "d",
+                "name": "date"
+            }
+        },
+        "FXAMYRCAD": {
+            "label": "MYR/CAD",
+            "description": "Malaysian ringgit to Canadian dollar annual exchange rate",
+            "dimension": {
+                "key": "d",
+                "name": "date"
+            }
+        },
+        "FXAMXNCAD": {
+            "label": "MXN/CAD",
+            "description": "Mexican peso to Canadian dollar annual exchange rate",
+            "dimension": {
+                "key": "d",
+                "name": "date"
+            }
+        },
+        "FXANZDCAD": {
+            "label": "NZD/CAD",
+            "description": "New Zealand dollar to Canadian dollar annual exchange rate",
+            "dimension": {
+                "key": "d",
+                "name": "date"
+            }
+        },
+        "FXANOKCAD": {
+            "label": "NOK/CAD",
+            "description": "Norwegian krone to Canadian dollar annual exchange rate",
+            "dimension": {
+                "key": "d",
+                "name": "date"
+            }
+        },
+        "FXAPENCAD": {
+            "label": "PEN/CAD",
+            "description": "Peruvian new sol to Canadian dollar annual exchange rate",
+            "dimension": {
+                "key": "d",
+                "name": "date"
+            }
+        },
+        "FXARUBCAD": {
+            "label": "RUB/CAD",
+            "description": "Russian ruble to Canadian dollar annual exchange rate",
+            "dimension": {
+                "key": "d",
+                "name": "date"
+            }
+        },
+        "FXASARCAD": {
+            "label": "SAR/CAD",
+            "description": "Saudi riyal to Canadian dollar annual exchange rate",
+            "dimension": {
+                "key": "d",
+                "name": "date"
+            }
+        },
+        "FXASGDCAD": {
+            "label": "SGD/CAD",
+            "description": "Singapore dollar to Canadian dollar annual exchange rate",
+            "dimension": {
+                "key": "d",
+                "name": "date"
+            }
+        },
+        "FXAZARCAD": {
+            "label": "ZAR/CAD",
+            "description": "South African rand to Canadian dollar annual exchange rate",
+            "dimension": {
+                "key": "d",
+                "name": "date"
+            }
+        },
+        "FXAKRWCAD": {
+            "label": "KRW/CAD",
+            "description": "South Korean won to Canadian dollar annual exchange rate",
+            "dimension": {
+                "key": "d",
+                "name": "date"
+            }
+        },
+        "FXASEKCAD": {
+            "label": "SEK/CAD",
+            "description": "Swedish krona to Canadian dollar annual exchange rate",
+            "dimension": {
+                "key": "d",
+                "name": "date"
+            }
+        },
+        "FXACHFCAD": {
+            "label": "CHF/CAD",
+            "description": "Swiss franc to Canadian dollar annual exchange rate",
+            "dimension": {
+                "key": "d",
+                "name": "date"
+            }
+        },
+        "FXATWDCAD": {
+            "label": "TWD/CAD",
+            "description": "Taiwanese dollar to Canadian dollar annual exchange rate",
+            "dimension": {
+                "key": "d",
+                "name": "date"
+            }
+        },
+        "FXATHBCAD": {
+            "label": "THB/CAD",
+            "description": "Thai baht to Canadian dollar annual exchange rate",
+            "dimension": {
+                "key": "d",
+                "name": "date"
+            }
+        },
+        "FXATRYCAD": {
+            "label": "TRY/CAD",
+            "description": "Turkish lira to Canadian dollar annual exchange rate",
+            "dimension": {
+                "key": "d",
+                "name": "date"
+            }
+        },
+        "FXAGBPCAD": {
+            "label": "GBP/CAD",
+            "description": "UK pound sterling to Canadian dollar annual exchange rate",
+            "dimension": {
+                "key": "d",
+                "name": "date"
+            }
+        },
+        "FXAUSDCAD": {
+            "label": "USD/CAD",
+            "description": "US dollar to Canadian dollar annual exchange rate",
+            "dimension": {
+                "key": "d",
+                "name": "date"
+            }
+        },
+        "FXAVNDCAD": {
+            "label": "VND/CAD",
+            "description": "Vietnamese dong to Canadian dollar annual exchange rate",
+            "dimension": {
+                "key": "d",
+                "name": "date"
+            }
+        }
+    },
+    "observations": [
+        {
+            "d": "2017-01-01",
+            "FXAAUDCAD": {
+                "v": "0.9951"
+            },
+            "FXABRLCAD": {
+                "v": "0.4071"
+            },
+            "FXACNYCAD": {
+                "v": "0.1921"
+            },
+            "FXAEURCAD": {
+                "v": "1.4650"
+            },
+            "FXAHKDCAD": {
+                "v": "0.1667"
+            },
+            "FXAINRCAD": {
+                "v": "0.01995"
+            },
+            "FXAIDRCAD": {
+                "v": "0.000097"
+            },
+            "FXAJPYCAD": {
+                "v": "0.01158"
+            },
+            "FXAMYRCAD": {
+                "v": "0.3020"
+            },
+            "FXAMXNCAD": {
+                "v": "0.06884"
+            },
+            "FXANZDCAD": {
+                "v": "0.9229"
+            },
+            "FXANOKCAD": {
+                "v": "0.1570"
+            },
+            "FXAPENCAD": {
+                "v": "0.3982"
+            },
+            "FXARUBCAD": {
+                "v": "0.02228"
+            },
+            "FXASARCAD": {
+                "v": "0.3463"
+            },
+            "FXASGDCAD": {
+                "v": "0.9404"
+            },
+            "FXAZARCAD": {
+                "v": "0.09767"
+            },
+            "FXAKRWCAD": {
+                "v": "0.001149"
+            },
+            "FXASEKCAD": {
+                "v": "0.1520"
+            },
+            "FXACHFCAD": {
+                "v": "1.3189"
+            },
+            "FXATWDCAD": {
+                "v": "0.04269"
+            },
+            "FXATHBCAD": {
+                "v": "0.03827"
+            },
+            "FXATRYCAD": {
+                "v": "0.3565"
+            },
+            "FXAGBPCAD": {
+                "v": "1.6720"
+            },
+            "FXAUSDCAD": {
+                "v": "1.2986"
+            },
+            "FXAVNDCAD": {
+                "v": "0.000057"
+            }
+        },
+        {
+            "d": "2018-01-01",
+            "FXAAUDCAD": {
+                "v": "0.9687"
+            },
+            "FXABRLCAD": {
+                "v": "0.3566"
+            },
+            "FXACNYCAD": {
+                "v": "0.1961"
+            },
+            "FXAEURCAD": {
+                "v": "1.5302"
+            },
+            "FXAHKDCAD": {
+                "v": "0.1653"
+            },
+            "FXAINRCAD": {
+                "v": "0.01897"
+            },
+            "FXAIDRCAD": {
+                "v": "0.000091"
+            },
+            "FXAJPYCAD": {
+                "v": "0.01174"
+            },
+            "FXAMYRCAD": {
+                "v": "0.3213"
+            },
+            "FXAMXNCAD": {
+                "v": "0.06744"
+            },
+            "FXANZDCAD": {
+                "v": "0.8973"
+            },
+            "FXANOKCAD": {
+                "v": "0.1594"
+            },
+            "FXAPENCAD": {
+                "v": "0.3943"
+            },
+            "FXARUBCAD": {
+                "v": "0.02071"
+            },
+            "FXASARCAD": {
+                "v": "0.3455"
+            },
+            "FXASGDCAD": {
+                "v": "0.9607"
+            },
+            "FXAZARCAD": {
+                "v": "0.09844"
+            },
+            "FXAKRWCAD": {
+                "v": "0.001178"
+            },
+            "FXASEKCAD": {
+                "v": "0.1492"
+            },
+            "FXACHFCAD": {
+                "v": "1.3246"
+            },
+            "FXATWDCAD": {
+                "v": "0.04299"
+            },
+            "FXATHBCAD": {
+                "v": "0.04011"
+            },
+            "FXATRYCAD": {
+                "v": "0.2759"
+            },
+            "FXAGBPCAD": {
+                "v": "1.7299"
+            },
+            "FXAUSDCAD": {
+                "v": "1.2957"
+            },
+            "FXAVNDCAD": {
+                "v": "0.000056"
+            }
+        },
+        {
+            "d": "2019-01-01",
+            "FXAAUDCAD": {
+                "v": "0.9228"
+            },
+            "FXABRLCAD": {
+                "v": "0.3371"
+            },
+            "FXACNYCAD": {
+                "v": "0.1922"
+            },
+            "FXAEURCAD": {
+                "v": "1.4856"
+            },
+            "FXAHKDCAD": {
+                "v": "0.1693"
+            },
+            "FXAINRCAD": {
+                "v": "0.01885"
+            },
+            "FXAIDRCAD": {
+                "v": "0.000094"
+            },
+            "FXAJPYCAD": {
+                "v": "0.01217"
+            },
+            "FXAMYRCAD": {
+                "v": "0.3203"
+            },
+            "FXAMXNCAD": {
+                "v": "0.06894"
+            },
+            "FXANZDCAD": {
+                "v": "0.8747"
+            },
+            "FXANOKCAD": {
+                "v": "0.1509"
+            },
+            "FXAPENCAD": {
+                "v": "0.3977"
+            },
+            "FXARUBCAD": {
+                "v": "0.02051"
+            },
+            "FXASARCAD": {
+                "v": "0.3538"
+            },
+            "FXASGDCAD": {
+                "v": "0.9728"
+            },
+            "FXAZARCAD": {
+                "v": "0.09194"
+            },
+            "FXAKRWCAD": {
+                "v": "0.001139"
+            },
+            "FXASEKCAD": {
+                "v": "0.1404"
+            },
+            "FXACHFCAD": {
+                "v": "1.3352"
+            },
+            "FXATWDCAD": {
+                "v": "0.04294"
+            },
+            "FXATHBCAD": {
+                "v": "0.04274"
+            },
+            "FXATRYCAD": {
+                "v": "0.2340"
+            },
+            "FXAGBPCAD": {
+                "v": "1.6945"
+            },
+            "FXAUSDCAD": {
+                "v": "1.3269"
+            },
+            "FXAVNDCAD": {
+                "v": "0.000057"
+            }
+        }
+    ]
+}
