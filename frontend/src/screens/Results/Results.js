@@ -121,19 +121,42 @@ class Result extends React.Component {
     }
   }
 
+  isempty(obj){
+    for (var key in obj) {
+      return false;
+    }
+    return true;
+  }
+
   render() {
     const resultQuery = this.state.query;
     const amount = this.state.amount;
     const loading = this.state.loading;
 
-    let products = [{"price":150}, {"price":200}, {"price":250}, {"price":300}]
+    let products = [{"price":150, "size": "XS"}, {"price":200, "size":"S"}, {"price":250, "size":"M"}, {"price":300, "size":"L"}]
 
     if (this.state.setFilterOn) {
       products = products.filter((product)=> 
         product['price'] >= this.state.min && product['price'] <= this.state.max
         )
     }
+
     
+
+    if (this.state.checkValues){
+      //need to check if size or if category, etc.
+      let checked_filters = {}
+      Object.keys(this.state.checkValues).forEach(key => {
+        if (key !== 'price' && this.state.checkValues[key] === true) {
+          checked_filters[key] = this.state.checkValues[key];
+        }
+      });
+      if (!this.isempty(checked_filters)){
+        products = products.filter((product) =>
+        product['size'] in checked_filters)
+      }
+    }
+
     let compare = (x) => {return x};
 
     if (this.state.sortFunction === "lth") {
