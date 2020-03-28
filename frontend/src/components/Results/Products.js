@@ -2,6 +2,13 @@ import React from "react";
 import { Typography, Card, Row, Col} from "antd";
 import Price from "../Price/Price";
 
+/*Available currencies: verify in ExchangeRatesToCAD.js
+  "CAD","AUD","BRL","CNY","EUR","HKD","INR",
+  "IDR","JPY","MYR","MXN","NZD","NOK","PEN",
+  "RUB","SAR","SGD","ZAR","KRW","SEK","CHF",
+  "TWD","THB","TRY","GBP","USD","VND"
+*/
+
 
 const { Meta } = Card;
 const { Text } = Typography;
@@ -19,8 +26,8 @@ const generateCard = (product) => {
       }
     >
       <Meta title="Europe Street beat" description="www.instagram.com" />
-      {/*TODO: replace curr with currency to display, product_curr from product info*/}
-      <Price product_value={product['price']} product_curr={'USD'} curr={'CNY'}/>
+      {/*TODO: replace currency with currency to display, product_currency from product info*/}
+      <Price product_value={product['price']} product_currency={'USD'} currency={'GBP'}/>
     </Card>
   );
 };

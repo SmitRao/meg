@@ -11,8 +11,8 @@ class Price extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            curr: this.validateCurrency(this.props.curr) ? this.props.curr : "USD",
-            currRate: this.getRate(this.props.curr)
+            curr: this.validateCurrency(this.props.currency) ? this.props.currency : "USD",
+            currRate: this.getRate(this.props.currency)
         }
     }
 
@@ -38,13 +38,13 @@ class Price extends React.Component {
         const conv = value * toCADRate / this.state.currRate;
 
         // console.log(value, curr, conv, this.state.curr);
-        return conv.toFixed(2);
+        return conv.toFixed(0);
     };
 
     render() {
-        const {product_value, product_curr} = this.props;
+        const {product_value, product_currency} = this.props;
         const curr = exchangeRates["CURRENCIES"][this.state.curr];
-        const value = this.convertValuetoCurr( product_value, product_curr);
+        const value = this.convertValuetoCurr( product_value, product_currency);
 
         return <Text>{curr}{value}</Text>
     }
