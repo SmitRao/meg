@@ -9,8 +9,8 @@ from project.models import Brands,Categories,Products
 import csv
 import os
 
-products_eb_csv_path = "./project/product_data/parsed_eb.csv"
-products_nea_csv_path = "./project/product_data/parsed_nea.csv"
+products_eb_csv_path = "./project/product_data/previous_versions/parsed_eb.csv"
+products_nea_csv_path = "./project/product_data/previous_versions/parsed_nea.csv"
 
 
 #productName,priceInEuros,productUrl,gender,productDetails,mainImageUrl,brandName,categoryName
