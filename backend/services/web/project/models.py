@@ -34,7 +34,8 @@ class Products(db.Model):
 
     product_id = db.Column(db.Integer, primary_key = True)
     product_name = db.Column(db.String(50), nullable=False)
-    price_in_euros = db.Column(db.Float(4), nullable=False)
+    price = db.Column(db.Float(4), nullable=False)
+    currency = db.Column(db.String(3), nullable=False)
     product_url = db.Column(db.Text, unique=True, nullable=False)
     gender = db.Column(db.String(1))
     product_detail = db.Column(db.Text)
@@ -45,9 +46,10 @@ class Products(db.Model):
 
     # preview_images = db.relationship('PreviewImages', cascade="all,delete", backref='products', lazy=True) 
 
-    def __init__(self, product_name, price_in_euros, product_url, gender, product_detail, main_image_url, size, brand_name, category_name):
+    def __init__(self, product_name, price, currency, product_url, gender, product_detail, main_image_url, size, brand_name, category_name):
         self.product_name=product_name
-        self.price_in_euros=price_in_euros
+        self.price=price
+        self.currency=currency
         self.product_url=product_url
         self.gender=gender
         self.product_detail=product_detail
@@ -60,7 +62,8 @@ class Products(db.Model):
         d = {
             "ProductId" : self.product_id,
             "ProductName" : self.product_name,
-            "PriceInEuros": self.price_in_euros,
+            "Price": self.price,
+            "Currency":self.currency,
             "ProductUrl": self.product_url,
             "Gender": self.gender,
             "ProductDetail": self.product_detail,
