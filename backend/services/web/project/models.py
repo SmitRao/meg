@@ -39,18 +39,20 @@ class Products(db.Model):
     gender = db.Column(db.String(1))
     product_detail = db.Column(db.Text)
     main_image_url = db.Column(db.Text)
+    size = db.Column(db.Text)
     brand_name = db.Column(db.String(50), db.ForeignKey('brands.brand_name'), nullable=False)
     category_name = db.Column(db.String(50), db.ForeignKey('categories.category_name'), nullable=False)
 
     # preview_images = db.relationship('PreviewImages', cascade="all,delete", backref='products', lazy=True) 
 
-    def __init__(self, product_name, price_in_euros, product_url, gender, product_detail, main_image_url, brand_name, category_name):
+    def __init__(self, product_name, price_in_euros, product_url, gender, product_detail, main_image_url, size, brand_name, category_name):
         self.product_name=product_name
         self.price_in_euros=price_in_euros
         self.product_url=product_url
         self.gender=gender
         self.product_detail=product_detail
         self.main_image_url=main_image_url
+        self.size = size
         self.brand_name=brand_name
         self.category_name=category_name
     
@@ -63,33 +65,8 @@ class Products(db.Model):
             "Gender": self.gender,
             "ProductDetail": self.product_detail,
             "MainImageUrl": self.main_image_url,
+            "Size": self.size,
             "BrandName": self.brand_name,
             "CategoryName": self.category_name
         }
         return d
-
-    # def __repr__(self):
-    #     return '<Products {}>'.format(self.product_name)
-
-    # def search(self, search_keyword):
-    #     res = Products.filter(or_(self.product_name.like('%'+search_keyword+'%'),
-    #                             self.price_in_euros.like('%'+search_keyword+'%'),
-    #                             self.gender.like('%'+search_keyword+'%'),
-    #                             self.product_detail.like('%'+search_keyword+'%'),
-    #                             self.brand_name.like('%'+search_keyword+'%'),
-    #                             self.category_name.like('%'+search_keyword+'%')))
-    #     return res
-
-# class PreviewImages(db.Model):
-#     __tablename__ = 'preview_images'
-
-#     PreviewImageUrl = db.Column(db.Text, unique = True, nullable = False, primary_key = True)
-#     # product_url = db.Column(db.Text, nullable=False)
-#     product_url = db.Column(db.Text, db.ForeignKey('products.product_url'), nullable=False)
-
-#     def __init__(self, PreviewImageUrl, product_url):
-#         self.PreviewImageUrl=PreviewImageUrl
-#         self.product_url=product_url
-
-#     def __repr__(self):
-#         return '<PreviewImages {}>'.format(self.product_url)

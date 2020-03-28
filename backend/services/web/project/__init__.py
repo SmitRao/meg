@@ -7,7 +7,8 @@ app.config.from_object("project.config.Config")
 db = SQLAlchemy(app)
 
 
-from project.models import Products
+from project.models import Products, Categories, Brands
+from project import db
 
 def search(search_keyword):
     # NO SEARCHING BY PRICE!!
@@ -70,6 +71,28 @@ def sort_by_price_descending(res):
     returns res as a sorted list of dicts by descending by price
     """
     return sorted(res, key = lambda i: i["PriceInEuros"], reverse=True)
+
+def category_size(res):
+    """
+    res should be the return value of search (a list of Products as dictionaries)
+    returns dictionary with category_name as key, available size as value
+    """
+    categories = db.session.query(Categories.category_name)
+    categories = list(categories)
+    for i in range(len(categories)):
+        categories[i] = categories[i][0]
+    category_size = {}
+    for category in categories:
+        sizes =[]
+        for row in res:
+            if row['CategoryName'] == category:
+                sizes.append(row['Size'])
+        category_size[category] = set(sizes)
+    
+    # remove empty value
+    category_size = {key:val for key, val in category_size.items() if val != set()}
+
+    return category_size
 
   
 ### routes
