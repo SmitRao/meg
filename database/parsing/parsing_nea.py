@@ -60,7 +60,7 @@ for i in range(len(json['products'])):
 
 # Set up to write parsed data into structured csv file
 csv_columns = ['productName', 'price', 'currency', 'productUrl', 'gender', 'productDetails', 'mainImage', 'size', 'brandName', 'categoryName']
-csv_file = '../../backend/services/web/project/product_data/parsed_nea.csv'
+csv_file = '../../backend/project/product_data/parsed_nea.csv'
 
 # Write parsed data into file parsed_nea.csv
 with open(csv_file, 'w', newline='') as csvfile:
