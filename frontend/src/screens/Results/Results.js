@@ -126,6 +126,13 @@ class Result extends React.Component {
     }
   }
 
+  isempty(obj){
+    for (var key in obj) {
+      return false;
+    }
+    return true;
+  }
+
   render() {
     const resultQuery = this.props.location.state.query;
     const amountOfResults = this.props.location.state.data.length;
@@ -138,7 +145,23 @@ class Result extends React.Component {
         product['PriceInEuros'] >= this.state.min && product['PriceInEuros'] <= this.state.max
         )
     }
+
     
+
+    if (this.state.checkValues){
+      //need to check if size or if category, etc.
+      let checked_filters = {}
+      Object.keys(this.state.checkValues).forEach(key => {
+        if (key !== 'price' && this.state.checkValues[key] === true) {
+          checked_filters[key] = this.state.checkValues[key];
+        }
+      });
+      if (!this.isempty(checked_filters)){
+        products = products.filter((product) =>
+        product['size'] in checked_filters)
+      }
+    }
+
     let compare = (x) => {return x};
 
     if (this.state.sortFunction === "lth") {
