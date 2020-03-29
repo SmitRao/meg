@@ -23,14 +23,10 @@ const { Content, Sider } = Layout;
 const { Text } = Typography;
 const antIcon = <LoadingOutlined style={{ 
   fontSize: 80, 
-  color:"#333", 
-  position:"absolute", 
-  left: 0, 
-  right: 0, 
-  top: 0, 
-  bottom: 0,
-  margin:"auto"}
-} spin />;
+  color:"#333"}
+}
+className="centered" 
+spin />;
 
 const generatesubMenu = (title, children) => {
   return (
@@ -131,7 +127,6 @@ class Result extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     const resultQuery = this.props.location.state.query;
     const amountOfResults = this.props.location.state.data.length;
     const loading = this.state.loading;
@@ -155,19 +150,24 @@ class Result extends React.Component {
     return (
       <div>
       <Layout>
-      {/* <Navbar searchbar={<Searchbar className="searchbarresults" text="search items"/>}></Navbar>  */}
       <Navbar />
       <Searchbar className="searchbarresults" text="search items"/>
+      {amountOfResults !== 0  &&
         <Layout class="background">
+
           <Row className="row" justify="space-between" align="middle">
             <Col>
-              <Text>Showing {amountOfResults} Results for {resultQuery}</Text>
+            {(amountOfResults == 1)
+              ? <Text>Showing {amountOfResults} Result for "{resultQuery}"</Text>
+              :<Text>Showing {amountOfResults} Results for "{resultQuery}"</Text>
+              }
             </Col>
             <Col>
               <Sort onChange={this.handleSort}></Sort>
             </Col>
           </Row>
         </Layout>
+      }
         <Layout class="background">
         <Sider>
         <Row justify="center" className="reset">
@@ -188,10 +188,15 @@ class Result extends React.Component {
               return generatesubMenu(filter, typeOfFilter);
             })}
           </Menu>
-        </Sider>
+        </Sider>  
         <Content className="productscontainer background">
-          {loading ? <Row justify="center" align="middle"><Spin indicator={antIcon}/></Row> : 
-          <Products products={products.sort(compare)}></Products>}
+          {loading 
+            ? <Row justify="center" align="middle"><Spin indicator={antIcon}/></Row> 
+            :
+            (amountOfResults == 0)
+            ? <Text className="centered no-results">No Results for {resultQuery}</Text>
+            :<Products products={products.sort(compare)}></Products>
+          }
         </Content>
         </Layout>
         <MegFooter></MegFooter>
