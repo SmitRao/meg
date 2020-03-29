@@ -1,0 +1,8 @@
+The "dockmeg.pem" file is associated with our ec2 instance and should not be exposed publicly.
+
+I (Smit) have the file saved locally if anyone needs it.
+
+Commands for deployment:
+
+scp -r -i dockmeg.pem ~/Documents/CSC301/meg/backend ec2-user@3.88.174.215:~/
+ssh -i dockmeg.pem ec2-user@3.88.174.215
