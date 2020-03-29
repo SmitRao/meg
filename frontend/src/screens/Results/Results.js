@@ -21,7 +21,16 @@ import { Link } from "react-router-dom";
 const { SubMenu } = Menu;
 const { Content, Sider } = Layout;
 const { Text } = Typography;
-const antIcon = <LoadingOutlined style={{ fontSize: 80, color:"#333"}} spin />;
+const antIcon = <LoadingOutlined style={{ 
+  fontSize: 80, 
+  color:"#333", 
+  position:"absolute", 
+  left: 0, 
+  right: 0, 
+  top: 0, 
+  bottom: 0,
+  margin:"auto"}
+} spin />;
 
 const generatesubMenu = (title, children) => {
   return (
@@ -69,8 +78,6 @@ class Result extends React.Component {
       sortFunction: "htl", 
       min: 0, 
       max: 1000,
-      query: 'Europe Street Beat',
-      amount: 10,
       setFilterOn: false,
       checkValues: intialFilters,
       loading: false
@@ -124,25 +131,26 @@ class Result extends React.Component {
   }
 
   render() {
-    const resultQuery = this.state.query;
-    const amount = this.state.amount;
+    console.log(this.props);
+    const resultQuery = this.props.location.state.query;
+    const amountOfResults = this.props.location.state.data.length;
     const loading = this.state.loading;
 
-    let products = [{"price":150}, {"price":200}, {"price":250}, {"price":300}]
+    let products = this.props.location.state.data;
 
     if (this.state.setFilterOn) {
       products = products.filter((product)=> 
-        product['price'] >= this.state.min && product['price'] <= this.state.max
+        product['PriceInEuros'] >= this.state.min && product['PriceInEuros'] <= this.state.max
         )
     }
     
     let compare = (x) => {return x};
 
     if (this.state.sortFunction === "lth") {
-      compare = (a,b) => {return a.price-b.price};
+      compare = (a,b) => {return a.PriceInEuros-b.PriceInEuros};
     }
     else if (this.state.sortFunction === "htl") {
-      compare = (a,b) => {return b.price-a.price};
+      compare = (a,b) => {return b.PriceInEuros-a.PriceInEuros};
     }
     return (
       <div>
@@ -153,7 +161,7 @@ class Result extends React.Component {
         <Layout class="background">
           <Row className="row" justify="space-between" align="middle">
             <Col>
-              <Text>Showing {amount} Results for {resultQuery}</Text>
+              <Text>Showing {amountOfResults} Results for {resultQuery}</Text>
             </Col>
             <Col>
               <Sort onChange={this.handleSort}></Sort>

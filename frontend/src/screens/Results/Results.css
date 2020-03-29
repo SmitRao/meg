@@ -115,3 +115,7 @@
 .ant-checkbox-inner {
 	border: none;
 }
+
+.ant-card-cover img {
+	height: 350px;
+}
