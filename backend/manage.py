@@ -54,7 +54,8 @@ def populate_db():
     for p in eb_data:
         db.session.add(Products(
             product_name=p["productName"], 
-            price_in_euros=p["priceInEuros"], 
+            # price_in_euros=p["priceInEuros"], 
+            price_in_euros=p["price"], 
             product_url=p["productUrl"], 
             gender=p["gender"], 
             product_detail=p["productDetails"], 
@@ -68,11 +69,13 @@ def populate_db():
     for p in nea_data:
         db.session.add(Products(
             product_name=p["productName"], 
-            price_in_euros=p["priceInEuros"], 
+            price_in_euros=p["price"], 
+            # price_in_euros=p["priceInEuros"], 
             product_url=p["productUrl"], 
             gender=p["gender"], 
             product_detail=p["productDetails"], 
-            main_image_url=p["mainImageUrl"], 
+            main_image_url=p["mainImage"], 
+            # main_image_url=p["mainImageUrl"], 
             size = p["size"],
             brand_name=p["brandName"], 
             category_name=p["categoryName"]

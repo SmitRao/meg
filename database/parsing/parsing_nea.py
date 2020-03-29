@@ -3,6 +3,18 @@ import os
 import unicodedata
 import csv
 
+# Function that converts currency symbol into 3 char string (currency code) to be returned
+def curr_symbol_to_code(symbol):
+    code = ""
+    if symbol == "£":
+        code = "GBP"
+    elif symbol == "€":
+        code = "EUR"
+    elif symbol == "₽":
+        code = "RUB"
+
+    return code
+
 # Open json of scraped data to be parsed
 with open (os.path.abspath('../static_data/json_files/nea_data.json')) as f:
     json = json.load(f)
@@ -21,7 +33,7 @@ for i in range(len(json['products'])):
 
     current_product['price'] = float(json['products'][i]['priceInEuros'][2:])
 
-    current_product['currency'] = json['products'][i]['priceInEuros'][1:2]
+    current_product['currency'] = curr_symbol_to_code(json['products'][i]['priceInEuros'][1:2])
     
     current_product['productUrl'] = json['products'][i]['productUrl']
         
@@ -30,6 +42,13 @@ for i in range(len(json['products'])):
     current_product['productDetails'] = json['products'][i]['productDescription'][0]['data'].replace('\n', " ")
         
     current_product['mainImage'] = json['products'][i]['mainImage']
+
+    # parse out size info from brands site; needs to be cleaned up but is functional
+    curr_data = json['products'][i]['productDescription'][0]['data'].replace('\n', " ")
+    size_start = curr_data.find("Dimension")
+    new_data = curr_data[size_start + 11:]
+    size_end = new_data.find('C')
+    current_product['size'] = new_data[:size_end - 1].replace('"', " ")[:-1]
         
     current_product['brandName'] = 'Nea'
         
@@ -40,8 +59,8 @@ for i in range(len(json['products'])):
 
 
 # Set up to write parsed data into structured csv file
-csv_columns = ['productName', 'price', 'currency', 'productUrl', 'gender', 'productDetails', 'mainImage', 'brandName', 'categoryName']
-csv_file = '../static_data/csv_files/parsed_nea.csv'
+csv_columns = ['productName', 'price', 'currency', 'productUrl', 'gender', 'productDetails', 'mainImage', 'size', 'brandName', 'categoryName']
+csv_file = '../../backend/project/product_data/parsed_nea.csv'
 
 # Write parsed data into file parsed_nea.csv
 with open(csv_file, 'w', newline='') as csvfile:
