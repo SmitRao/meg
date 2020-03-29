@@ -14,7 +14,7 @@ class Sort extends React.Component {
       <Col>
         <Select defaultValue="htl" style={{ width: 160 }} label="Sort By" onChange={this.props.onChange}>
           <Option value="htl">Price High To Low</Option>
-          <Option value="lth">Low to High</Option>
+          <Option value="lth">Price Low to High</Option>
         </Select>
       </Col>
       </Row>

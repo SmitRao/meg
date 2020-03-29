@@ -69,6 +69,10 @@
 	background-color: white;
 }
 
+.ant-menu-item:hover {
+	background-color: #F9F9F9;
+}
+
 .ant-checkbox-checked .ant-checkbox-inner {
     background-color: #333;
     border-color: #333;
@@ -77,6 +81,7 @@
 .ant-btn:focus, .ant-btn:hover {
     color: #333;
     background-color: white;	
+    border-color: #333;
 }
 
 .ant-card-body {
@@ -105,4 +110,26 @@
 
 .ant-menu-submenu-inline>.ant-menu-submenu-title:hover .ant-menu-submenu-arrow:after {
 	background: #333;
+}
+
+.ant-checkbox-inner {
+	border: none;
+}
+
+.ant-card-cover img {
+	height: 350px;
+}
+
+.centered {
+  position: absolute;
+  left: 0;
+  right: 0; 
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.no-results {
+	height: 10vh;
+	width: 10vw;
 }
