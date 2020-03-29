@@ -17,7 +17,7 @@ const generateCard = (product) => {
         />
       }
     >
-      <Meta title={product["BrandName"]} description={product["ProductName"]} />
+      <Meta title={product["BrandName"]} description={product["ProductName"]} size={product["size"]} />
       <Text>{product["PriceInEuros"]}</Text>
     </Card>
   );
