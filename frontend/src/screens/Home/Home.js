@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import Searchbar from "../../components/Searchbar/Searchbar";
 import MegFooter from "../../components/MegFooter/MegFooter";
+
 const { Text } = Typography;
 
 //TODO: remove when navbar and footer are made
@@ -16,7 +17,7 @@ class Home extends React.Component {
   render() {
     return (
       <Layout className="home">
-        <Navbar/>
+        <Navbar />
 
         <Content className="content">
           <div className="message">
@@ -36,7 +37,7 @@ class Home extends React.Component {
           alt="pictures carousel"
         />
 
-        <MegFooter/>
+        <MegFooter />
       </Layout>
     );
   }

@@ -13,13 +13,20 @@ import MegFooter from "../../components/MegFooter/MegFooter.js"
 import Navbar from "../../components/Navbar/Navbar.js"
 
 import Searchbar from "../../components/Searchbar/Searchbar";
+import { Link } from "react-router-dom";
+
 
 
 
 const { SubMenu } = Menu;
 const { Content, Sider } = Layout;
 const { Text } = Typography;
-const antIcon = <LoadingOutlined style={{ fontSize: 80, color:"#333"}} spin />;
+const antIcon = <LoadingOutlined style={{ 
+  fontSize: 80, 
+  color:"#333"}
+}
+className="centered" 
+spin />;
 
 const generatesubMenu = (title, children) => {
   return (
@@ -67,8 +74,6 @@ class Result extends React.Component {
       sortFunction: "htl", 
       min: 0, 
       max: 1000,
-      query: 'Europe Street Beat',
-      amount: 10,
       setFilterOn: false,
       checkValues: intialFilters,
       loading: false
@@ -129,15 +134,15 @@ class Result extends React.Component {
   }
 
   render() {
-    const resultQuery = this.state.query;
-    const amount = this.state.amount;
+    const resultQuery = this.props.location.state.query;
+    const amountOfResults = this.props.location.state.data.length;
     const loading = this.state.loading;
 
-    let products = [{"price":150, "size": "XS"}, {"price":200, "size":"S"}, {"price":250, "size":"M"}, {"price":300, "size":"L"}]
+    let products = this.props.location.state.data;
 
     if (this.state.setFilterOn) {
       products = products.filter((product)=> 
-        product['price'] >= this.state.min && product['price'] <= this.state.max
+        product['PriceInEuros'] >= this.state.min && product['PriceInEuros'] <= this.state.max
         )
     }
 
@@ -160,25 +165,32 @@ class Result extends React.Component {
     let compare = (x) => {return x};
 
     if (this.state.sortFunction === "lth") {
-      compare = (a,b) => {return a.price-b.price};
+      compare = (a,b) => {return a.PriceInEuros-b.PriceInEuros};
     }
     else if (this.state.sortFunction === "htl") {
-      compare = (a,b) => {return b.price-a.price};
+      compare = (a,b) => {return b.PriceInEuros-a.PriceInEuros};
     }
     return (
       <div>
       <Layout>
-      <Navbar searchbar={<Searchbar className="searchbarresults" text="search items"/>}></Navbar> 
+      <Navbar />
+      <Searchbar className="searchbarresults" text="search items"/>
+      {amountOfResults !== 0  &&
         <Layout class="background">
+
           <Row className="row" justify="space-between" align="middle">
             <Col>
-              <Text>Showing {amount} Results for {resultQuery}</Text>
+            {(amountOfResults == 1)
+              ? <Text>Showing {amountOfResults} Result for "{resultQuery}"</Text>
+              :<Text>Showing {amountOfResults} Results for "{resultQuery}"</Text>
+              }
             </Col>
             <Col>
               <Sort onChange={this.handleSort}></Sort>
             </Col>
           </Row>
         </Layout>
+      }
         <Layout class="background">
         <Sider>
         <Row justify="center" className="reset">
@@ -199,10 +211,15 @@ class Result extends React.Component {
               return generatesubMenu(filter, typeOfFilter);
             })}
           </Menu>
-        </Sider>
+        </Sider>  
         <Content className="productscontainer background">
-          {loading ? <Row justify="center" align="middle"><Spin indicator={antIcon}/></Row> : 
-          <Products products={products.sort(compare)}></Products>}
+          {loading 
+            ? <Row justify="center" align="middle"><Spin indicator={antIcon}/></Row> 
+            :
+            (amountOfResults == 0)
+            ? <Text className="centered no-results">No Results for {resultQuery}</Text>
+            :<Products products={products.sort(compare)}></Products>
+          }
         </Content>
         </Layout>
         <MegFooter></MegFooter>

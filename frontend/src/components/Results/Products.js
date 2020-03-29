@@ -9,16 +9,16 @@ const generateCard = (product) => {
   return (
     <Card
       hoverable
-      onClick={()=> window.location.href= "http://www.instagram.com"}
+      onClick={()=> window.location.href=product["ProductUrl"]}
       cover={
         <img
-          alt="example"
-          src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+          alt={product["ProductName"]}
+          src={product["MainImageUrl"]}
         />
       }
     >
-      <Meta title="Europe Street beat" description="www.instagram.com" />
-      <Text>{product["price"]}</Text>
+      <Meta title={product["BrandName"]} description={product["ProductName"]} />
+      <Text>{product["PriceInEuros"]}</Text>
     </Card>
   );
 };

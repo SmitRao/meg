@@ -12,7 +12,6 @@ function App() {
     <Router>
       <div>
         <Route path="/" exact component={Home} />
-        <Route path="/testing" component={<h2>My yummytoken is... ???</h2>} />
         <Route path="/how-it-works" component={HowItWorks} />
         <Route path="/results" component={Results} />
       </div>
