@@ -1,10 +1,9 @@
 import React from "react";
-import { Input, Button, Typography } from "antd";
+import { Input } from "antd";
 import "./Searchbar.css";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
 
-const { Text } = Typography;
 
 const { Search } = Input;
 

@@ -1,14 +1,13 @@
 import React from "react";
-import { Typography, Card, Row, Col} from "antd";
+import { Card, Row, Col } from "antd";
 import Price from "./Price";
 
 
 const { Meta } = Card;
-const { Text } = Typography;
 
 const generateCard = (product, curr) => {
   const currency = (curr === "curr") ? product["Currency"] : curr;
-  console.log("generate car", currency);
+  // console.log("generate car", currency);
   return (
     <Card
       hoverable
@@ -40,7 +39,7 @@ const generateGrid = (products, currency) => {
 
 class Products extends React.Component {
   render() {
-  console.log(this.props.currency);
+  // console.log(this.props.currency);
     return <div>{generateGrid(this.props.products, this.props.currency)}</div>;
   }
 }
