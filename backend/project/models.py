@@ -62,7 +62,9 @@ class Products(db.Model):
         d = {
             "ProductId" : self.product_id,
             "ProductName" : self.product_name,
-            "Price": self.price,
+            # "Price": self.price,
+            # TODO: to change this to price, will need to change in frontend as well!
+            "PriceInEuros": self.price,
             "Currency":self.currency,
             "ProductUrl": self.product_url,
             "Gender": self.gender,

@@ -74,7 +74,7 @@ def populate_db():
             product_url=p["productUrl"], 
             gender=p["gender"], 
             product_detail=p["productDetails"], 
-            main_image_url=p["mainImageUrl"], 
+            main_image_url=p["mainImage"], 
             size = p["size"],
             brand_name=p["brandName"], 
             category_name=p["categoryName"]
