@@ -2,18 +2,13 @@ import React from "react";
 import { Typography, Card, Row, Col} from "antd";
 import Price from "./Price";
 
-/*Available currencies: verify in ExchangeRatesToCAD.js
-  "CAD","AUD","BRL","CNY","EUR","HKD","INR",
-  "IDR","JPY","MYR","MXN","NZD","NOK","PEN",
-  "RUB","SAR","SGD","ZAR","KRW","SEK","CHF",
-  "TWD","THB","TRY","GBP","USD","VND"
-*/
-
 
 const { Meta } = Card;
 const { Text } = Typography;
 
-const generateCard = (product) => {
+const generateCard = (product, curr) => {
+  const currency = (curr === "curr") ? product["Currency"] : curr;
+  console.log("generate car", currency);
   return (
     <Card
       hoverable
@@ -27,17 +22,17 @@ const generateCard = (product) => {
     >
       <Meta title={product["BrandName"]} description={product["ProductName"]} />
       {/*TODO: replace currency with currency to display, product_currency from product info*/}
-      <Price product_value={product["PriceInEuros"]} product_currency={product["Currency"]} currency={product["Currency"]}/>
+      <Price product_value={product["PriceInEuros"]} product_currency={product["Currency"]} currency={currency}/>
       {/* <Text>{product["PriceInEuros"]}</Text> */}
     </Card>
   );
 };
 
-const generateGrid = (products) => {
+const generateGrid = (products, currency) => {
   return (
     <Row gutter={[32,48]}>
       {products.map((product) => {
-        return <Col span={6}>{generateCard(product)} </Col>;
+        return <Col span={6}>{generateCard(product, currency)} </Col>;
       })}
     </Row>
   );
@@ -45,8 +40,8 @@ const generateGrid = (products) => {
 
 class Products extends React.Component {
   render() {
-  // console.log(this.props.products);
-    return <div>{generateGrid(this.props.products)}</div>;
+  console.log(this.props.currency);
+    return <div>{generateGrid(this.props.products, this.props.currency)}</div>;
   }
 }
 

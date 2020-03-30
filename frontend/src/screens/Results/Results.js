@@ -14,6 +14,7 @@ import { LoadingOutlined } from "@ant-design/icons";
 import { filters } from "../../constants/FilterOptions.js";
 import "./Results.css";
 
+import Currency from "../../components/Results/Currency";
 import Sort from "../../components/Results/Sort.js";
 import PriceFilter from "../../components/Results/PriceFilter.js";
 import Products from "../../components/Results/Products.js";
@@ -72,6 +73,7 @@ class Result extends React.Component {
     this.onCheckboxChange = this.onCheckboxChange.bind(this);
     this.resetFilters = this.resetFilters.bind(this);
     this.handleLoad = this.handleLoad.bind(this);
+    this.handleCurrency = this.handleCurrency.bind(this);
 
     let intialFilters = {};
     Object.keys(filters).forEach(key => {
@@ -86,7 +88,8 @@ class Result extends React.Component {
       max: 1000,
       setFilterOn: false,
       checkValues: intialFilters,
-      loading: false
+      loading: false,
+      currency: "curr"
     };
   }
 
@@ -139,6 +142,12 @@ class Result extends React.Component {
     } else {
       this.setState({ setFilterOn: false });
     }
+  }
+
+  handleCurrency(currencyOption) {
+    // console.log(currencyOption);
+    this.setState({ currency: currencyOption });
+
   }
 
   isempty(obj) {
@@ -211,8 +220,10 @@ class Result extends React.Component {
                   )}
                 </Col>
                 <Col>
-                  <Sort onChange={this.handleSort}></Sort>
+                  <Sort onChange={this.handleSort}/>
+                  <Currency onChange={this.handleCurrency}/>
                 </Col>
+                {/*<Col><Currency onChange={this.handleCurrency}/></Col>*/}
               </Row>
             </Layout>
           )}
@@ -256,7 +267,7 @@ class Result extends React.Component {
                   No Results for {resultQuery}
                 </Text>
               ) : (
-                <Products products={products.sort(compare)}></Products>
+                <Products products={products.sort(compare)} currency={this.state.currency}/>
               )}
             </Content>
           </Layout>

@@ -8,13 +8,6 @@ const {Text} = Typography;
 const exchangeRates = require('./ExchangeRatesToCAD');
 
 class Price extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            curr: this.validateCurrency(this.props.currency) ? this.props.currency : "USD",
-            currRate: this.getRate(this.props.currency)
-        }
-    }
 
     // check valid currency we can convert
     validateCurrency = (curr) => {
@@ -31,20 +24,20 @@ class Price extends React.Component {
     };
 
     // convert from value to the required currency
-    convertValuetoCurr = (value, curr) => {
+    convertValuetoCurr = (value, fromCurr, toCurr) => {
         // TODO: this method will only give an approximation!!!
 
-        const toCADRate = this.getRate(curr);
-        const conv = value * toCADRate / this.state.currRate;
+        const toCADRate = this.getRate(fromCurr);
+        const conv = value * toCADRate / this.getRate(toCurr);
 
-        // console.log(value, curr, conv, this.state.curr);
+        console.log(value, fromCurr, conv, toCurr);
         return conv.toFixed(0);
     };
 
     render() {
-        const {product_value, product_currency} = this.props;
-        const curr = exchangeRates["CURRENCIES"][this.state.curr];
-        const value = this.convertValuetoCurr( product_value, product_currency);
+        const {product_value, product_currency, currency} = this.props;
+        const curr = exchangeRates["CURRENCIES"][currency];
+        const value = this.convertValuetoCurr( product_value, product_currency, currency);
 
         return <Text>{curr}{value}</Text>
     }
