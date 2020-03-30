@@ -163,6 +163,7 @@ class Result extends React.Component {
     const loading = this.state.loading;
 
     let products = this.props.location.state.data;
+    console.log("products data: ", products)
 
     if (this.state.setFilterOn) {
       products = products.filter(
@@ -176,15 +177,27 @@ class Result extends React.Component {
       //need to check if size or if category, etc.
       let checked_filters = {};
       Object.keys(this.state.checkValues).forEach(key => {
-        if (key !== "price" && this.state.checkValues[key] === true) {
-          checked_filters[key] = this.state.checkValues[key];
+        if (key !== 'price' && this.state.checkValues[key] === true) {
+          if (key === "Men"){
+            let value = this.state.checkValues[key];
+            checked_filters["M"] = value;
+          }
+          else if (key === "Woman"){
+            let value = this.state.checkValues[key];
+            checked_filters["F"] = value;
+          } 
+          else {
+            checked_filters[key] = this.state.checkValues[key];
+          }
         }
       });
-      if (!this.isempty(checked_filters)) {
-        products = products.filter(
-          product => product["size"] in checked_filters
-        );
+      
+      console.log("filters to check: ", checked_filters);
+      if (!this.isempty(checked_filters)){
+        products = products.filter((product) =>
+        (product['Size'] in checked_filters) || product["Gender"] in checked_filters);
       }
+
     }
 
     let compare = x => {
