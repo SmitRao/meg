@@ -9,10 +9,10 @@ class Currency extends React.Component {
     return (
       <Row gutter={16} align="middle">
       <Col>
-        <Text>Sort By</Text>
+        <Text>Currency</Text>
       </Col>
       <Col>
-        <Select defaultValue="htl" style={{ width: 60 }} label="Sort By" onChange={this.props.onChange}>
+        <Select defaultValue="USD" style={{ width: 60 }} label="Sort By" onChange={this.props.onChange}>
           <Option value="USD">USD</Option>
           <Option value="CAD">CAD</Option>
           <Option value="GBP">GBP</Option>
