@@ -21,7 +21,7 @@ class Currency extends React.Component {
       <Col>
         <Select
             defaultValue="curr"
-            style={{ width: 100 }}
+            style={{ width: 140 }}
             label="currency"
             onChange={this.props.onChange}
         >

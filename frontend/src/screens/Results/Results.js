@@ -220,10 +220,11 @@ class Result extends React.Component {
                   )}
                 </Col>
                 <Col>
-                  <Sort onChange={this.handleSort}/>
-                  <Currency onChange={this.handleCurrency}/>
+                  <Row gutter={16} align="middle">
+                    <Col><Sort onChange={this.handleSort}/></Col>
+                    <Col><Currency onChange={this.handleCurrency}/></Col>
+                  </Row>
                 </Col>
-                {/*<Col><Currency onChange={this.handleCurrency}/></Col>*/}
               </Row>
             </Layout>
           )}
