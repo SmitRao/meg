@@ -29,6 +29,8 @@ class Currency extends React.Component {
           <Option value="USD">USD</Option>
           <Option value="CAD">CAD</Option>
           <Option value="GBP">GBP</Option>
+          <Option value="EUR">EUR</Option>
+          <Option value="AUD">AUD</Option>
           <Option value="CNY">CNY</Option>
         </Select>
       </Col>
