@@ -116,9 +116,19 @@
 	border: none;
 }
 
-.ant-card-cover img {
+
+@media only screen and (min-width: 1200px) {
+	.ant-card-cover img {
 	height: 350px;
+    }
 }
+
+@media only screen and (min-width: 1600px) {
+	.ant-card-cover img {
+	height: 500px;
+    }
+}
+
 
 .centered {
   position: absolute;

@@ -159,7 +159,6 @@ class Result extends React.Component {
 
   render() {
     const resultQuery = this.props.location.state.query;
-    const amountOfResults = this.props.location.state.data.length;
     const loading = this.state.loading;
 
     let products = this.props.location.state.data;
@@ -200,6 +199,7 @@ class Result extends React.Component {
 
     }
 
+    let amountOfResults = products.length;
     let compare = x => {
       return x;
     };
