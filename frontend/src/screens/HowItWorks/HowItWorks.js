@@ -4,12 +4,12 @@ import { Layout, Typography } from "antd";
 import {
   SearchOutlined,
   FilterOutlined,
-  ShoppingCartOutlined,
+  ShoppingCartOutlined
 } from "@ant-design/icons";
 import Navbar from "../../components/Navbar/Navbar";
 import MegFooter from "../../components/MegFooter/MegFooter";
 
-const { Content} = Layout;
+const { Content } = Layout;
 const { Text, Title } = Typography;
 class HowItWorks extends React.Component {
   render() {
@@ -56,7 +56,7 @@ class HowItWorks extends React.Component {
             </div>
           </div>
         </Content>
-         <MegFooter/>
+        <MegFooter />
       </Layout>
     );
   }

@@ -1,0 +1,16 @@
+The "dockmeg.pem" file is a secret key associated with our AWS EC2 instance, and should not be exposed publicly.
+
+Smit has the file saved locally if anyone needs it. 
+
+When deploying, make sure you...
+
+1) cd into the folder where you've saved dockmeg.pem
+2) Know the path to the /meg/backend directory "~/path/to/meg/backend"
+
+When you're ready, enter the following commands for deployment (replacing ~/path/to/meg/backend appropriately):
+
+scp -r -i dockmeg.pem ~/path/to/meg/backend ec2-user@3.88.174.215:~/
+ssh -i dockmeg.pem ec2-user@3.88.174.215
+cd backend && dockdown && dockup
+
+Test the deployment by heading over to http://ec2-3-88-174-215.compute-1.amazonaws.com:5000/

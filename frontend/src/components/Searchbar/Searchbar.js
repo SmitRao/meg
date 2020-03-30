@@ -2,45 +2,51 @@ import React from "react";
 import { Input, Button, Typography } from "antd";
 import "./Searchbar.css";
 import axios from "axios";
-import { Link } from "react-router-dom";
-// import { Searchbar } from 'react-native-paper';
+import { withRouter } from "react-router-dom";
 
 const { Text } = Typography;
 
 const { Search } = Input;
 
 class Searchbar extends React.Component {
-  postsearch() {
-    var search_keyword = document.getElementById("product-search").value;
+  constructor(props) {
+    super(props);
+    this.postSearch = this.postSearch.bind(this);
+  }
 
-    console.log("data is..." + search_keyword);
+  postSearch() {
+    let searchKeyword = document.getElementById("product-search").value;
 
-    const params = {'data': search_keyword}
+    // console.log("data is..." + searchKeyword);
+
+    const params = { data: searchKeyword };
 
     axios
-      .post(
-        "/query",
-        params, 
-        {headers: { 'content-type': 'application/json', },
+      .post("/query", params, {
+        headers: { "content-type": "application/json" }
       })
-      .then(function(response) {
-        // response is the searched results
-        console.log(response);        
+      .then(response => {
+        console.log(response.data);
+        this.props.history.push("/results", {
+          data: response.data,
+          query: searchKeyword
+        });
       })
-      .catch(function(error) {
+      .catch(error => {
         console.log(error);
       });
   }
+
   render() {
     return (
       <Search
         id="product-search"
-        className="search-bar"
-        placeholder="search for items..."
-        onSearch={this.postsearch}
+        className={"search-bar" + " " + this.props.className}
+        placeholder={this.props.text}
+        onSearch={this.postSearch}
       />
     );
   }
 }
 
-export default Searchbar;
+export default withRouter(Searchbar);
