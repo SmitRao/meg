@@ -10,29 +10,27 @@ const { Search } = Input;
 
 class Searchbar extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.postSearch = this.postSearch.bind(this);
   }
 
   postSearch() {
     let searchKeyword = document.getElementById("product-search").value;
 
-    // console.log("data is..." + searchKeyword);  
+    // console.log("data is..." + searchKeyword);
 
-    const params = {'data': searchKeyword}
+    const params = { data: searchKeyword };
 
     axios
-      .post(
-        "/query",
-        params, 
-        {headers: { 'content-type': 'application/json', },
+      .post("/query", params, {
+        headers: { "content-type": "application/json" }
       })
       .then(response => {
-        console.log(response.data)
+        console.log(response.data);
         this.props.history.push("/results", {
           data: response.data,
           query: searchKeyword
-        })
+        });
       })
       .catch(error => {
         console.log(error);
