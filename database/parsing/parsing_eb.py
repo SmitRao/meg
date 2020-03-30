@@ -3,6 +3,29 @@ import os
 import unicodedata
 import csv
 
+# Function that converts currency symbol into 3 char string (currency code) to be returned
+def curr_symbol_to_code(symbol):
+    code = ""
+    if symbol == "£":
+        code = "GBP"
+    elif symbol == "€":
+        code = "EUR"
+    elif symbol == "₽":
+        code = "RUB"
+
+    return code
+
+def get_sizes(product_data):
+    sizes = ""
+    if ("small" in product_data.lower()):
+        print("hi\n")
+        sizes += "S"
+    if ('medium' in product_data.lower()):
+        sizes += "M"
+    if ('large' in product_data.lower()):
+        sizes += "L"
+    return sizes
+
 # Open json of scraped data to be parsed
 with open (os.path.abspath('../static_data/json_files/eb_data.json')) as f:
     json = json.load(f)
@@ -22,7 +45,8 @@ for i in range(len(json['products'])):
 
         current_product['price'] = float(json['products'][i]['priceInEuros'][2:])
 
-        current_product['currency'] = json['products'][i]['priceInEuros'][1:2]
+        # Use helper function to convert currency symbol to 3 char string representation
+        current_product['currency'] = curr_symbol_to_code(json['products'][i]['priceInEuros'][1:2])
         
         current_product['productUrl'] = json['products'][i]['productUrl']
         
@@ -31,7 +55,11 @@ for i in range(len(json['products'])):
         current_product['productDetails'] = json['products'][i]['productDetails'].replace('\n', " ")
         
         current_product['mainImageUrl'] = json['products'][i]['image1']
-        
+
+        # need to modify scraping structure to include size measurements, using filler data for now
+        sizeList = get_sizes(json['products'][i]['productDetails'].replace('\n', " "))
+        current_product['size'] = "S/M/L"
+
         current_product['brandName'] = 'Electric Bazaar'
         
         current_product['categoryName'] = str(json['products'][i]['productName']).rsplit(' ', 1)[-1]
@@ -42,8 +70,8 @@ for i in range(len(json['products'])):
 
 
 # Set up to write parsed data into structured csv file
-csv_columns = ['productName', 'price', 'currency', 'productUrl', 'gender', 'productDetails', 'mainImageUrl', 'brandName', 'categoryName']
-csv_file = '../static_data/csv_files/parsed_eb.csv'
+csv_columns = ['productName', 'price', 'currency', 'productUrl', 'gender', 'productDetails', 'mainImageUrl', 'size', 'brandName', 'categoryName']
+csv_file = '../../backend/project/product_data/parsed_eb.csv'
 
 # Write parsed data into file parsed_eb.csv
 with open(csv_file, 'w', newline='') as csvfile:

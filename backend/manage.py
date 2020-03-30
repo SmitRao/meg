@@ -13,7 +13,7 @@ products_eb_csv_path = "./project/product_data/parsed_eb.csv"
 products_nea_csv_path = "./project/product_data/parsed_nea.csv"
 
 
-#productName,priceInEuros,productUrl,gender,productDetails,mainImageUrl,brandName,categoryName
+#productName,price,currency,productUrl,gender,productDetails,mainImage,brandName,categoryName
 with open(os.path.abspath(products_eb_csv_path), newline='') as eb_csv:
     reader = csv.DictReader(eb_csv, delimiter=',')
     eb_data = list(reader)  
@@ -49,12 +49,13 @@ def populate_db():
         db.session.add(Categories(category_name=category))
 
 
-# productName,priceInEuros,productUrl,gender,productDetails,mainImageUrl,brandName,categoryName
+# productName,price,currency,productUrl,gender,productDetails,mainImage,brandName,categoryName
 
     for p in eb_data:
         db.session.add(Products(
             product_name=p["productName"], 
-            price_in_euros=p["priceInEuros"], 
+            price=p["price"],
+            currency=p["currency"],
             product_url=p["productUrl"], 
             gender=p["gender"], 
             product_detail=p["productDetails"], 
@@ -64,15 +65,16 @@ def populate_db():
             category_name=p["categoryName"]
         ))
 
-#productName,priceInEuros,productUrl,gender,productDetails,mainImageUrl,brandName,categoryName
+#productName,price,currency,productUrl,gender,productDetails,mainImageUrl,brandName,categoryName
     for p in nea_data:
         db.session.add(Products(
             product_name=p["productName"], 
-            price_in_euros=p["priceInEuros"], 
+            price=p["price"],
+            currency=p["currency"],
             product_url=p["productUrl"], 
             gender=p["gender"], 
             product_detail=p["productDetails"], 
-            main_image_url=p["mainImageUrl"], 
+            main_image_url=p["mainImage"], 
             size = p["size"],
             brand_name=p["brandName"], 
             category_name=p["categoryName"]

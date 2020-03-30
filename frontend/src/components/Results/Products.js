@@ -17,17 +17,18 @@ const generateCard = (product) => {
   return (
     <Card
       hoverable
-      onClick={()=> window.location.href= "http://www.instagram.com"}
+      onClick={()=> window.location.href=product["ProductUrl"]}
       cover={
         <img
-          alt="example"
-          src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+          alt={product["ProductName"]}
+          src={product["MainImageUrl"]}
         />
       }
     >
-      <Meta title="Europe Street beat" description="www.instagram.com" />
+      <Meta title={product["BrandName"]} description={product["ProductName"]} />
       {/*TODO: replace currency with currency to display, product_currency from product info*/}
-      <Price product_value={product['price']} product_currency={'USD'} currency={'GBP'}/>
+      <Price product_value={product["PriceInEuros"]} product_currency={product["Currency"]} currency={product["Currency"]}/>
+      {/* <Text>{product["PriceInEuros"]}</Text> */}
     </Card>
   );
 };
