@@ -1,6 +1,6 @@
 import React from "react";
 import { Typography, Card, Row, Col} from "antd";
-import Price from "../Price/Price";
+import Price from "./Price";
 
 /*Available currencies: verify in ExchangeRatesToCAD.js
   "CAD","AUD","BRL","CNY","EUR","HKD","INR",

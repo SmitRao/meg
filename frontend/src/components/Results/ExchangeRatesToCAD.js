@@ -1,6 +1,6 @@
 // March 27, 2020
 // modified from downloaded json from https://www.bankofcanada.ca/rates/exchange/annual-average-exchange-rates/
-// json with ra"tes": ./static/FX_RATES_ANNUAL-sd-2017-01-01"
+// json with rates: ./FX_RATES_ANNUAL-sd-2017-01-01"
 // Only kept rates for end of 2019
 
 
