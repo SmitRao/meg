@@ -160,6 +160,7 @@ class Result extends React.Component {
   render() {
     const resultQuery = this.props.location.state.query;
     const loading = this.state.loading;
+    const currency = this.state.currency;
 
     let products = this.props.location.state.data;
     console.log("products data: ", products)
@@ -258,6 +259,7 @@ class Result extends React.Component {
                     <PriceFilter
                       onSet={this.handlePriceFilter}
                       className="pricefilter"
+                      currency={currency}
                     />
                   );
                   if (filter !== "price") {
