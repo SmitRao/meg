@@ -1,4 +1,5 @@
 from project import db
+from project.currency import convert_value_to_curr
 
 class Brands(db.Model):
     __tablename__ = "brands"
@@ -66,6 +67,25 @@ class Products(db.Model):
             # TODO: to change this to price, will need to change in frontend as well!
             "PriceInEuros": self.price,
             "Currency":self.currency,
+            "ProductUrl": self.product_url,
+            "Gender": self.gender,
+            "ProductDetail": self.product_detail,
+            "MainImageUrl": self.main_image_url,
+            "Size": self.size,
+            "BrandName": self.brand_name,
+            "CategoryName": self.category_name
+        }
+        return d
+
+    def asDictPriceInUSD(self):
+        price_in_usd = convert_value_to_curr(self.price, self.currency, "USD")
+        d = {
+            "ProductId" : self.product_id,
+            "ProductName" : self.product_name,
+            # "Price": self.price,
+            # TODO: to change this to price, will need to change in frontend as well!
+            "PriceInEuros": price_in_usd,
+            "Currency":"USD",
             "ProductUrl": self.product_url,
             "Gender": self.gender,
             "ProductDetail": self.product_detail,
