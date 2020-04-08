@@ -23,7 +23,7 @@ def search(search_keyword):
     dicts = []
     for r in res:
         # dicts.append(r.asDict())
-        # convert prices to USE
+        # convert prices to USD
         dicts.append(r.asDictPriceInUSD())
 
     return dicts

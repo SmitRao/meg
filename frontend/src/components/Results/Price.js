@@ -23,12 +23,12 @@ export const getRate = (curr) => {
 
 // convert from value to the required currency
 export const convertValuetoCurr = (value, fromCurr, toCurr) => {
-    // TODO: this method will only give an approximation!!!
+    // NOTE: this method will only give an approximation!!!
 
     const toCADRate = getRate(fromCurr);
     const conv = value * toCADRate / getRate(toCurr);
 
-    // console.log(value, fromCurr, conv, toCurr);
+    // returns number as a string rounded to nearest whole number
     return conv.toFixed(0);
 };
 
