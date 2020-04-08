@@ -1,3 +1,4 @@
+import math
 conversion_rates = {
     "CAD": 1,
     "AUD": 0.9228,
@@ -44,4 +45,4 @@ def convert_value_to_curr(value, from_curr, to_curr):
 
     to_CAD_rate = conversion_rates[from_curr]
     conv = value * to_CAD_rate / conversion_rates[to_curr]
-    return conv
+    return math.ceil(conv)

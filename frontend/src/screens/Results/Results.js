@@ -89,7 +89,7 @@ class Result extends React.Component {
       setFilterOn: false,
       checkValues: intialFilters,
       loading: false,
-      currency: "curr"
+      currency: "USD"
     };
   }
 
@@ -236,7 +236,7 @@ class Result extends React.Component {
                 <Col>
                   <Row gutter={16} align="middle">
                     <Col><Sort onChange={this.handleSort}/></Col>
-                    <Col><Currency onChange={this.handleCurrency}/></Col>
+                    <Col><Currency onChange={this.handleCurrency} currency={currency}/></Col>
                   </Row>
                 </Col>
               </Row>
@@ -283,7 +283,7 @@ class Result extends React.Component {
                   No Results for {resultQuery}
                 </Text>
               ) : (
-                <Products products={products.sort(compare)} currency={this.state.currency}/>
+                <Products products={products.sort(compare)} currency={currency}/>
               )}
             </Content>
           </Layout>

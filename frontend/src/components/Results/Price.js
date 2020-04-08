@@ -28,7 +28,7 @@ export const convertValuetoCurr = (value, fromCurr, toCurr) => {
     const toCADRate = getRate(fromCurr);
     const conv = value * toCADRate / getRate(toCurr);
 
-    console.log(value, fromCurr, conv, toCurr);
+    // console.log(value, fromCurr, conv, toCurr);
     return conv.toFixed(0);
 };
 
