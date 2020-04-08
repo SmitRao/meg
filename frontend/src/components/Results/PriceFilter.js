@@ -15,14 +15,12 @@ class PriceFilter extends React.Component {
   }
 
   handleMinChange(event) {
-    //TODO: Change GBP to whatever default currency is used in the product data
     const convertedMinVal = convertValuetoCurr(event.target.value, this.props.currency,"USD");
     // console.log("handleMinChange", this.props.currency, event.target.value, "USD", convertedMinVal)
     this.setState({min: convertedMinVal});
   }
 
   handleMaxChange(event) {
-    //TODO: Change GBP to whatever default currency is used in the product data
     const convertedMaxVal = convertValuetoCurr(event.target.value, this.props.currency,"USD");
     // console.log("handleMaxChange", this.props.currency, event.target.value, "USD", convertedMaxVal)
     this.setState({max: convertedMaxVal});
