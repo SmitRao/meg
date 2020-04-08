@@ -126,3 +126,6 @@ def results():
 def how_it_works():
     return render_template("index.html", howitworkstoken="--meggy--")
 
+@app.route("/about-brands")
+def about_brands():
+    return render_template("index.html", aboutbrandstoken="--spicybrands--")
