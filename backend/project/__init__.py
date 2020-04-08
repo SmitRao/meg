@@ -22,7 +22,9 @@ def search(search_keyword):
                             Products.category_name.like(s)))
     dicts = []
     for r in res:
-        dicts.append(r.asDict())
+        # dicts.append(r.asDict())
+        # convert prices to USD
+        dicts.append(r.asDictPriceInUSD())
 
     return dicts
 

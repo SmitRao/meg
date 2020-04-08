@@ -1,5 +1,6 @@
 import React from "react";
 import { Input, Button, Row, Col } from "antd";
+import {convertValuetoCurr} from "./Price";
 
 const InputGroup = Input.Group;
 
@@ -14,11 +15,15 @@ class PriceFilter extends React.Component {
   }
 
   handleMinChange(event) {
-    this.setState({min: event.target.value});
+    const convertedMinVal = convertValuetoCurr(event.target.value, this.props.currency,"USD");
+    // console.log("handleMinChange", this.props.currency, event.target.value, "USD", convertedMinVal)
+    this.setState({min: convertedMinVal});
   }
 
   handleMaxChange(event) {
-    this.setState({max: event.target.value});
+    const convertedMaxVal = convertValuetoCurr(event.target.value, this.props.currency,"USD");
+    // console.log("handleMaxChange", this.props.currency, event.target.value, "USD", convertedMaxVal)
+    this.setState({max: convertedMaxVal});
   }
 
   getMinMax() {

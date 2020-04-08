@@ -20,12 +20,11 @@ class Currency extends React.Component {
       </Col>
       <Col>
         <Select
-            defaultValue="curr"
+            defaultValue={this.props.currency ? this.props.currency : "USD"}
             style={{ width: 140 }}
             label="currency"
             onChange={this.props.onChange}
         >
-          <Option value="curr">Listed Currency</Option>
           <Option value="USD">USD</Option>
           <Option value="CAD">CAD</Option>
           <Option value="GBP">GBP</Option>
