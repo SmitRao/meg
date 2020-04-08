@@ -17,7 +17,7 @@ class Navbar extends React.Component {
                     <Menu
                         theme="light"
                         mode="horizontal"
-                        defaultSelectedKeys={["1"]}
+                        defaultSelectedKeys={[""]}
                         className="menu">
 
                         <Menu.Item key="1" onClick=""> 
@@ -25,7 +25,10 @@ class Navbar extends React.Component {
                             Home
                         </Menu.Item>
                         <Menu.Item key="2"> Our Values</Menu.Item>
-                        <Menu.Item key="3"> Brands </Menu.Item>
+                        <Menu.Item key="3" onClick="">
+                            <Link to="about-brands"/> 
+                            Brands 
+                        </Menu.Item>
                      </Menu>
                     </Header>
             )
