@@ -18,7 +18,6 @@ def curr_symbol_to_code(symbol):
 def get_sizes(product_data):
     sizes = ""
     if ("small" in product_data.lower()):
-        print("hi\n")
         sizes += "S"
     if ('medium' in product_data.lower()):
         sizes += "M"
@@ -56,7 +55,7 @@ for i in range(len(json['products'])):
         
         current_product['mainImageUrl'] = json['products'][i]['image1']
 
-        # need to modify scraping structure to include size measurements, using filler data for now
+        # size info from brand's site
         sizeList = get_sizes(json['products'][i]['productDetails'].replace('\n', " "))
         current_product['size'] = "S/M/L"
 

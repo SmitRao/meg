@@ -4,15 +4,13 @@ import unicodedata
 import csv
 
 # Function that converts currency symbol into 3 char string (currency code) to be returned
+# Only handles the currency options available on nea's site
 def curr_symbol_to_code(symbol):
     code = ""
     if symbol == "£":
         code = "GBP"
     elif symbol == "€":
         code = "EUR"
-    elif symbol == "₽":
-        code = "RUB"
-
     return code
 
 # Open json of scraped data to be parsed
@@ -43,7 +41,7 @@ for i in range(len(json['products'])):
         
     current_product['mainImage'] = json['products'][i]['mainImage']
 
-    # parse out size info from brands site; needs to be cleaned up but is functional
+    # parse out size info from brands site 
     curr_data = json['products'][i]['productDescription'][0]['data'].replace('\n', " ")
     size_start = curr_data.find("Dimension")
     new_data = curr_data[size_start + 11:]
