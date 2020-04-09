@@ -23,7 +23,6 @@ import MegFooter from "../../components/MegFooter/MegFooter.js";
 import Navbar from "../../components/Navbar/Navbar.js";
 
 import Searchbar from "../../components/Searchbar/Searchbar";
-import { Link } from "react-router-dom";
 
 const { SubMenu } = Menu;
 const { Content, Sider } = Layout;
@@ -89,7 +88,8 @@ class Result extends React.Component {
       setFilterOn: false,
       checkValues: intialFilters,
       loading: false,
-      currency: "USD"
+      currency: "USD",
+      clear: false
     };
   }
 
@@ -115,7 +115,8 @@ class Result extends React.Component {
         min: 0,
         max: 1000,
         checkValues: checkValues,
-        loading: true
+        loading: true,
+        clear: true
       },
       this.handleLoad()
     );
@@ -124,7 +125,8 @@ class Result extends React.Component {
   handleLoad() {
     setTimeout(() => {
       this.setState({
-        loading: false
+        loading: false,
+        clear: false
       });
     }, 500);
   }
@@ -163,7 +165,7 @@ class Result extends React.Component {
     const currency = this.state.currency;
 
     let products = this.props.location.state.data;
-    console.log("products data: ", products)
+    //console.log("products data: ", products)
 
     if (this.state.setFilterOn) {
       products = products.filter(
@@ -192,7 +194,7 @@ class Result extends React.Component {
         }
       });
       
-      console.log("filters to check: ", checked_filters);
+      //console.log("filters to check: ", checked_filters);
       if (!this.isempty(checked_filters)){
         products = products.filter((product) =>
         (product['Size'] in checked_filters) || product["Gender"] in checked_filters);
@@ -223,7 +225,7 @@ class Result extends React.Component {
             <Layout class="background">
               <Row className="row" justify="space-between" align="middle">
                 <Col>
-                  {amountOfResults == 1 ? (
+                  {amountOfResults === 1 ? (
                     <Text>
                       Showing {amountOfResults} Result for "{resultQuery}"
                     </Text>
@@ -260,6 +262,7 @@ class Result extends React.Component {
                       onSet={this.handlePriceFilter}
                       className="pricefilter"
                       currency={currency}
+                      clear={this.state.clear}
                     />
                   );
                   if (filter !== "price") {
@@ -278,7 +281,7 @@ class Result extends React.Component {
                 <Row justify="center" align="middle">
                   <Spin indicator={antIcon} />
                 </Row>
-              ) : amountOfResults == 0 ? (
+              ) : amountOfResults === 0 ? (
                 <Text className="centered no-results">
                   No Results for {resultQuery}
                 </Text>
