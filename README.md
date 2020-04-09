@@ -36,9 +36,24 @@ MEG is a fullstack application serving as a search engine for ethically-sourced 
 │   ├── manage.py
 │   ├── requirements.txt
 ├── database
-│   ├── ...
+│   ├── parsing
+|   |   ├── parsing_eb.py
+|   |   ├── parsing_eb_kuchi.py
+|   |   ├── parsing_nea.py
+│   ├── sql
+|   |   ├── (*).sql
+│   ├── static_data
+|   |   ├── csv_files
+|   |   |   ├── parsed_eb.csv
+|   |   |   ├── parsed_images.csv
+|   |   |   ├── parsed_nea.csv
+|   |   ├── json_files
+|   |   |   ├── eb_data.json
+|   |   |   ├── eb_kuchi_data.json
+|   |   |   ├── nea_data.json
 ├── deliverables
-│   ├── ...
+│   ├── (*).md
+│   ├── (*).png
 ├── frontend
 │   ├── ...
 ├── LICENSE
