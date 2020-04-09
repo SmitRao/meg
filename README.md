@@ -55,7 +55,45 @@ MEG is a fullstack application serving as a search engine for ethically-sourced 
 │   ├── (*).md
 │   ├── (*).png
 ├── frontend
-│   ├── ...
+│   ├── config
+|   |   ├── jest/...
+|   |   ├── paths.js
+|   |   ├── (*).js
+│   ├── public
+|   |   ├── favicon.ico
+|   |   ├── index.html
+|   |   ├── manifest.json
+|   |   ├── robots.txt
+|   |   ├── (*).png
+│   ├── scripts
+|   |   ├── (*).js
+│   ├── src
+|   |   ├── __tests__
+|   |   |   ├── __snapshots__/...
+|   |   |   ├── (*).test.js
+|   |   ├── assets
+|   |   |   ├── logo.svg
+|   |   |   ├── pictures-carousel.png
+|   |   ├── components
+|   |   |   ├── MegFooter/...
+|   |   |   ├── Navbar/...
+|   |   |   ├── Results/...
+|   |   |   ├── Searchbar/...
+|   |   ├── constants
+|   |   |   ├── FilterOptions.js
+|   |   ├── screens
+|   |   |   ├── AboutBrands/...
+|   |   |   ├── Home/...
+|   |   |   ├── HowItWorks/...
+|   |   |   ├── Results/...
+|   |   ├── App.js
+|   |   ├── index.js
+|   |   ├── serviceWorker.js
+|   |   ├── setupTests.js
+│   ├── .gitignore
+│   ├── README.md
+│   ├── package-lock.json
+│   ├── package.json
 ├── LICENSE
 └── .gitignore
 ```
