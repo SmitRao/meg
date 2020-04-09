@@ -197,7 +197,7 @@ class Result extends React.Component {
       //console.log("filters to check: ", checked_filters);
       if (!this.isempty(checked_filters)){
         products = products.filter((product) =>
-        (product['Size'] in checked_filters) || product["Gender"] in checked_filters);
+        (product['Size'] in checked_filters) || product["Gender"] in checked_filters || product["CategoryName"] in checked_filters);
       }
 
     }

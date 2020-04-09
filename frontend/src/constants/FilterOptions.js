@@ -1,5 +1,5 @@
 export const filters = {
-	//'category': [],
+	'category': ['Hijab', 'Gharara', 'Kimono', 'Dress', 'Kaftan'],
 	'gender': ['Men','Woman', 'Unisex'],
 	'price': [0],
 	'colors': ['Red', 'Orange', 'Yellow', 'Blue', 'Green', 'Indigo', 'Violet'],
