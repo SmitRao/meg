@@ -15,11 +15,11 @@ from project import db
 def search(search_keyword):
     # NO SEARCHING BY PRICE!!
     s=text("'%"+search_keyword+"%'")
-    res = Products.query.filter(or_(Products.product_name.like(s),
-                            Products.gender.like(s),
-                            Products.product_detail.like(s),
-                            Products.brand_name.like(s),
-                            Products.category_name.like(s)))
+    res = Products.query.filter(or_(Products.product_name.ilike(s),
+                            Products.gender.ilike(s),
+                            Products.product_detail.ilike(s),
+                            Products.brand_name.ilike(s),
+                            Products.category_name.ilike(s)))
     dicts = []
     for r in res:
         # dicts.append(r.asDict())
