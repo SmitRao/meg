@@ -1,7 +1,12 @@
 # My Ethical Garment
-MEG is a fullstack application serving as a search engine for ethically-sourced fashion.
+MEG is a fullstack application which serves as a search engine for ethically-sourced fashion.
 
 ## Installation
+Please make sure you have [Docker installed](https://docs.docker.com/get-docker/) on your machine. Also, Google Chrome would be the recommended browser you should use to test the app.
+
+Next, add aliases we specify in ```backend/.bashrc``` to your machine's ```bashrc``` file.
+
+For the Frontend side, you will need to [install npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) as well as [React](https://reactjs.org/docs/getting-started.html) and [Ant Design](https://ant.design/docs/react/introduce#Installation).
 
 ## File structure
 ```bash
@@ -108,10 +113,12 @@ MEG is a fullstack application serving as a search engine for ethically-sourced 
 - [Jest](https://jestjs.io/)
 - [PostgreSQL](https://www.postgresql.org/)
 
-
 ### Scraping
 
 ### Frontend to backend (build instructions)
+In the ```frontend/``` folder, run the command ```npm run build``` and let React eject and build a production-version of the application. This will inject static template (markup/stylesheet) files into ```backend/project/static/react/...```. 
+
+Next, ```cd``` into the ```backend``` directory and run ```sudo dockdown && dockup```. You should be able ot see the latest version of the frontend app on http://localhost:5000.
 
 ### Dockerize
 
