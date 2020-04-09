@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./screens/Home/Home";
 import HowItWorks from "./screens/HowItWorks/HowItWorks";
 import Results from "./screens/Results/Results";
+import AboutBrands from "./screens/AboutBrands/AboutBrands";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" exact component={Home} />
         <Route path="/how-it-works" component={HowItWorks} />
         <Route path="/results" component={Results} />
+        <Route path="/about-brands" component={AboutBrands}/>
       </div>
     </Router>
   );
