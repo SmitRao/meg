@@ -7,7 +7,19 @@ Repository: https://github.com/SmitRao/meg
 **My Ethical Garment** is a web application that acts as a clothing search engine for ethical brands.
 Users, who want to be more ethically conscious of their clothing purchases, but don’t know where to start, can use this website to search for clothing from ethical brands. My Ethical Garment helps people to search for ethical clothing in efficient ways. Users can search for specific apparel, filter by selected filters, and view the results in sorted order.
 
-## Installation
+## Background
+### Key Features
+
+![UserWorkFlow](https://github.com/SmitRao/meg/blob/deliverables/deliverables/user_workflow_2.png)
+Key features in the application are **searching**, **displaying**, **filtering**, **sorting**, and **redirecting**.
+
+- **Searching**: Users can search for products using keywords. If the keyword matches with product name, details, or other attributes, the product comes up at result pages.
+- **Displaying**: The website will return clothes from brands that satisfy the query.
+- **Filtering**: Users can filter their results. For example, they can filter their results to see only women's clothing.
+- **Sorting**: Users can view the results in sorted order. For example, they can sort the results by price from low to high.
+- **Redirecting**: Once they find something they like, they can click the product and be redirected to the brand’s product site.
+
+## Development setup
 Please make sure you have [Docker installed](https://docs.docker.com/get-docker/) on your machine. Also, Google Chrome would be the recommended browser you should use to test the app.
 
 Next, add aliases we specify in ```backend/.bashrc``` to your machine's ```bashrc``` file.
@@ -115,12 +127,12 @@ For the Frontend side, you will need to [install npm](https://docs.npmjs.com/dow
 (need to add docs)
 
 ### Frontend to backend (build instructions)
-In the ```frontend/``` folder, run the command ```npm run build``` and let React eject and build a production-version of the application. This will inject static template (markup/stylesheet) files into ```backend/project/static/react/...```. 
+In the ```frontend/``` folder, run the command ```npm run build``` and let React eject and build a production-version of the application. This will inject static template (markup/stylesheet) files into ```backend/project/static/react/...```
 
 Next, ```cd``` into the ```backend``` directory and run ```sudo dockdown && dockup```. You should be able ot see the latest version of the frontend app on http://localhost:5000.
 
 ### Deploy dockerized version
-Sign up for AWS and register IAM roles for the person(s) responsible for deployement in your team. The individual(s) deploying should first create an AmazonLinux/Ubuntu EC2 instance with security settings configured appropriately to allow development on all ports.
+Sign up for [AWS](https://aws.amazon.com/) and register IAM roles for the person(s) responsible for deployement in your team. The individual(s) deploying should first create an AmazonLinux/Ubuntu [EC2](https://aws.amazon.com/ec2/?nc2=h_ql_prod_fs_ec2) instance with security settings configured appropriately to allow development on all ports.
 
 The ```{secret}.pem``` file is a secret key associated with your AWS EC2 instance, and should not be exposed publicly. Save the secret securely. 
 
@@ -129,14 +141,14 @@ When deploying, make sure you...
 1) cd into the folder where you've saved ```{secret}.pem```
 2) Know the path to the /meg/backend directory, ex. "~/path/to/meg/backend"
 
-When you're ready, enter the following commands for deployment (replacing ~/path/to/meg/backend appropriately, as well as @3.88.174.215 to point to your actual ec2 IP):
+When you're ready, enter the following commands for deployment (replacing **```~/path/to/meg/backend```** appropriately, as well as **```@3.88.174.215```** to point to your actual ec2 IP):
 
-1.  scp -r -i dockmeg.pem /path/to/meg/backend ec2-user@3.88.174.215:~/
-2.  ssh -i dockmeg.pem ec2-user@3.88.174.215
+1.  ```scp -r -i``` **```{secret}.pem```** ```/path/to/meg/backend ec2-user```**```@3.88.174.215```**```:~/```
+2.  ```ssh -i``` **```{secret}.pem```** ```ec2-user```**```@3.88.174.215```**
 3.  (follow installation instructions for Ubuntu/Fedora Docker installation, based on your EC2 linux type)
-4.  cd backend && dockdown && dockup
+4.  ```cd backend && dockdown && dockup```
 
-Test the deployment by heading over to http://ec2-3-88-174-215.compute-1.amazonaws.com:5000/ (replace ```ec2-3-88-174-215``` with your actual ec2 instance url base).
+Test the deployment by heading over to [http://**```ec2-3-88-174-215```**.compute-1.amazonaws.com:5000/](#) (replace **```ec2-3-88-174-215```** with your actual [EC2](https://aws.amazon.com/ec2/?nc2=h_ql_prod_fs_ec2) instance url base).
 
 If stuck, search for relevant Medium articles written on the topic -- these are a great resource as there have been several flavors of the operation described by different contributors.
 
@@ -146,21 +158,8 @@ Register or transfer your domain on AWS Route 53, and create the DNS records to 
 ### Frontend tests
 The tests (using Jest for frontend) can be found in ```frontend/src/__tests__```, and you can follow Jest instructions to test these and add more React tests here.
 
-## Background
-### Key Features
 
-![UserWorkFlow](https://github.com/SmitRao/meg/blob/deliverables/deliverables/user_workflow_2.png)
-Key features in the application are **searching**, **displaying**, **filtering**, **sorting**, and **redirecting**.
-
-- **Searching**: Users can search for products using keywords. If the keyword matches with product name, details, or other attributes, the product comes up at result pages.
-- **Displaying**: The website will return clothes from brands that satisfy the query.
-- **Filtering**: Users can filter their results. For example, they can filter their results to see only women's clothing.
-- **Sorting**: Users can view the results in sorted order. For example, they can sort the results by price from low to high.
-- **Redirecting**: Once they find something they like, they can click the product and be redirected to the brand’s product site.
-
-There were a lot of moving pieces that we haven't quite put together in the app yet (we have something developed for sorting/filtering/searching, however, these haven't yet been successfully integrated to work with our application). So, for the purpose of showing a proof-of-concept (and our prioritization of Frontend/DB/Scraping) we've added mocks in the /results route and deployed only the frontend since this is what we chose to finish by the D2 deadline. **The features that have been implemented but not integrated into the deployed application at this point are shown below.**
-
-## Testing instructions for the backend
+### Backend tests
 
 1. Set up the docker container (if you haven't already started it yet)
    1. In the command line, from the root project directory `meg` navigate to `backend`
@@ -168,7 +167,7 @@ There were a lot of moving pieces that we haven't quite put together in the app 
       1. This command will initialize the tables in the db and populate it with product data in the Docker container
       2. Refer to technical requirements on the software needed for docker
 
-## Testing the database
+### Database tests
 
 1. To view the contents of the database, use the command `docker-compose exec db psql --username=hello_flask --dbname=hello_flask_dev`
 2. This will open the psql server that contains the product data.
