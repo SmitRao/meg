@@ -138,7 +138,7 @@ The ```{secret}.pem``` file is a secret key associated with your AWS EC2 instanc
 
 When deploying, make sure you...
 
-1) cd into the folder where you've saved ```{secret}.pem```
+1) `cd` into the folder where you've saved ```{secret}.pem```
 2) Know the path to the /meg/backend directory, ex. "~/path/to/meg/backend"
 
 When you're ready, enter the following commands for deployment (replacing **```~/path/to/meg/backend```** appropriately, as well as **```@3.88.174.215```** to point to your actual ec2 IP):
@@ -154,6 +154,8 @@ If stuck, search for relevant Medium articles written on the topic -- these are 
 
 ### Add a custom URL (e.g. http://myethicalgarment.com)
 Register or transfer your domain on AWS Route 53, and create the DNS records to point to your EC2 instance (there are docs from AWS that help you do this). You may want to set up CloudFront/Cert manager/S3 buckets as needed for SSL configuration.
+
+## Tests
 
 ### Frontend tests
 The tests (using Jest for frontend) can be found in ```frontend/src/__tests__```, and you can follow Jest instructions to test these and add more React tests here.
@@ -206,7 +208,7 @@ The tests (using Jest for frontend) can be found in ```frontend/src/__tests__```
     - `SELECT * FROM products;` will return the entire database of products that can be searched
 7. Once you're done exploring the database, you can quit with the command `\q`
 
-## Testing the backend
+### Backend tests
 
 NOTE: if at any point you encounter errors due to searching for invalid inputs, you will need to restart the container!
 
@@ -268,8 +270,7 @@ NOTE: if at any point you encounter errors due to searching for invalid inputs, 
 10. Once you're done testing, you can quit the python shell with `quit()`
 
 
-##  Testing  instructions  for   parsing 
-**Scraping/Parsing**
+###  Scraping/Parsing tests
 
 The brands that we are currently working with were not able to get in touch with us regarding their API endpoints, so we chose to scrape all the required product info directly from their sites. We utilized parsehub to gather the various product details we needed and exported them as JSON objects. These JSON objects were parsed and all of the data was formatted into csv files based on the database requirements. The functionality can be seen by going through the following steps. 
 
