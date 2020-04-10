@@ -136,7 +136,10 @@ class Result extends React.Component {
   }
 
   handlePriceFilter(values) {
-    if (values["min"] <= values["max"] && values["min"] >= 0) {
+    let min = parseFloat(values["min"]);
+    let max = parseFloat(values["max"]);
+
+    if (min <= max && min >= 0) {
       this.setState(
         { ...values, loading: true, setFilterOn: true },
         this.handleLoad()
