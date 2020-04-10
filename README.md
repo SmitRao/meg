@@ -1,3 +1,4 @@
+
 # My Ethical Garment (MEG)
 
 Repository: https://github.com/SmitRao/meg
@@ -29,8 +30,8 @@ For the Frontend side, you will need to [install npm](https://docs.npmjs.com/dow
 ## File structure
 ```bash
 ├── backend
-│   ├── project
-│   │   ├── product_data
+│   ├── project
+│   │   ├── product_data
 |   |   |   ├── parsed_eb.csv
 |   |   |   ├── parsed_eb_kuchi.csv
 |   |   |   ├── parsed_nea.csv
@@ -50,22 +51,22 @@ For the Frontend side, you will need to [install npm](https://docs.npmjs.com/dow
 |   |   ├── config.py
 |   |   ├── currency.py
 |   |   ├── models.py
-│   ├── .bashrc
-│   ├── .env.dev
-│   ├── Dockerfile
-│   ├── deploy.txt
-│   ├── docker-compose.yml
-│   ├── entrypoint.sh
-│   ├── manage.py
-│   ├── requirements.txt
+│   ├── .bashrc
+│   ├── .env.dev
+│   ├── Dockerfile
+│   ├── deploy.txt
+│   ├── docker-compose.yml
+│   ├── entrypoint.sh
+│   ├── manage.py
+│   ├── requirements.txt
 ├── database
-│   ├── parsing
+│   ├── parsing
 |   |   ├── parsing_eb.py
 |   |   ├── parsing_eb_kuchi.py
 |   |   ├── parsing_nea.py
-│   ├── sql
+│   ├── sql
 |   |   ├── (*).sql
-│   ├── static_data
+│   ├── static_data
 |   |   ├── csv_files
 |   |   |   ├── parsed_eb.csv
 |   |   |   ├── parsed_images.csv
@@ -75,22 +76,22 @@ For the Frontend side, you will need to [install npm](https://docs.npmjs.com/dow
 |   |   |   ├── eb_kuchi_data.json
 |   |   |   ├── nea_data.json
 ├── deliverables
-│   ├── (*).md
-│   ├── (*).png
+│   ├── (*).md
+│   ├── (*).png
 ├── frontend
-│   ├── config
+│   ├── config
 |   |   ├── jest/...
 |   |   ├── paths.js
 |   |   ├── (*).js
-│   ├── public
+│   ├── public
 |   |   ├── favicon.ico
 |   |   ├── index.html
 |   |   ├── manifest.json
 |   |   ├── robots.txt
 |   |   ├── (*).png
-│   ├── scripts
+│   ├── scripts
 |   |   ├── (*).js
-│   ├── src
+│   ├── src
 |   |   ├── __tests__
 |   |   |   ├── __snapshots__/...
 |   |   |   ├── (*).test.js
@@ -113,10 +114,10 @@ For the Frontend side, you will need to [install npm](https://docs.npmjs.com/dow
 |   |   ├── index.js
 |   |   ├── serviceWorker.js
 |   |   ├── setupTests.js
-│   ├── .gitignore
-│   ├── README.md
-│   ├── package-lock.json
-│   ├── package.json
+│   ├── .gitignore
+│   ├── README.md
+│   ├── package-lock.json
+│   ├── package.json
 ├── LICENSE
 └── .gitignore
 ```
@@ -124,7 +125,7 @@ For the Frontend side, you will need to [install npm](https://docs.npmjs.com/dow
 ## Notes for future developers
 
 ### Scraping
-(need to add docs)
+Scraping was done using Parsehub projects for both nea and electric bazaar. Parsehub projects result in a JSON object of scraped data when run. This JSON object then needs to be cleaned up and formatted in a way that can be inserted into the database. The current approach was to make simple python programs to parse through these JSON objects and store the resulting data in a csv format. For future brands, ideally an API will be provided but if further scraping is required then please note that parsehub premium is required to get their data on a consistent basis. 
 
 ### Frontend to backend (build instructions)
 In the ```frontend/``` folder, run the command ```npm run build``` and let React eject and build a production-version of the application. This will inject static template (markup/stylesheet) files into ```backend/project/static/react/...```
