@@ -131,7 +131,7 @@ When deploying, make sure you...
 
 When you're ready, enter the following commands for deployment (replacing ~/path/to/meg/backend appropriately, as well as @3.88.174.215 to point to your actual ec2 IP):
 
-1.  scp -r -i dockmeg.pem ~/path/to/meg/backend ec2-user@3.88.174.215:~/
+1.  scp -r -i dockmeg.pem /path/to/meg/backend ec2-user@3.88.174.215:~/
 2.  ssh -i dockmeg.pem ec2-user@3.88.174.215
 3.  (follow installation instructions for Ubuntu/Fedora Docker installation, based on your EC2 linux type)
 4.  cd backend && dockdown && dockup
